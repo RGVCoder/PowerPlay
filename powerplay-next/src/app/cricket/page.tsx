@@ -8,7 +8,7 @@ function Navbar() {
         <nav className="navbar glass">
             <div className="navbar-container">
                 <Link className="navbar-brand" href="/">
-                    <Image src="/images/logo.png" alt="PowerPlay Logo" width={40} height={40} />
+                    <Image src="/images/logo.jpeg" alt="PowerPlay Logo" width={40} height={40} />
                     PowerPlay
                 </Link>
                 <ul className="navbar-nav">

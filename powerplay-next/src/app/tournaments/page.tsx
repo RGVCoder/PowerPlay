@@ -10,8 +10,8 @@ function Navbar() {
   return (
     <nav className="navbar glass">
       <div className="navbar-container">
-        <Link className="navbar-brand" href="/">
-          <Image src="/images/logo.png" alt="PowerPlay Logo" width={40} height={40} />
+               <Link className="navbar-brand" href="/">
+                 <Image src="/images/logo.jpeg" alt="PowerPlay Logo" width={40} height={40} />
           <span>PowerPlay</span>
         </Link>
 

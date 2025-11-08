@@ -10,7 +10,7 @@ function Navbar() {
     <nav className="navbar glass">
       <div className="navbar-container">
         <a className="navbar-brand" href="#home">
-          <Image src="/images/logo.png" alt="PowerPlay Logo" width={40} height={40} />
+          <Image src="/images/logo.jpeg" alt="PowerPlay Logo" width={40} height={40} />
           <span>PowerPlay</span>
         </a>
 
@@ -94,36 +94,42 @@ function EventsPreviewSection() {
         <div className="events-preview-grid">
           <div className="event-preview-group fade-in-up" style={{ animationDelay: '0.3s' }}>
             <h3 className="event-preview-title">Cricket Tournament</h3>
-            <div className="event-images-grid">
-              {cricketImages.map((img, index) => (
-                <div key={index} className="event-image-wrapper">
-                  <Image
-                    src={img}
-                    alt={`Cricket tournament ${index + 1}`}
-                    width={300}
-                    height={200}
-                    className="event-image"
-                  />
+                <div className="event-images-grid">
+                  {cricketImages.map((img, index) => (
+                    <div key={index} className="event-image-wrapper">
+                      <Image
+                        src={img}
+                        alt={`Cricket tournament ${index + 1}`}
+                        width={300}
+                        height={200}
+                        className="event-image"
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+                <p className="event-preview-description">
+                  Competitive league play that spotlights rising cricket talent, complete with pro-style officiating, community vendors, and post-match skills clinics that keep the excitement going beyond the boundary.
+                </p>
             <a href="/cricket" className="btn btn-outline" style={{ marginTop: 'var(--space-6)' }}>View Cricket Tournament</a>
           </div>
           <div className="event-preview-group fade-in-up" style={{ animationDelay: '0.4s' }}>
             <h3 className="event-preview-title">Pickleball Tournament</h3>
-            <div className="event-images-grid">
-              {pickleballImages.map((img, index) => (
-                <div key={index} className="event-image-wrapper">
-                  <Image
-                    src={img}
-                    alt={`Pickleball tournament ${index + 1}`}
-                    width={300}
-                    height={200}
-                    className="event-image"
-                  />
+                <div className="event-images-grid">
+                  {pickleballImages.map((img, index) => (
+                    <div key={index} className="event-image-wrapper">
+                      <Image
+                        src={img}
+                        alt={`Pickleball tournament ${index + 1}`}
+                        width={300}
+                        height={200}
+                        className="event-image"
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+                <p className="event-preview-description">
+                  Fast-paced brackets designed for all skill levels, featuring morning warm-up sessions, live match commentary, and inclusive lounges where players and fans can connect between games.
+                </p>
             <a href="/pickleball" className="btn btn-outline" style={{ marginTop: 'var(--space-6)' }}>View Pickleball Tournament</a>
           </div>
         </div>
@@ -134,40 +140,25 @@ function EventsPreviewSection() {
 
 function TestimonialSlider() {
   const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Cricket Tournament Participant",
-      text: "PowerPlay created an incredible tournament experience. The organization was top-notch and the community spirit was amazing!",
-      image: "/images/raghav.png"
-    },
-    {
-      name: "Michael Chen",
-      role: "Pickleball Player",
-      text: "This was my first tournament with PowerPlay and it exceeded all expectations. Great competition and even better people!",
-      image: "/images/advik.jpeg"
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Community Volunteer",
-      text: "PowerPlay's commitment to building community through sports is truly inspiring. Proud to be part of this organization!",
-      image: "/images/aryan.jpeg"
-    },
-    {
-      name: "David Kim",
-      role: "Tournament Sponsor",
-      text: "Supporting PowerPlay has been one of the best decisions. The impact they have on young athletes is remarkable.",
-      image: "/images/ishaan.jpeg"
-    }
+      {
+        name: "Vrishank Naveen",
+        role: "PowerPlay Athlete",
+        quote: "Power Play really helped me get more confident and stay motivated. The people there push you to do your best and actually care about your growth — on and off the field. Super grateful to be part of it.",
+        closing: ""
+      }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
+    useEffect(() => {
+      if (testimonials.length <= 1) {
+        return;
+      }
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }, [testimonials.length]);
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
@@ -184,55 +175,58 @@ function TestimonialSlider() {
   return (
     <section className="section">
       <div className="section-content">
-        <h2 className="section-title fade-in-up">What People Say</h2>
+               <h2 className="section-title fade-in-up">Testimonials</h2>
         <div className="testimonial-slider fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="testimonial-container">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className={`testimonial-slide ${index === currentIndex ? 'active' : ''}`}
-              >
-                <div className="testimonial-content">
-                  <div className="testimonial-image-wrapper">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={80}
-                      height={80}
-                      className="testimonial-image"
-                    />
-                  </div>
-                  <p className="testimonial-text">&ldquo;{testimonial.text}&rdquo;</p>
-                  <div className="testimonial-author">
-                    <h4 className="testimonial-name">{testimonial.name}</h4>
-                    <p className="testimonial-role">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+                  {testimonials.map((testimonial, index) => (
+                    <div
+                      key={index}
+                      className={`testimonial-slide ${index === currentIndex ? 'active' : ''}`}
+                    >
+                      <div className="testimonial-content">
+                        <p className="testimonial-text">&ldquo;{testimonial.quote}&rdquo;</p>
+                        {testimonial.closing && (
+                          <p className="testimonial-signature">
+                            {testimonial.closing.split('\n').map((line, lineIndex, lines) => (
+                              <React.Fragment key={lineIndex}>
+                                {line}
+                                {lineIndex < lines.length - 1 && <br />}
+                              </React.Fragment>
+                            ))}
+                          </p>
+                        )}
+                        <div className="testimonial-author">
+                          <h4 className="testimonial-name">{testimonial.name}</h4>
+                          <p className="testimonial-role">{testimonial.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
           </div>
-          <div className="testimonial-controls">
-            <button className="testimonial-nav-btn" onClick={goToPrevious} aria-label="Previous testimonial">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </button>
-            <div className="testimonial-dots">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  className={`testimonial-dot ${index === currentIndex ? 'active' : ''}`}
-                  onClick={() => goToSlide(index)}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-            <button className="testimonial-nav-btn" onClick={goToNext} aria-label="Next testimonial">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </button>
-          </div>
+                 {testimonials.length > 1 && (
+                   <div className="testimonial-controls">
+                     <button className="testimonial-nav-btn" onClick={goToPrevious} aria-label="Previous testimonial">
+                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                         <path d="M15 18l-6-6 6-6" />
+                       </svg>
+                     </button>
+                     <div className="testimonial-dots">
+                       {testimonials.map((_, index) => (
+                         <button
+                           key={index}
+                           className={`testimonial-dot ${index === currentIndex ? 'active' : ''}`}
+                           onClick={() => goToSlide(index)}
+                           aria-label={`Go to testimonial ${index + 1}`}
+                         />
+                       ))}
+                     </div>
+                     <button className="testimonial-nav-btn" onClick={goToNext} aria-label="Next testimonial">
+                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                         <path d="M9 18l6-6-6-6" />
+                       </svg>
+                     </button>
+                   </div>
+                 )}
         </div>
       </div>
     </section>
@@ -248,8 +242,15 @@ function DonateSection() {
           Your support helps us create more opportunities for athletes and build stronger communities.
           Every contribution makes a difference in someone&apos;s life.
         </p>
+        <div className="donation-embed fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <iframe
+            src="https://hcb.hackclub.com/donations/start/powerplay"
+            title="PowerPlay Donation Form"
+            loading="lazy"
+            allowTransparency
+          />
+        </div>
         <div className="button-group fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <a href="https://hcb.hackclub.com/donations/start/powerplay" className="btn btn-primary">Donate Now</a>
           <a href="#about" className="btn btn-outline">Learn More</a>
         </div>
       </div>
@@ -308,6 +309,24 @@ function TeamSection() {
 }
 
 function ContactSection() {
+  const contacts = [
+    {
+      title: 'Email Our Team',
+      description: 'Reach out directly for tournament info, volunteering, or any questions. We respond within 24 hours.',
+      meta: 'powerplaynpo@gmail.com',
+    },
+    {
+      title: 'Call / Text Us',
+      description: 'Prefer a quick chat? Give us a call or send a text and we’ll connect with you shortly.',
+      meta: '+1 (469) 360-4088',
+    },
+    {
+      title: 'Follow on Instagram',
+      description: 'Stay up to date with tournament highlights, behind-the-scenes moments, and community updates.',
+      meta: '@powerplaynpo',
+    },
+  ] as const;
+
   return (
     <section id="contact" className="section">
       <div className="section-content">
@@ -316,9 +335,16 @@ function ContactSection() {
           Get in touch with us to learn more about our tournaments, volunteer opportunities,
           or how you can support our mission.
         </p>
-        <div className="button-group fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <a href="mailto:info@powerplaynpo.org" className="btn btn-primary">Email Us</a>
-          <a href="#about" className="btn btn-outline">Learn More</a>
+        <div className="contact-grid fade-in-up" style={{ animationDelay: '0.4s' }}>
+          {contacts.map((contact, index) => (
+            <div key={index} className="contact-card">
+              <div className="contact-card-header">
+                <h3>{contact.title}</h3>
+              </div>
+              <p className="contact-card-description">{contact.description}</p>
+              <div className="contact-card-meta">{contact.meta}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -351,6 +377,11 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>&copy; 2025 PowerPlay. All rights reserved.</p>
+        <div className="footer-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span aria-hidden="true">•</span>
+          <a href="/terms-of-service">Terms of Service</a>
+        </div>
       </div>
     </footer>
   );
@@ -361,6 +392,7 @@ export default function Home() {
     <>
       <Navbar />
       <HeroSection />
+      <StatsBar />
       <AboutSection />
       <EventsPreviewSection />
       <TestimonialSlider />
@@ -369,5 +401,26 @@ export default function Home() {
       <ContactSection />
       <Footer />
     </>
+  );
+}
+
+function StatsBar() {
+  const stats = [
+    { value: '500+', label: 'Athletes Empowered' },
+    { value: '$1K+', label: 'Funds Raised' },
+    { value: '1000+', label: 'People Reached' },
+  ];
+
+  return (
+    <section className="stats-bar fade-in-up" aria-label="PowerPlay impact statistics">
+      <div className="stats-container">
+        {stats.map((stat, index) => (
+          <div key={index} className="stat-item">
+            <div className="stat-value">{stat.value}</div>
+            <div className="stat-label">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
