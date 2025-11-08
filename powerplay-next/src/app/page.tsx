@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 function Navbar() {
@@ -27,7 +27,7 @@ function Navbar() {
         <ul className={`navbar-nav ${isMenuOpen ? 'active' : ''}`}>
           <li><a className="nav-link" href="#home">Home</a></li>
           <li><a className="nav-link" href="#about">About</a></li>
-          <li><a className="nav-link" href="#events">Tournaments</a></li>
+          <li><a className="nav-link" href="/tournaments">Tournaments</a></li>
           <li><a className="nav-link" href="#donate">Donate</a></li>
           <li><a className="nav-link" href="#team">Our Team</a></li>
           <li><a className="nav-link" href="#contact">Contact</a></li>
@@ -48,10 +48,12 @@ function HeroSection() {
         <p className="lead fade-in-up" style={{ animationDelay: '0.2s' }}>
           Bringing athletes together through tournaments that inspire, connect, and uplift communities.
         </p>
-        <div className="fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <a href="#events" className="btn btn-primary">View Tournaments</a>
+        <div className="hero-actions fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <a href="/tournaments" className="btn btn-primary">View Tournaments</a>
+          <a href="#about" className="btn btn-outline">Learn More</a>
         </div>
       </div>
+      <div className="hero-decoration"></div>
     </section>
   );
 }
@@ -70,33 +72,166 @@ function AboutSection() {
   );
 }
 
-function EventsSection() {
+function EventsPreviewSection() {
+  const cricketImages = [
+    '/images/cricketPowerplay1.jpeg',
+    '/images/cricketPowerplay2.jpeg',
+    '/images/cricketPowerplay3.jpeg',
+  ];
+  const pickleballImages = [
+    '/images/pickleballPowerplay1.jpeg',
+    '/images/pickleballPowerplay2.jpeg',
+    '/images/pickleballPowerplay3.jpeg',
+  ];
+
   return (
-    <section id="events" className="section section-alt">
+    <section className="section section-alt">
       <div className="section-content">
-        <h2 className="section-title fade-in-up">Tournaments</h2>
+        <h2 className="section-title fade-in-up">Tournaments & Events</h2>
         <p className="section-text fade-in-up" style={{ animationDelay: '0.2s' }}>
-          Join us for exciting tournaments that bring together athletes from all backgrounds.
-          Experience the thrill of competition while building lasting friendships.
+          Experience the excitement and energy of our tournaments through these highlights.
         </p>
-        <div className="cards-grid">
-          <div className="card fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <h3 className="card-title">Cricket Tournament</h3>
-            <p className="card-text">
-              Our premier cricket tournament featuring teams from across the region.
-              Experience the excitement of competitive cricket in a supportive environment.
-            </p>
-            <div className="card-meta">January - June 2025</div>
-            <a href="/cricket" className="btn btn-outline">View Tournament</a>
+        <div className="events-preview-grid">
+          <div className="event-preview-group fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <h3 className="event-preview-title">Cricket Tournament</h3>
+            <div className="event-images-grid">
+              {cricketImages.map((img, index) => (
+                <div key={index} className="event-image-wrapper">
+                  <Image
+                    src={img}
+                    alt={`Cricket tournament ${index + 1}`}
+                    width={300}
+                    height={200}
+                    className="event-image"
+                  />
+                </div>
+              ))}
+            </div>
+            <a href="/cricket" className="btn btn-outline" style={{ marginTop: 'var(--space-6)' }}>View Cricket Tournament</a>
           </div>
-          <div className="card fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3 className="card-title">Pickleball Tournament</h3>
-            <p className="card-text">
-              A fun and inclusive pickleball tournament for players of all skill levels.
-              Perfect for both beginners and experienced players.
-            </p>
-            <div className="card-meta">July 2025</div>
-            <a href="/pickleball" className="btn btn-outline">View Tournament</a>
+          <div className="event-preview-group fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <h3 className="event-preview-title">Pickleball Tournament</h3>
+            <div className="event-images-grid">
+              {pickleballImages.map((img, index) => (
+                <div key={index} className="event-image-wrapper">
+                  <Image
+                    src={img}
+                    alt={`Pickleball tournament ${index + 1}`}
+                    width={300}
+                    height={200}
+                    className="event-image"
+                  />
+                </div>
+              ))}
+            </div>
+            <a href="/pickleball" className="btn btn-outline" style={{ marginTop: 'var(--space-6)' }}>View Pickleball Tournament</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialSlider() {
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "Cricket Tournament Participant",
+      text: "PowerPlay created an incredible tournament experience. The organization was top-notch and the community spirit was amazing!",
+      image: "/images/raghav.png"
+    },
+    {
+      name: "Michael Chen",
+      role: "Pickleball Player",
+      text: "This was my first tournament with PowerPlay and it exceeded all expectations. Great competition and even better people!",
+      image: "/images/advik.jpeg"
+    },
+    {
+      name: "Emily Rodriguez",
+      role: "Community Volunteer",
+      text: "PowerPlay's commitment to building community through sports is truly inspiring. Proud to be part of this organization!",
+      image: "/images/aryan.jpeg"
+    },
+    {
+      name: "David Kim",
+      role: "Tournament Sponsor",
+      text: "Supporting PowerPlay has been one of the best decisions. The impact they have on young athletes is remarkable.",
+      image: "/images/ishaan.jpeg"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  return (
+    <section className="section">
+      <div className="section-content">
+        <h2 className="section-title fade-in-up">What People Say</h2>
+        <div className="testimonial-slider fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="testimonial-container">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className={`testimonial-slide ${index === currentIndex ? 'active' : ''}`}
+              >
+                <div className="testimonial-content">
+                  <div className="testimonial-image-wrapper">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={80}
+                      height={80}
+                      className="testimonial-image"
+                    />
+                  </div>
+                  <p className="testimonial-text">&ldquo;{testimonial.text}&rdquo;</p>
+                  <div className="testimonial-author">
+                    <h4 className="testimonial-name">{testimonial.name}</h4>
+                    <p className="testimonial-role">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="testimonial-controls">
+            <button className="testimonial-nav-btn" onClick={goToPrevious} aria-label="Previous testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <div className="testimonial-dots">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  className={`testimonial-dot ${index === currentIndex ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button className="testimonial-nav-btn" onClick={goToNext} aria-label="Next testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -202,7 +337,7 @@ function Footer() {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <a href="#about">About Us</a>
-          <a href="#events">Tournaments</a>
+          <a href="/tournaments">Tournaments</a>
           <a href="#team">Our Team</a>
           <a href="#donate">Donate</a>
         </div>
@@ -227,7 +362,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <EventsSection />
+      <EventsPreviewSection />
+      <TestimonialSlider />
       <DonateSection />
       <TeamSection />
       <ContactSection />

@@ -5,12 +5,17 @@ import Image from 'next/image';
 
 export default function TeamSection() {
   useEffect(() => {
-    const teamColors = [
-      "rgb(220, 38, 38)", "rgb(59, 130, 246)", "rgb(16, 185, 129)", "rgb(245, 158, 11)",
-      "rgb(139, 92, 246)", "rgb(236, 72, 153)", "rgb(20, 184, 166)", "rgb(244, 63, 94)"
+    // Elegant gold color variations for team cards
+    const goldColors = [
+      "#D4AF37", // Rich gold
+      "#FFD966", // Bright gold
+      "#B8941F", // Darker gold
+      "#FFE8A3", // Light gold
+      "#9A7A1A", // Deep gold
+      "#C9A961"  // Antique gold
     ];
     document.querySelectorAll('.color-bar').forEach(bar => {
-      const color = teamColors[Math.floor(Math.random() * teamColors.length)];
+      const color = goldColors[Math.floor(Math.random() * goldColors.length)];
       (bar as HTMLElement).style.backgroundColor = color;
     });
   }, []);
