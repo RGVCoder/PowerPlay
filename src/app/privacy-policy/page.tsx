@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
         <Link href="/" className="legal-back-link">← Back to Home</Link>
         <h1>Privacy Policy</h1>
         <p className="legal-updated">Last Updated: {lastUpdated}</p>
-        {sections.map((section, index) => (
+        {sections.map((section) => (
           <section key={section.title} className="legal-section">
             <h2>{section.title}</h2>
             {section.content.map((paragraph, pIndex) => (
