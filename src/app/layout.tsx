@@ -22,6 +22,14 @@ export const metadata: Metadata = {
   description: "PowerPlay - Empowering Tomorrow's Champions through sports tournaments and community building. Join us for exciting cricket and pickleball tournaments.",
   keywords: "sports, tournaments, cricket, pickleball, community, athletics, PowerPlay",
   authors: [{ name: "PowerPlay Team" }],
+  icons: {
+    icon: [
+      { url: "/images/logo.png", type: "image/png" },
+      { url: "/images/logo.jpeg", type: "image/jpeg" },
+    ],
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   openGraph: {
     title: "PowerPlay - Empowering Tomorrow's Champions",
     description: "Join us for exciting sports tournaments that bring communities together.",
