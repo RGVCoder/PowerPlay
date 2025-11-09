@@ -24,9 +24,9 @@ export default function TeamSection() {
     { img: '/images/raghav.png', name: 'Raghav Sridhar', role: 'Co-Founder & President' },
     { img: '/images/advik.jpeg', name: 'Advik Gupta', role: 'Vice President & CTO' },
     { img: '/images/ishaan.jpeg', name: 'Ishaan Acharya', role: 'CFO' },
-    { img: '/images/aryan.jpeg', name: 'Aryan Gokul', role: 'COO' },
+    { img: '/images/sriram.png', name: 'Aryan Gokul', role: 'COO' },
     { img: '/images/vedhas.png', name: 'Vedhas', role: 'CAO' },
-    { img: '/images/rochit.jpg', name: 'Rochit', role: 'Marketing Director' },
+    { img: '/images/yuvi.png', name: 'Rochit', role: 'Marketing Director' },
   ];
 
   return (
