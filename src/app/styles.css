@@ -1710,7 +1710,7 @@
 }
 
 .hero-line + .hero-line {
-  margin-top: 0.15em;
+  margin-top: 0;
 }
 
 /* Ensure hero-line doesn't inherit the hero h1 gradient */
@@ -1728,6 +1728,7 @@
   color: var(--text-primary) !important;
   background: none !important;
   -webkit-text-fill-color: unset !important;
+  margin-bottom: 0;
 }
 
 /* Ensure the solid-text second line has the desired color */
