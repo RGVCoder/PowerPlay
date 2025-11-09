@@ -23,12 +23,9 @@ export const metadata: Metadata = {
   keywords: "sports, tournaments, cricket, pickleball, community, athletics, PowerPlay",
   authors: [{ name: "PowerPlay Team" }],
   icons: {
-    icon: [
-      { url: "/images/logo.png", type: "image/png" },
-      { url: "/images/logo.jpeg", type: "image/jpeg" },
-    ],
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: [{ url: "/images/@logo.jpeg", type: "image/jpeg" }],
+    shortcut: "/images/@logo.jpeg",
+    apple: "/images/@logo.jpeg",
   },
   openGraph: {
     title: "PowerPlay - Empowering Tomorrow's Champions",
