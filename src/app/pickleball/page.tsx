@@ -14,7 +14,7 @@ function Navbar() {
                 <ul className="navbar-nav">
                     <li><Link className="nav-link" href="/">Home</Link></li>
                     <li><Link className="nav-link" href="/#about">About</Link></li>
-                    <li><Link className="nav-link" href="/#events">Tournaments</Link></li>
+                    <li><Link className="nav-link" href="/events">Events</Link></li>
                     <li><Link className="nav-link" href="/#donate">Donate</Link></li>
                     <li><Link className="nav-link" href="/#team">Our Team</Link></li>
                     <li><Link className="nav-link" href="/#contact">Contact</Link></li>

@@ -14,7 +14,7 @@ function Navbar() {
                 <ul className="navbar-nav">
                     <li><Link className="nav-link" href="/">Home</Link></li>
                     <li><Link className="nav-link" href="/#about">About</Link></li>
-                    <li><Link className="nav-link" href="/#events">Tournaments</Link></li>
+                    <li><Link className="nav-link" href="/events">Events</Link></li>
                     <li><Link className="nav-link" href="/#donate">Donate</Link></li>
                     <li><Link className="nav-link" href="/#team">Our Team</Link></li>
                     <li><Link className="nav-link" href="/#contact">Contact</Link></li>
@@ -25,6 +25,15 @@ function Navbar() {
 }
 
 export default function CricketTournamentPage() {
+    const tournamentImages = [
+        '/images/tournament/img1.jpeg',
+        '/images/tournament/img2.jpeg',
+        '/images/tournament/img3.jpeg',
+        '/images/tournament/img4.jpeg',
+        '/images/tournament/img5.jpeg',
+        '/images/tournament/img6.jpeg',
+    ];
+
     return (
         <div className="cricket-page">
             <Navbar />
@@ -49,11 +58,9 @@ export default function CricketTournamentPage() {
                             In the final, Rockhill defeated Heritage, led by Bhavya Hooda&apos;s 73-run performance.  
                             Sushant Kumar Vetapalem (Lebanon Trail) earned MVP honors for his play.
                         </p>
-                        <p>
-                            Before the match, former Pakistan international Asif Mujtaba delivered an inspiring speech that energized both teams.
-                        </p>
                         <div className="button-group">
                             <a href="https://cricheroes.com/tournament/1200891/PowerPlay-Cricket-Tournament" className="btn btn-outline-light" target="_blank" rel="noopener noreferrer">View Full Stats</a>
+                            <Link href="/events/asif-mujtaba" className="btn btn-outline-light">View Asif Mujtaba Event</Link>
                         </div>
                     </div>
                 </div>
@@ -183,12 +190,12 @@ export default function CricketTournamentPage() {
                 <div className="container">
                     <h2 className="section-title section-title-light text-center">Tournament Highlights</h2>
                     <div className="highlights-grid">
-                        {[1,2,3,4,5,6].map((num) => (
-                            <div className="highlight-wrapper" key={num}>
+                        {tournamentImages.map((src, index) => (
+                            <div className="highlight-wrapper" key={src}>
                                 <div className="highlight-card">
                                     <Image
-                                        src={`/images/cricketPowerplay${num}.jpeg`}
-                                        alt={`Cricket Highlight ${num}`}
+                                        src={src}
+                                        alt={`Cricket Tournament Highlight ${index + 1}`}
                                         className="highlight-image"
                                         width={350}
                                         height={250}

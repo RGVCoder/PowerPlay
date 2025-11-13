@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import ImageCarousel from './components/ImageCarousel';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ function Navbar() {
         <ul className={`navbar-nav ${isMenuOpen ? 'active' : ''}`}>
           <li><a className="nav-link" href="#home">Home</a></li>
           <li><a className="nav-link" href="#about">About</a></li>
-          <li><a className="nav-link" href="/tournaments">Tournaments</a></li>
+          <li><a className="nav-link" href="/events">Events</a></li>
           <li><a className="nav-link" href="#donate">Donate</a></li>
           <li><a className="nav-link" href="#team">Our Team</a></li>
           <li><a className="nav-link" href="#contact">Contact</a></li>
@@ -49,7 +50,7 @@ function HeroSection() {
           Bringing athletes together through tournaments that inspire, connect, and uplift communities.
         </p>
         <div className="hero-actions fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <a href="/tournaments" className="btn btn-primary">View Tournaments</a>
+          <a href="/events" className="btn btn-primary">View Events</a>
           <a href="#about" className="btn btn-outline">Learn More</a>
         </div>
       </div>
@@ -74,14 +75,70 @@ function AboutSection() {
 
 function EventsPreviewSection() {
   const cricketImages = [
-    '/images/cricketPowerplay1.jpeg',
-    '/images/cricketPowerplay2.jpeg',
-    '/images/cricketPowerplay3.jpeg',
+    {
+      src: '/images/tournament/img1.jpeg',
+      alt: 'Cricket athletes celebrating a boundary during PowerPlay tournament',
+    },
+    {
+      src: '/images/tournament/img2.jpeg',
+      alt: 'Bowler in action at the PowerPlay cricket tournament',
+    },
+    {
+      src: '/images/tournament/img3.jpeg',
+      alt: 'Fielders strategizing between overs at the cricket tournament',
+    },
+    {
+      src: '/images/tournament/img4.jpeg',
+      alt: 'Team celebration after a successful match',
+    },
+    {
+      src: '/images/tournament/img5.jpeg',
+      alt: 'Players in action during the tournament',
+    },
+    {
+      src: '/images/tournament/img6.jpeg',
+      alt: 'Tournament highlights and memorable moments',
+    },
   ];
   const pickleballImages = [
-    '/images/pickleballPowerplay1.jpeg',
-    '/images/pickleballPowerplay2.jpeg',
-    '/images/pickleballPowerplay3.jpeg',
+    {
+      src: '/images/pickleballPowerplay1.jpeg',
+      alt: 'Pickleball players locking in for a rally at PowerPlay event',
+    },
+    {
+      src: '/images/pickleballPowerplay2.jpeg',
+      alt: 'PowerPlay pickleball teams shaking hands after a match',
+    },
+    {
+      src: '/images/pickleballPowerplay3.jpeg',
+      alt: 'Excited crowd cheering during the pickleball finals',
+    },
+  ];
+  const asifEventImages = [
+    {
+      src: '/images/interview/WhatsApp Image 2025-11-11 at 19.42.34.jpeg',
+      alt: 'Asif Mujtaba speaking to the teams ahead of the final',
+    },
+    {
+      src: '/images/interview/img2.jpeg',
+      alt: 'Players listening intently to Asif Mujtaba',
+    },
+    {
+      src: '/images/interview/img3.jpeg',
+      alt: 'Teams applauding the special guest speech',
+    },
+    {
+      src: '/images/interview/img4.jpeg',
+      alt: 'Asif Mujtaba sharing insights with the teams',
+    },
+    {
+      src: '/images/interview/img5.jpeg',
+      alt: 'Players engaged during the inspiring speech',
+    },
+    {
+      src: '/images/interview/img6.jpeg',
+      alt: 'Teams gathered around Asif Mujtaba during the speech',
+    },
   ];
 
   return (
@@ -94,19 +151,14 @@ function EventsPreviewSection() {
         <div className="events-preview-grid">
           <div className="event-preview-group fade-in-up" style={{ animationDelay: '0.3s' }}>
             <h3 className="event-preview-title">Cricket Tournament</h3>
-                <div className="event-images-grid">
-                  {cricketImages.map((img, index) => (
-                    <div key={index} className="event-image-wrapper">
-                      <Image
-                        src={img}
-                        alt={`Cricket tournament ${index + 1}`}
-                        width={300}
-                        height={200}
-                        className="event-image"
-                      />
-                    </div>
-                  ))}
-                </div>
+                <ImageCarousel
+                  images={cricketImages}
+                  imageWidth={1200}
+                  imageHeight={420}
+                  autoAdvanceInterval={5000}
+                  controlsAlignment="compact"
+                  className="event-card-carousel"
+                />
                 <p className="event-preview-description">
                   Competitive league play that spotlights rising cricket talent, complete with pro-style officiating, community vendors, and post-match skills clinics that keep the excitement going beyond the boundary.
                 </p>
@@ -114,23 +166,33 @@ function EventsPreviewSection() {
           </div>
           <div className="event-preview-group fade-in-up" style={{ animationDelay: '0.4s' }}>
             <h3 className="event-preview-title">Pickleball Tournament</h3>
-                <div className="event-images-grid">
-                  {pickleballImages.map((img, index) => (
-                    <div key={index} className="event-image-wrapper">
-                      <Image
-                        src={img}
-                        alt={`Pickleball tournament ${index + 1}`}
-                        width={300}
-                        height={200}
-                        className="event-image"
-                      />
-                    </div>
-                  ))}
-                </div>
+                <ImageCarousel
+                  images={pickleballImages}
+                  imageWidth={1200}
+                  imageHeight={420}
+                  autoAdvanceInterval={5500}
+                  controlsAlignment="compact"
+                  className="event-card-carousel"
+                />
                 <p className="event-preview-description">
                   Fast-paced brackets designed for all skill levels, featuring morning warm-up sessions, live match commentary, and inclusive lounges where players and fans can connect between games.
                 </p>
             <a href="/pickleball" className="btn btn-outline" style={{ marginTop: 'var(--space-6)' }}>View Pickleball Tournament</a>
+          </div>
+          <div className="event-preview-group fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <h3 className="event-preview-title">Special Guest Event</h3>
+                <ImageCarousel
+                  images={asifEventImages}
+                  imageWidth={1200}
+                  imageHeight={420}
+                  autoAdvanceInterval={6000}
+                  controlsAlignment="compact"
+                  className="event-card-carousel"
+                />
+                <p className="event-preview-description">
+                  Former Pakistan international Asif Mujtaba energized both teams with an inspiring address ahead of the championship match. Experience the atmosphere from that powerful moment.
+                </p>
+            <a href="/events/asif-mujtaba" className="btn btn-outline" style={{ marginTop: 'var(--space-6)' }}>View Event Spotlight</a>
           </div>
         </div>
       </div>
@@ -144,6 +206,12 @@ function TestimonialSlider() {
         name: "Vrishank Naveen",
         role: "PowerPlay Athlete",
         quote: "Power Play really helped me get more confident and stay motivated. The people there push you to do your best and actually care about your growth — on and off the field. Super grateful to be part of it.",
+        closing: ""
+      },
+      {
+        name: "Christopher Badr",
+        role: "PowerPlay Supporter",
+        quote: "Power Play has done an incredible job empowering athletes to reach their full potential. They’ve created an environment where sports and fitness feel exciting, accessible, and meaningful. Through their programs, I’ve seen so many people gain confidence both on and off the field.",
         closing: ""
       }
   ];
@@ -261,11 +329,11 @@ function DonateSection() {
 function TeamSection() {
   const teamMembers = [
     { img: '/images/raghav.png', name: 'Raghav Sridhar', role: 'Founder & President' },
-    { img: '/images/advik.jpeg', name: 'Advik Gupta', role: 'Vice President / CTO' },
+    { img: '/images/biswajit.jpeg', name: 'Biswajit Vaddu', role: 'Director of Outreach' },
     { img: '/images/aryan.jpeg', name: 'Aryan Gokul', role: 'COO' },
     { img: '/images/ishaan.jpeg', name: 'Ishaan Acharya', role: 'CFO' },
     { img: '/images/vedhas.png', name: 'Vedhas', role: 'CAO' },
-    { img: '/images/rochit.jpg', name: 'Rochit', role: 'Marketing Director' },
+    { img: '/images/rochit.jpeg', name: 'Rochit', role: 'Marketing Director' },
   ];
 
   return (
@@ -363,7 +431,7 @@ function Footer() {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <a href="#about">About Us</a>
-          <a href="/tournaments">Tournaments</a>
+          <a href="/events">Events</a>
           <a href="#team">Our Team</a>
           <a href="#donate">Donate</a>
         </div>

@@ -28,6 +28,7 @@ function Navbar() {
         <ul className={`navbar-nav ${isMenuOpen ? 'active' : ''}`}>
           <li><Link className="nav-link" href="/#home">Home</Link></li>
           <li><Link className="nav-link" href="/#about">About</Link></li>
+          <li><Link className="nav-link" href="/events/asif-mujtaba">Events</Link></li>
           <li><Link className="nav-link" href="/tournaments">Tournaments</Link></li>
           <li><Link className="nav-link" href="/#donate">Donate</Link></li>
           <li><Link className="nav-link" href="/#team">Our Team</Link></li>

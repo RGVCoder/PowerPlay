@@ -22,11 +22,11 @@ export default function TeamSection() {
 
   const teamMembers = [
     { img: '/images/raghav.png', name: 'Raghav Sridhar', role: 'Co-Founder & President' },
-    { img: '/images/advik.jpeg', name: 'Advik Gupta', role: 'Vice President & CTO' },
+    { img: '/images/biswajit.jpeg', name: 'Biswajit Vaddu', role: 'Director of Outreach' },
     { img: '/images/ishaan.jpeg', name: 'Ishaan Acharya', role: 'CFO' },
     { img: '/images/sriram.png', name: 'Aryan Gokul', role: 'COO' },
     { img: '/images/vedhas.png', name: 'Vedhas', role: 'CAO' },
-    { img: '/images/yuvi.png', name: 'Rochit', role: 'Marketing Director' },
+    { img: '/images/rochit.jpeg', name: 'Rochit', role: 'Marketing Director' },
   ];
 
   return (

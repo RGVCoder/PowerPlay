@@ -23,9 +23,8 @@ export const metadata: Metadata = {
   keywords: "sports, tournaments, cricket, pickleball, community, athletics, PowerPlay",
   authors: [{ name: "PowerPlay Team" }],
   icons: {
-    icon: [{ url: "/images/@logo.jpeg", type: "image/jpeg" }],
-    shortcut: "/images/@logo.jpeg",
-    apple: "/images/@logo.jpeg",
+    icon: "/images/logo.jpeg",
+    apple: "/images/logo.jpeg",
   },
   openGraph: {
     title: "PowerPlay - Empowering Tomorrow's Champions",
@@ -45,6 +44,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="/images/home_background.jpg" />
+        <link rel="icon" type="image/jpeg" href="/images/logo.jpeg" />
+        <link rel="apple-touch-icon" href="/images/logo.jpeg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${raleway.variable} ${spaceGrotesk.variable}`}>
