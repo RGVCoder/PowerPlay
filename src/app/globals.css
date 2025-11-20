@@ -68,9 +68,9 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-glow: 0 0 0 1px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.1);
 
-  /* Typography - Sleek Modern Fonts */
+  /* Typography - Professional & Aesthetic Fonts */
   --font-primary: var(--font-raleway), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   
   /* Font Weights */
@@ -214,22 +214,22 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: var(--font-weight-extrabold);
-  letter-spacing: -0.05em;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
   line-height: var(--line-height-tight);
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: var(--font-weight-bold);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
 }
 
 h4 {
@@ -255,7 +255,7 @@ p {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-relaxed);
   color: var(--text-tertiary);
@@ -525,15 +525,15 @@ textarea::placeholder {
   }
 
   h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
     font-size: 2rem;
   }
 
+  h2 {
+    font-size: 1.75rem;
+  }
+
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 }
 

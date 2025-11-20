@@ -41,17 +41,35 @@ function Navbar() {
 function HeroSection() {
   return (
     <section id="home" className="hero">
+      <div className="hero-brand-watermark">P</div>
       <div className="hero-content">
-        <h1 className="fade-in-up">
-          <span className="hero-line hero-first">Empowering Tomorrow&apos;s</span>
-          <span className="hero-line solid-text">Champions</span>
-        </h1>
-        <p className="lead fade-in-up" style={{ animationDelay: '0.2s' }}>
-          Bringing athletes together through tournaments that inspire, connect, and uplift communities.
-        </p>
-        <div className="hero-actions fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <a href="/events" className="btn btn-primary">View Events</a>
-          <a href="#about" className="btn btn-outline">Learn More</a>
+        <div className="hero-content-left">
+          <div className="hero-eyebrow fade-in-up">
+            <span className="hero-eyebrow-line"></span>
+            <span className="hero-eyebrow-text">Youth Sports Nonprofit | Cricket, Pickleball, and More</span>
+          </div>
+          <h1 className="fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <span className="hero-line hero-first">Empowering Tomorrow&apos;s</span>
+            <span className="hero-line solid-text">Champions</span>
+            <span className="hero-angled-stripe"></span>
+          </h1>
+          <p className="hero-subheading fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Bringing student athletes together through community tournaments that raise funds for under resourced kids.
+          </p>
+          <div className="hero-actions fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <a href="/events" className="btn btn-primary">View Events</a>
+            <a href="#about" className="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+        <div className="hero-event-card fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <div className="hero-event-card-header">
+            <span className="hero-event-badge">Upcoming Event</span>
+          </div>
+          <h3 className="hero-event-title">PowerPlay Basketball Tournament</h3>
+          <p className="hero-event-details">Lilyana Elementary</p>
+          <div className="hero-event-actions">
+            <button className="btn btn-coming-soon btn-sm" disabled>Coming Soon</button>
+          </div>
         </div>
       </div>
       <div className="hero-decoration"></div>
