@@ -14,7 +14,7 @@ export const Donations: React.FC = () => {
                 <div className="h-[2px] w-24 bg-gradient-to-r from-gold to-transparent mb-12"></div>
 
                 <p className="text-gray-400 text-lg leading-relaxed mb-12 font-light text-center max-w-3xl">
-                    Your contribution helps us organize more tournaments, support under-resourced athletes, and build a stronger community through sports.
+                Your Donation. Their Future. We are teaming up to make a difference for children battling cancer. 100% of the funds raised on this page go directly to pediatric cancer causes. Join the PowerPlay community in making a life-changing impact—because every child deserves the chance to grow up and play. Make your play. Donate today.
                 </p>
 
                 <div className="w-full flex justify-center bg-white/5 p-4 rounded-xl backdrop-blur-sm max-w-4xl border border-white/10 shadow-2xl">
