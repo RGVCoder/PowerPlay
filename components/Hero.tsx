@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
           </span>
-          <span className="text-xs font-medium text-gray-300 tracking-wide">Welcome to PowerPlay</span>
+          <span className="text-xs font-medium text-gray-300 tracking-wide">PowerPlay - A 501(c)(3) Non-Profit Organization</span>
         </div>
 
         {/* Main Headline */}
