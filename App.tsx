@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Events } from './components/Events';
+import { Partners } from './components/Partners';
 import { Gallery } from './components/Gallery';
 import { Testimonials } from './components/Testimonials';
 import { Team } from './components/Team';
@@ -18,6 +19,7 @@ function App() {
         <About />
         <Gallery />
         <Events />
+        <Partners />
         <Testimonials />
         <Donations />
         <Team />
