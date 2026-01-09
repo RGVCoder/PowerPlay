@@ -1,58 +1,67 @@
 import React from 'react';
 
 export const Partners: React.FC = () => {
+    const partners = [
+        {
+            name: 'Courtside Change',
+            logo: '/images/courtside.png',
+        },
+        {
+            name: 'AA Sports',
+            logo: '/images/aa_sports.png',
+        },
+        {
+            name: 'HeroesForIBD',
+            logo: '/images/heroesforibd.png',
+        }
+    ];
+
     return (
-        <section className="py-20 bg-black-rich border-b border-white/5 relative overflow-hidden">
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gold/5 blur-[120px] rounded-full opacity-20 pointer-events-none"></div>
+        <section className="relative bg-cream py-24">
+            {/* Top decorative border */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-teal to-coral"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4 tracking-tight">
-                    PARTNERS & <span className="text-gold">COLLABORATIONS</span>
-                </h2>
-                <p className="text-gray-400 font-light mb-16 max-w-2xl mx-auto">
-                    Proud to work with organizations that share our vision for youth sports and community impact.
-                </p>
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Section Header */}
+                <div className="flex items-center justify-center gap-6 mb-16">
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-teal/30 to-charcoal/20"></div>
+                    <h2 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
+                        Our Partners
+                    </h2>
+                    <div className="flex-1 h-px bg-gradient-to-l from-transparent via-teal/30 to-charcoal/20"></div>
+                </div>
 
-                <div className="flex flex-wrap justify-center items-center gap-16 md:gap-32">
-                    {/* Partner 1: Courtside Change */}
-                    <div className="group relative p-6 transition-transform duration-500 hover:scale-105">
-                        {/* Inner gradient background */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl opacity-100 border border-white/5"></div>
+                {/* Logo Strip */}
+                <div className="flex flex-wrap justify-center items-center gap-16 mb-12">
+                    {partners.map((partner, index) => (
+                        <div
+                            key={index}
+                            className="group transition-all duration-300 hover:scale-105"
+                        >
+                            <div className="w-32 h-32 rounded-full bg-white border-2 border-coral/30 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-md hover:border-coral/50 transition-all duration-300">
+                                <img
+                                    src={partner.logo}
+                                    alt={partner.name}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
-                        {/* Subtle Gold Glow - Pulse Animation */}
-                        <div className="absolute inset-0 bg-gold/5 rounded-2xl blur-xl opacity-60 animate-pulse-slow"></div>
-
-                        {/* Border Glow on Hover */}
-                        <div className="absolute inset-0 border border-gold/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_30px_rgba(212,175,55,0.1)]"></div>
-
-                        <img
-                            src="/images/courtside.png"
-                            alt="Courtside Change"
-                            className="relative h-32 md:h-48 w-auto object-contain transition-all duration-500 drop-shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]"
-                        />
-                    </div>
-
-                    {/* Partner 2: AA Sports */}
-                    <div className="group relative p-6 transition-transform duration-500 hover:scale-105">
-                        {/* Inner gradient background */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl opacity-100 border border-white/5"></div>
-
-                        {/* Subtle Gold Glow - Pulse Animation */}
-                        <div className="absolute inset-0 bg-gold/5 rounded-2xl blur-xl opacity-60 animate-pulse-slow"></div>
-
-                        {/* Border Glow on Hover */}
-                        <div className="absolute inset-0 border border-gold/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_30px_rgba(212,175,55,0.1)]"></div>
-
-                        <img
-                            src="/images/aa_sports.png"
-                            alt="AA Sports"
-                            className="relative h-32 md:h-48 w-auto object-contain transition-all duration-500 drop-shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]"
-                        />
+                {/* Partnership CTA */}
+                <div className="text-center">
+                    <div className="inline-block border-t border-charcoal/20 pt-8">
+                        <a
+                            href="mailto:powerplay@hackclub.com"
+                            className="text-charcoal-light hover:text-coral transition-colors text-sm group"
+                        >
+                            Interested in partnering?
+                            <span className="text-coral font-semibold ml-1 group-hover:ml-2 transition-all">Get in touch →</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     );
 };
-

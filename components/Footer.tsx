@@ -2,68 +2,72 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-black border-t border-white/10 pt-20 pb-10">
+    <footer className="bg-cream pt-24 pb-12 relative">
+      {/* Top gradient border */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-teal to-coral"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+
           <div className="col-span-1 md:col-span-1">
-            <a href="#" className="font-display font-bold text-3xl tracking-tighter text-white mb-6 block">
-              POWER<span className="text-gold">PLAY</span>
+            <a href="#" className="font-display font-bold text-3xl tracking-tighter text-charcoal mb-6 block">
+              POWER<span className="text-coral">PLAY</span>
             </a>
-            <p className="text-gray-500 text-sm leading-relaxed">
+            <p className="text-charcoal/60 text-sm leading-relaxed">
               Empowering youth through sports, building community, and creating champions for tomorrow.
             </p>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em] text-gold">Contact</h4>
-            <ul className="space-y-4 text-gray-400 text-sm font-light">
-              <li className="flex items-center hover:text-white transition-colors cursor-pointer">
-                 <span className="w-4 h-4 mr-3 text-gold">✉</span>
-                 powerplaynpo@gmail.com
+            <h4 className="text-teal font-bold mb-6 uppercase text-xs tracking-[0.2em]">Contact</h4>
+            <ul className="space-y-4 text-charcoal/70 text-sm">
+              <li className="flex items-center hover:text-charcoal transition-colors cursor-pointer group">
+                <span className="w-5 h-5 mr-3 text-teal group-hover:scale-110 transition-transform">✉</span>
+                powerplaynpo@gmail.com
               </li>
-              <li className="flex items-center hover:text-white transition-colors cursor-pointer">
-                 <span className="w-4 h-4 mr-3 text-gold">☎</span>
-                 +1 (469) 360-4088
+              <li className="flex items-center hover:text-charcoal transition-colors cursor-pointer group">
+                <span className="w-5 h-5 mr-3 text-teal group-hover:scale-110 transition-transform">☎</span>
+                +1 (469) 360-4088
               </li>
-              <li className="flex items-center hover:text-white transition-colors cursor-pointer">
-                 <span className="w-4 h-4 mr-3 text-gold">@</span>
-                 @powerplaynpo
+              <li className="flex items-center hover:text-charcoal transition-colors cursor-pointer group">
+                <span className="w-5 h-5 mr-3 text-teal group-hover:scale-110 transition-transform">@</span>
+                @powerplaynpo
               </li>
             </ul>
           </div>
 
           <div>
-             <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em] text-gold">Quick Links</h4>
-             <ul className="space-y-4 text-gray-400 text-sm font-light">
-               <li><a href="#about" className="hover:text-gold transition-colors block">About Us</a></li>
-               <li><a href="#events" className="hover:text-gold transition-colors block">Events</a></li>
-               <li><a href="#team" className="hover:text-gold transition-colors block">Team</a></li>
-               <li><a href="#" className="hover:text-gold transition-colors block">Donate</a></li>
-             </ul>
+            <h4 className="text-coral font-bold mb-6 uppercase text-xs tracking-[0.2em]">Quick Links</h4>
+            <ul className="space-y-4 text-charcoal/70 text-sm">
+              <li><a href="#about" className="hover:text-coral transition-colors block">About Us</a></li>
+              <li><a href="#events" className="hover:text-coral transition-colors block">Events</a></li>
+              <li><a href="#team" className="hover:text-coral transition-colors block">Team</a></li>
+              <li><a href="#" className="hover:text-coral transition-colors block">Donate</a></li>
+            </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em] text-gold">Stay Updated</h4>
-             <div className="flex border-b border-white/20 pb-2 focus-within:border-gold transition-colors">
-               <input 
-                  type="email" 
-                  placeholder="Enter email" 
-                  className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder-gray-600"
-               />
-               <button className="text-gold font-bold hover:text-white transition-colors uppercase text-xs tracking-wider">
-                  Join
-               </button>
-             </div>
+            <h4 className="text-teal font-bold mb-6 uppercase text-xs tracking-[0.2em]">Stay Updated</h4>
+            <div className="flex border-2 border-charcoal/20 focus-within:border-teal transition-colors overflow-hidden">
+              <input
+                type="email"
+                placeholder="Enter email"
+                className="bg-transparent text-charcoal text-sm w-full px-4 py-3 focus:outline-none placeholder-charcoal/40"
+              />
+              <button className="bg-teal text-white font-bold px-4 hover:bg-teal-dark transition-colors uppercase text-xs tracking-wider">
+                Join
+              </button>
+            </div>
+            <p className="text-charcoal/50 text-xs mt-3">Get updates on events & impact</p>
           </div>
 
         </div>
 
-        <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+        <div className="border-t border-charcoal/10 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-charcoal/50">
           <p>© 2025 PowerPlay NPO. All rights reserved.</p>
           <div className="flex space-x-8 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-charcoal transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-charcoal transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

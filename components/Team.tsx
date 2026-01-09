@@ -12,13 +12,13 @@ const members: TeamMember[] = [
 
 export const Team: React.FC = () => {
   return (
-    <section id="team" className="py-24 bg-black-surface">
+    <section id="team" className="py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-6 tracking-tight">
-            MEET THE <span className="text-gold">TEAM</span>
+          <h2 className="font-display font-bold text-4xl md:text-5xl text-charcoal mb-6 tracking-tight">
+            MEET THE <span className="text-coral">TEAM</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto font-light">
+          <p className="text-charcoal-light max-w-2xl mx-auto font-light">
             The passionate students driving PowerPlay forward.
           </p>
         </div>
@@ -30,18 +30,18 @@ export const Team: React.FC = () => {
               <div key={index} className="group text-center">
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   {/* Rotating Border Effect - Solid & Brighter for Founder */}
-                  <div className={`absolute inset-0 rounded-full border ${isFounder ? 'border-solid border-gold/60 shadow-[0_0_10px_rgba(212,175,55,0.2)]' : 'border-dashed border-gold/30'} group-hover:rotate-180 transition-transform duration-1000`}></div>
-                  <div className="absolute inset-2 rounded-full border border-white/10 bg-black-lighter overflow-hidden">
-                      {/* Placeholder for team headshots */}
-                      <img 
-                          src={`https://placehold.co/150x150/000000/D4AF37?text=${member.name.charAt(0)}`} 
-                          alt={member.name}
-                          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                      />
+                  <div className={`absolute inset-0 rounded-full border-2 ${isFounder ? 'border-solid border-coral shadow-md' : 'border-dashed border-teal/40'} group-hover:rotate-180 transition-transform duration-1000`}></div>
+                  <div className="absolute inset-2 rounded-full border border-charcoal/10 bg-cream-sand overflow-hidden">
+                    {/* Placeholder for team headshots */}
+                    <img
+                      src={`https://placehold.co/150x150/FFF3E6/E76F51?text=${member.name.charAt(0)}`}
+                      alt={member.name}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
                   </div>
                 </div>
-                <h3 className={`font-bold text-lg mb-2 transition-colors ${isFounder ? 'text-gold' : 'text-white group-hover:text-gold'}`}>{member.name}</h3>
-                <p className={`text-xs uppercase tracking-[0.15em] font-medium ${isFounder ? 'text-gray-300' : 'text-gray-500'}`}>{member.title}</p>
+                <h3 className={`font-bold text-lg mb-2 transition-colors ${isFounder ? 'text-coral' : 'text-charcoal group-hover:text-teal'}`}>{member.name}</h3>
+                <p className={`text-xs uppercase tracking-[0.15em] font-medium ${isFounder ? 'text-charcoal-light' : 'text-charcoal-muted'}`}>{member.title}</p>
               </div>
             );
           })}

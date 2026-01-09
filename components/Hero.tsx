@@ -1,75 +1,134 @@
-import React from 'react';
-import { Button } from './Button';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+// Real photos only - curated selection
+const heroImages = [
+  '/images/event-cricket.jpg',
+  '/images/event-guest.jpg',
+  '/images/event-pickleball.jpg',
+  '/images/gallery-batting.jpg',
+  '/images/gallery-pickleball.jpg',
+  '/images/hero-bg.jpg',
+  '/images/Photo Jul 20 2025 from raghavsridhar09.jpg',
+  '/images/trio-pic.jpg',
+];
 
 export const Hero: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-cycle images every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-black-rich pt-20">
-      {/* Background Image / Overlay */}
-      <div className="absolute inset-0 z-0">
-        {/* User Image: Wide Team Lineup */}
-        <img 
-          src="/images/hero-bg.jpg" 
-          alt="PowerPlay Team" 
-          className="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-[2s]"
-          onError={(e) => {
-            e.currentTarget.src = "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=2000&auto=format&fit=crop";
-            e.currentTarget.onerror = null; // Prevent infinite loop
+    <section id="home" className="relative h-[100vh] flex items-center overflow-hidden bg-charcoal">
+      {/* Base Background Image - Always visible as fallback */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${heroImages[0]})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+
+      {/* Rotating Background Images with Transitions */}
+      {heroImages.map((image, index) => (
+        <div
+          key={image}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black-rich via-black-rich/70 to-black-rich z-10"></div>
-        <div className="absolute inset-0 bg-hero-glow z-10 mix-blend-soft-light"></div>
-      </div>
+      ))}
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center flex flex-col items-center">
-        
-        {/* Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-md mb-8 hover:border-gold/30 transition-colors cursor-default animate-fade-in-up shadow-lg">
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-          </span>
-          <span className="text-xs font-medium text-gray-300 tracking-wide">PowerPlay - A 501(c)(3) Non-Profit Organization</span>
+      {/* Dark Overlay for Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/60 to-charcoal/40 z-10" />
+
+      {/* Content Container */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-16 flex flex-col lg:flex-row items-center justify-between gap-12">
+
+        {/* Left Content - Text */}
+        <div className="flex-1 text-white max-w-2xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border-l-4 border-teal mb-8">
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-coral opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+            </span>
+            <span className="text-sm font-medium text-white/90">Student-Run 501(c)(3) Nonprofit</span>
+          </div>
+
+          {/* Main Headline - Bold Style (no italics) */}
+          <h1 className="font-display font-black text-5xl md:text-7xl lg:text-8xl text-white leading-[1.05] mb-8 tracking-tight uppercase">
+            Play For<br />
+            <span className="text-coral">A Cure</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg md:text-xl text-white/85 mb-10 max-w-xl leading-relaxed font-light">
+            PowerPlay unites local athletes through sports tournaments to raise critical funds for children and families battling pediatric illness—100% of donations go directly to those in need.
+          </p>
+
+          {/* Our Story Button */}
+          <Link
+            to="/about"
+            className="group relative px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-charcoal font-semibold text-lg transition-all duration-300 inline-flex items-center gap-3"
+          >
+            Our Story
+            <svg
+              className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <circle cx="12" cy="12" r="10" strokeWidth="2" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 16l4-4m0 0l-4-4m4 4H8" />
+            </svg>
+          </Link>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-8 tracking-tight drop-shadow-2xl">
-          Empowering Tomorrow's <br />
-          <span className="text-gold-gradient">Champions</span>
-        </h1>
-        
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed font-light mx-auto drop-shadow-lg">
-          Bringing student athletes together through community tournaments that raise funds for under-resourced kids.
-        </p>
-        
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center w-full">
-          <Button variant="primary" onClick={() => document.getElementById('events')?.scrollIntoView({behavior: 'smooth'})} className="rounded-full px-10">
-            View Events
-          </Button>
-          <Button variant="secondary" onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})} className="rounded-full px-10">
-            Learn More
-          </Button>
-        </div>
-      </div>
-
-      {/* Impact Stats Bar - Floating Card Style */}
-      <div className="relative z-20 w-full mt-24 max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-md shadow-2xl">
-          <div className="p-8 text-center bg-black-surface/60 hover:bg-black-surface/80 transition-colors">
-            <div className="font-display font-bold text-4xl md:text-5xl text-white mb-1">500<span className="text-gold">+</span></div>
-            <div className="text-gray-400 text-sm font-medium tracking-wider">Athletes Empowered</div>
-          </div>
-          <div className="p-8 text-center bg-black-surface/60 hover:bg-black-surface/80 transition-colors">
-            <div className="font-display font-bold text-4xl md:text-5xl text-white mb-1">$1K<span className="text-gold">+</span></div>
-            <div className="text-gray-400 text-sm font-medium tracking-wider">Funds Raised</div>
-          </div>
-          <div className="p-8 text-center bg-black-surface/60 hover:bg-black-surface/80 transition-colors">
-            <div className="font-display font-bold text-4xl md:text-5xl text-white mb-1">1000<span className="text-gold">+</span></div>
-            <div className="text-gray-400 text-sm font-medium tracking-wider">People Reached</div>
+        {/* Right Content - Actual Donation Form */}
+        <div className="w-full lg:w-auto lg:min-w-[420px] lg:max-w-[450px]">
+          <div className="bg-charcoal shadow-2xl overflow-hidden border-t-4 border-teal">
+            <div className="bg-coral px-6 py-4">
+              <h3 className="text-white font-display font-bold text-xl">Donate Now</h3>
+              <p className="text-white/80 text-sm font-light">Secure payment via Hack Club Bank</p>
+            </div>
+            {/* Iframe container - clips top banner, shows form */}
+            <div className="overflow-hidden">
+              <iframe
+                src="https://hcb.hackclub.com/donations/start/powerplay"
+                style={{
+                  border: 'none',
+                  marginTop: '-280px',  /* Crop to show from One-time/Monthly tabs */
+                  height: '900px',      /* Full form height including submit button */
+                  display: 'block'
+                }}
+                name="heroDonateFrame"
+                scrolling="no"
+                frameBorder={0}
+                marginHeight={0}
+                marginWidth={0}
+                width="100%"
+                allowFullScreen
+                className="w-full"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
+      {/* Bottom Gradient Bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 z-30 bg-gradient-to-r from-teal via-coral to-coral"></div>
     </section>
   );
 };

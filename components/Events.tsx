@@ -23,27 +23,27 @@ const EVENTS: EventData[] = [
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-8">
-          <p className="text-lg font-light leading-relaxed">The PowerPlay Cricket Tournament was a smashing success, featuring 8 teams from across the district.</p>
+          <p className="text-lg font-light leading-relaxed text-charcoal-light">The PowerPlay Cricket Tournament was a smashing success, featuring 8 teams from across the district.</p>
 
-          <div className="border border-white/10 rounded-sm p-6 bg-white/5">
-            <h4 className="text-white font-bold text-base mb-4 uppercase tracking-widest border-b border-white/10 pb-2">Match Summary</h4>
+          <div className="border-l-4 border-coral p-6 bg-cream-sand">
+            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Match Summary</h4>
 
             <div className="space-y-4 font-mono text-sm">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">Heritage</span>
-                <span className="font-bold text-white">149/3</span>
+                <span className="text-charcoal-light">Heritage</span>
+                <span className="font-bold text-charcoal">149/3</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gold">Rockhill</span>
-                <span className="font-bold text-gold">150/1 <span className="text-xs opacity-70 ml-1">(18.2)</span></span>
+                <span className="text-coral font-medium">Rockhill</span>
+                <span className="font-bold text-coral">150/1 <span className="text-xs opacity-70 ml-1">(18.2)</span></span>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10 flex items-start gap-3 text-sm">
+            <div className="mt-6 pt-4 border-t border-charcoal/10 flex items-start gap-3 text-sm">
               <span className="text-xl mt-1">🏅</span>
               <div>
-                <div className="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Player of the Match</div>
-                <div className="text-white font-medium">Bhavya Hooda – 73*</div>
+                <div className="text-[10px] uppercase tracking-wider text-charcoal-muted mb-1">Player of the Match</div>
+                <div className="text-charcoal font-medium">Bhavya Hooda – 73*</div>
               </div>
             </div>
           </div>
@@ -51,10 +51,10 @@ const EVENTS: EventData[] = [
 
         <div className="space-y-8">
           <div>
-            <h4 className="text-white font-bold text-base mb-4 uppercase tracking-widest border-b border-white/10 pb-2">Standings</h4>
+            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Standings</h4>
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="text-gray-500 text-xs uppercase tracking-wider">
+                <tr className="text-charcoal-muted text-xs uppercase tracking-wider">
                   <th className="py-2 px-1 font-medium">#</th>
                   <th className="py-2 px-1 font-medium">Team</th>
                   <th className="py-2 px-1 font-medium text-center">P</th>
@@ -63,34 +63,34 @@ const EVENTS: EventData[] = [
                   <th className="py-2 px-1 font-medium text-center">Pts</th>
                 </tr>
               </thead>
-              <tbody className="text-gray-300 font-light">
-                <tr className="border-b border-white/5">
-                  <td className="py-3 px-1 text-gold font-bold">1</td>
-                  <td className="py-3 px-1 text-white">LTHS Challengers</td>
+              <tbody className="text-charcoal-light font-light">
+                <tr className="border-b border-charcoal/5">
+                  <td className="py-3 px-1 text-coral font-bold">1</td>
+                  <td className="py-3 px-1 text-charcoal">LTHS Challengers</td>
                   <td className="py-3 px-1 text-center">4</td>
                   <td className="py-3 px-1 text-center">2</td>
                   <td className="py-3 px-1 text-center">1</td>
-                  <td className="py-3 px-1 text-center font-bold text-white">5</td>
+                  <td className="py-3 px-1 text-center font-bold text-charcoal">5</td>
                 </tr>
-                <tr className="border-b border-white/5">
-                  <td className="py-3 px-1 text-gold font-bold">2</td>
-                  <td className="py-3 px-1 text-white">Walnut Grove</td>
+                <tr className="border-b border-charcoal/5">
+                  <td className="py-3 px-1 text-coral font-bold">2</td>
+                  <td className="py-3 px-1 text-charcoal">Walnut Grove</td>
                   <td className="py-3 px-1 text-center">3</td>
                   <td className="py-3 px-1 text-center">2</td>
                   <td className="py-3 px-1 text-center">1</td>
-                  <td className="py-3 px-1 text-center font-bold text-white">4</td>
+                  <td className="py-3 px-1 text-center font-bold text-charcoal">4</td>
                 </tr>
-                <tr className="border-b border-white/5">
-                  <td className="py-3 px-1 text-gold font-bold">3</td>
-                  <td className="py-3 px-1 text-white">Heritage Cricket</td>
+                <tr className="border-b border-charcoal/5">
+                  <td className="py-3 px-1 text-coral font-bold">3</td>
+                  <td className="py-3 px-1 text-charcoal">Heritage Cricket</td>
                   <td className="py-3 px-1 text-center">3</td>
                   <td className="py-3 px-1 text-center">1</td>
                   <td className="py-3 px-1 text-center">1</td>
-                  <td className="py-3 px-1 text-center font-bold text-white">3</td>
+                  <td className="py-3 px-1 text-center font-bold text-charcoal">3</td>
                 </tr>
-                <tr className="border-b border-white/5">
-                  <td className="py-3 px-1 text-gray-600">4</td>
-                  <td className="py-3 px-1 text-gray-400">Wakeland</td>
+                <tr className="border-b border-charcoal/5">
+                  <td className="py-3 px-1 text-charcoal-muted">4</td>
+                  <td className="py-3 px-1 text-charcoal-light">Wakeland</td>
                   <td className="py-3 px-1 text-center">3</td>
                   <td className="py-3 px-1 text-center">0</td>
                   <td className="py-3 px-1 text-center">1</td>
@@ -100,7 +100,7 @@ const EVENTS: EventData[] = [
             </table>
           </div>
 
-          <p className="text-sm text-gray-400 italic">
+          <p className="text-sm text-charcoal-light italic bg-coral/10 p-3 border-l-4 border-coral">
             In the final, Rockhill defeated Heritage, led by Bhavya Hooda's 73-run performance.
             Sushant Kumar Vetapalem earned MVP honors.
           </p>
@@ -123,143 +123,143 @@ const EVENTS: EventData[] = [
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-8">
-          <p className="text-lg font-light leading-relaxed">
+          <p className="text-lg font-light leading-relaxed text-charcoal-light">
             The 2025 PowerPlay Pickleball Tournament brought together players from across the region for an exciting day of competitive doubles play. The tournament featured a single-elimination bracket format with 10 teams competing for the championship title.
           </p>
 
-          <div className="border border-white/10 rounded-sm p-6 bg-white/5">
-            <h4 className="text-white font-bold text-base mb-4 uppercase tracking-widest border-b border-white/10 pb-2">Tournament Results</h4>
+          <div className="border-l-4 border-coral p-6 bg-cream-sand">
+            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Tournament Results</h4>
 
             <div className="space-y-4 font-mono text-sm">
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
                   <span className="text-xl">🏆</span>
-                  <span className="text-gold font-bold">Champions</span>
+                  <span className="text-coral font-bold">Champions</span>
                 </div>
-                <span className="text-white text-right">Adithan & Ritvick</span>
+                <span className="text-charcoal text-right">Adithan & Ritvick</span>
               </div>
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
-                  <span className="text-xl text-gray-400">🥈</span>
-                  <span className="text-gray-300 font-medium">Runner-up</span>
+                  <span className="text-xl text-charcoal-light">🥈</span>
+                  <span className="text-charcoal-light font-medium">Runner-up</span>
                 </div>
-                <span className="text-gray-300 text-right">Biswajit & Arvind</span>
+                <span className="text-charcoal-light text-right">Biswajit & Arvind</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="space-y-8">
-          <div className="bg-black/20 p-6 rounded-sm border border-white/5 overflow-x-auto">
-            <h4 className="text-white font-bold text-sm mb-6 uppercase tracking-widest border-b border-white/10 pb-2">Bracket Highlights</h4>
+          <div className="bg-cream-sand p-6 border-l-4 border-teal overflow-x-auto">
+            <h4 className="text-charcoal font-bold text-sm mb-6 uppercase tracking-widest border-b border-charcoal/10 pb-2">Bracket Highlights</h4>
 
             {/* Custom Bracket Visualization - Compact & Fluid */}
             <div className="w-full flex justify-between text-[10px] font-mono relative select-none">
               {/* Round 1 */}
               <div className="flex flex-col justify-around flex-1 gap-6 pr-1">
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">9 Shauryan</span>
-                  <span>1</span>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">9 Shauryan</span>
+                  <span className="text-charcoal">1</span>
                 </div>
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">8 Abhinav</span>
-                  <span>6</span>
-                  <div className="absolute -right-2 top-[-14px] h-[28px] w-2 border-r border-white/20"></div>
-                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-white/20"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">8 Abhinav</span>
+                  <span className="text-charcoal">6</span>
+                  <div className="absolute -right-2 top-[-14px] h-[28px] w-2 border-r border-charcoal/20"></div>
+                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-charcoal/20"></div>
                 </div>
 
                 <div className="h-8"></div> {/* Spacer */}
 
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">7 Shreyas</span>
-                  <span>3</span>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">7 Shreyas</span>
+                  <span className="text-charcoal">3</span>
                 </div>
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-white truncate max-w-[40px] sm:max-w-[60px]">10 Ethan</span>
-                  <span className="text-gold">11</span>
-                  <div className="absolute -right-2 top-[-14px] h-[28px] w-2 border-r border-white/20"></div>
-                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-white/20"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">10 Ethan</span>
+                  <span className="text-coral">11</span>
+                  <div className="absolute -right-2 top-[-14px] h-[28px] w-2 border-r border-charcoal/20"></div>
+                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-charcoal/20"></div>
                 </div>
               </div>
 
               {/* Round 2 (QF) */}
               <div className="flex flex-col justify-between flex-1 py-2 pr-1">
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-white truncate max-w-[40px] sm:max-w-[60px]">1 Rohit</span>
-                  <span className="text-gold">11</span>
-                  <div className="absolute -left-2 top-2 h-[1px] w-2 bg-white/20"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">1 Rohit</span>
+                  <span className="text-coral">11</span>
+                  <div className="absolute -left-2 top-2 h-[1px] w-2 bg-charcoal/20"></div>
                 </div>
 
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-white truncate max-w-[40px] sm:max-w-[60px]">5 Biswajit</span>
-                  <span className="text-gold">16</span>
-                  <div className="absolute -right-2 top-2 h-[30px] w-2 border-r border-b border-white/20 rounded-br"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">5 Biswajit</span>
+                  <span className="text-coral">16</span>
+                  <div className="absolute -right-2 top-2 h-[30px] w-2 border-r border-b border-charcoal/20"></div>
                 </div>
 
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">4 Ankith</span>
-                  <span>14</span>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">4 Ankith</span>
+                  <span className="text-charcoal">14</span>
                 </div>
 
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-white truncate max-w-[40px] sm:max-w-[60px]">3 Aryan</span>
-                  <span className="text-gold">12</span>
-                  <div className="absolute -right-2 top-2 h-[30px] w-2 border-r border-b border-white/20 rounded-br"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">3 Aryan</span>
+                  <span className="text-coral">12</span>
+                  <div className="absolute -right-2 top-2 h-[30px] w-2 border-r border-b border-charcoal/20"></div>
                 </div>
 
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">6 Mithilesh</span>
-                  <span>10</span>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">6 Mithilesh</span>
+                  <span className="text-charcoal">10</span>
                 </div>
 
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-white truncate max-w-[40px] sm:max-w-[60px]">2 Adithan</span>
-                  <span className="text-gold">11</span>
-                  <div className="absolute -left-2 top-2 h-[1px] w-2 bg-white/20"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">2 Adithan</span>
+                  <span className="text-coral">11</span>
+                  <div className="absolute -left-2 top-2 h-[1px] w-2 bg-charcoal/20"></div>
                 </div>
               </div>
 
               {/* Round 3 (SF) */}
               <div className="flex flex-col justify-around flex-1 py-8 pr-1">
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">1 Rohit</span>
-                  <span>4</span>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">1 Rohit</span>
+                  <span className="text-charcoal">4</span>
                 </div>
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-white truncate max-w-[40px] sm:max-w-[60px]">5 Biswajit</span>
-                  <span className="text-gold">11</span>
-                  <div className="absolute -right-2 top-[-25px] h-[50px] w-2 border-r border-white/20"></div>
-                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-white/20"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">5 Biswajit</span>
+                  <span className="text-coral">11</span>
+                  <div className="absolute -right-2 top-[-25px] h-[50px] w-2 border-r border-charcoal/20"></div>
+                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-charcoal/20"></div>
                 </div>
 
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">3 Aryan</span>
-                  <span>3</span>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">3 Aryan</span>
+                  <span className="text-charcoal">3</span>
                 </div>
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-white truncate max-w-[40px] sm:max-w-[60px]">2 Adithan</span>
-                  <span className="text-gold">11</span>
-                  <div className="absolute -right-2 top-[-25px] h-[50px] w-2 border-r border-white/20"></div>
-                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-white/20"></div>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">2 Adithan</span>
+                  <span className="text-coral">11</span>
+                  <div className="absolute -right-2 top-[-25px] h-[50px] w-2 border-r border-charcoal/20"></div>
+                  <div className="absolute -right-2 top-0 h-[1px] w-1 bg-charcoal/20"></div>
                 </div>
               </div>
 
               {/* Final */}
               <div className="flex flex-col justify-center flex-1">
-                <div className="border-b border-white/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-gray-400 truncate max-w-[40px] sm:max-w-[60px]">5 Biswajit</span>
-                  <span>3</span>
+                <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">5 Biswajit</span>
+                  <span className="text-charcoal">3</span>
                 </div>
-                <div className="border-b border-gold pb-1 mb-1 flex justify-between relative whitespace-nowrap">
-                  <span className="text-gold font-bold truncate max-w-[40px] sm:max-w-[60px]">2 Adithan</span>
-                  <span className="text-gold font-bold">11</span>
-                  <div className="absolute -left-2 top-2 h-[1px] w-2 bg-white/20"></div>
+                <div className="border-b border-coral pb-1 mb-1 flex justify-between relative whitespace-nowrap">
+                  <span className="text-coral font-bold truncate max-w-[40px] sm:max-w-[60px]">2 Adithan</span>
+                  <span className="text-coral font-bold">11</span>
+                  <div className="absolute -left-2 top-2 h-[1px] w-2 bg-charcoal/20"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <p className="text-sm text-gray-400 italic mt-4">
+          <p className="text-sm text-charcoal-light italic mt-4 bg-coral/10 p-3 border-l-4 border-coral">
             The final match was a thrilling showdown between two talented teams, with Adithan & Ritvick emerging as the tournament champions.
           </p>
         </div>
@@ -281,15 +281,15 @@ const EVENTS: EventData[] = [
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <p className="text-lg font-light leading-relaxed">
+          <p className="text-lg font-light leading-relaxed text-charcoal-light">
             We were honored to host Asif Mujtaba, who shared invaluable insights on leadership, discipline, and the mental game of sports. The session included a Q&A where students asked about overcoming pressure, and a batting demonstration that left the young athletes inspired.
           </p>
-          <p className="text-gray-400 leading-relaxed font-light">
+          <p className="text-charcoal-light leading-relaxed font-light">
             His journey from local clubs to the international stage served as a powerful motivation for everyone present. Watch the exclusive interview below to hear his thoughts on the future of youth cricket.
           </p>
         </div>
-        <div className="bg-black/20 p-2 rounded-sm border border-white/5 shadow-2xl">
-          <div className="aspect-w-16 aspect-h-9 w-full bg-black rounded-sm overflow-hidden">
+        <div className="bg-cream-sand p-2 border-l-4 border-coral shadow-xl">
+          <div className="aspect-w-16 aspect-h-9 w-full bg-charcoal overflow-hidden">
             <video
               src="/images/final_asif_interview.mp4"
               className="w-full h-full object-cover"
@@ -384,76 +384,133 @@ export const Events: React.FC = () => {
   };
 
   return (
-    <section id="events" className="py-24 bg-black-surface border-y border-white/5">
+    <section id="events" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <div>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-3 tracking-tight">
-              TOURNAMENTS & <span className="text-gold">EVENTS</span>
-            </h2>
-            <p className="text-gray-400 font-light">Join the action and make a difference.</p>
+
+        {/* Upcoming Events Section */}
+        <div className="mb-16">
+          <div className="flex items-center justify-center gap-6 mb-12">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-coral/20 to-coral/40"></div>
+            <h3 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">Upcoming Events</h3>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-coral/20 to-coral/40"></div>
           </div>
-          <a href="#" className="hidden md:flex items-center text-gold hover:text-white transition-colors font-medium mt-4 md:mt-0 uppercase text-sm tracking-widest gap-2">
-            View Full Calendar <span className="text-lg">→</span>
-          </a>
-        </div>
 
-        {/* Featured Upcoming Event */}
-        <div className="relative group bg-black-card border border-white/5 rounded-sm p-8 mb-16 flex flex-col md:flex-row gap-10 items-center overflow-hidden hover:border-gold/30 transition-all duration-500">
-          <div className="absolute top-0 left-0 w-1 h-full bg-gold"></div>
-          <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          {/* Featured: Guest Speaker Event */}
+          <div className="relative group bg-white border-l-4 border-coral p-8 mb-8 flex flex-col md:flex-row gap-10 items-start overflow-hidden transition-all duration-500 shadow-lg">
+            <div className="absolute inset-0 bg-coral/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Bottom accent border - underline effect */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-          <div className="w-full md:w-5/12 relative z-10">
-            <div className="aspect-w-16 aspect-h-10 w-full bg-gray-900 rounded-sm overflow-hidden relative shadow-2xl">
-              {/* User Image: Basketball */}
+            <div className="w-full md:w-5/12 relative z-10">
+              <div className="w-full bg-cream-dark overflow-hidden relative shadow-xl">
+                <img
+                  src="/images/guest-speaker-poster.png"
+                  alt="Game On: IBD & Youth Sports"
+                  className="object-contain w-full h-auto"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop";
+                    e.currentTarget.onerror = null;
+                  }}
+                />
+                <div className="absolute top-0 left-0 bg-coral text-white font-bold px-4 py-2 text-xs uppercase tracking-widest">Featured</div>
+              </div>
+            </div>
+            <div className="w-full md:w-7/12 relative z-10">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="text-coral font-mono text-sm uppercase tracking-wider">Saturday, January 17, 2026</span>
+                <span className="text-charcoal/30">•</span>
+                <span className="text-charcoal font-mono text-sm">4:00 - 5:00 PM</span>
+                <span className="text-charcoal/30">•</span>
+                <span className="text-teal text-sm font-medium bg-teal/10 px-2 py-1">PowerPlay X HeroesForIBD</span>
+              </div>
+              <h3 className="font-display font-bold text-4xl text-charcoal mb-2 uppercase tracking-tight">Game On: IBD & Youth Sports</h3>
+
+              {/* Location */}
+              <div className="mb-4">
+                <p className="text-charcoal font-semibold text-sm">John and Judy Gay Library JJG – Meeting Room</p>
+                <p className="text-charcoal-light text-sm">6861 Eldorado Pkwy, McKinney, TX 75070</p>
+              </div>
+
+              {/* Speaker */}
+              <div className="mb-4 bg-cream-sand p-3 border-l-4 border-teal inline-block">
+                <p className="text-charcoal font-semibold">Dr. Bhaskar Gurram</p>
+                <p className="text-teal text-sm">Pediatric Gastroenterologist</p>
+              </div>
+
+              <p className="text-charcoal-light mb-4 leading-relaxed font-light">
+                An educational session designed to help young athletes with pediatric illnesses thrive in sports. Discover practical strategies for staying active while managing chronic illness.
+              </p>
+
+              {/* Highlights */}
+              <div className="mb-6">
+                <p className="text-charcoal font-semibold text-sm mb-2">Key Takeaways:</p>
+                <ul className="space-y-1">
+                  <li className="text-charcoal-light text-sm flex items-start gap-2">
+                    <span className="text-teal mt-1">✓</span>
+                    Strategies for handling flare-ups and fatigue on game day
+                  </li>
+                  <li className="text-charcoal-light text-sm flex items-start gap-2">
+                    <span className="text-teal mt-1">✓</span>
+                    Training modifications that keep athletes competitive
+                  </li>
+                  <li className="text-charcoal-light text-sm flex items-start gap-2">
+                    <span className="text-teal mt-1">✓</span>
+                    Mental and physical benefits of maintaining an active lifestyle
+                  </li>
+                  <li className="text-charcoal-light text-sm flex items-start gap-2">
+                    <span className="text-teal mt-1">✓</span>
+                    Building supportive environments for young athletes with chronic conditions
+                  </li>
+                </ul>
+              </div>
+
+              <a
+                href="https://forms.gle/pTVDUCFdMmCCY8FC6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-teal text-white font-bold px-6 py-3 uppercase tracking-wider text-sm hover:bg-teal/90 transition-colors"
+              >
+                Volunteer (5 Hours)
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Secondary: Pickleball Tournament - Full width like featured */}
+          <div className="relative group bg-white border-l-4 border-teal overflow-hidden transition-all duration-500 shadow-md flex flex-col md:flex-row">
+            {/* Bottom accent border - underline effect */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20"></div>
+
+            <div className="w-full md:w-1/3 h-64 overflow-hidden relative z-10">
               <img
-                src="/images/basketball.jpg"
-                alt="Basketball"
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                src="/images/pickleball-upcoming.png"
+                alt="Pickleball Tournament"
+                className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1519861531473-920026393112?q=80&w=1000&auto=format&fit=crop";
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop";
                   e.currentTarget.onerror = null;
                 }}
               />
-              <div className="absolute top-0 left-0 bg-gold text-black font-bold px-4 py-2 text-xs uppercase tracking-widest">Coming Soon</div>
+              <div className="absolute top-0 left-0 bg-teal text-white font-bold px-3 py-1.5 text-[10px] uppercase tracking-widest">Coming Soon</div>
             </div>
-          </div>
-          <div className="w-full md:w-7/12 relative z-10">
-            <h3 className="font-display font-bold text-4xl text-white mb-2 uppercase tracking-tight">Basketball Tournament</h3>
-            <p className="text-gold mb-6 font-mono text-sm border-b border-white/10 pb-4 inline-block">LOCATION: LILYANA ELEMENTARY SCHOOL</p>
-            <p className="text-gray-400 mb-8 leading-relaxed font-light">
-              Get ready for high-flying action! Our upcoming basketball tournament brings the best local talent to the court. A premium experience for athletes and spectators alike.
-            </p>
-            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === 'basketball' ? 'max-h-96 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                We are finalizing the bracket and team registrations. Expect a high-energy weekend with live commentary, music, and refreshments.
-                All proceeds will go towards supporting local youth sports initiatives.
-              </p>
-              <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
-                <div>
-                  <div className="text-gold font-bold text-lg">12</div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wider">Teams</div>
-                </div>
-                <div>
-                  <div className="text-gold font-bold text-lg">5v5</div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wider">Format</div>
-                </div>
-                <div>
-                  <div className="text-gold font-bold text-lg">$1K</div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wider">Prize Pool</div>
-                </div>
+            <div className="w-full md:w-2/3 p-8 flex flex-col justify-center relative z-10">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-coral font-mono text-sm uppercase tracking-wider">Late February / Early March 2026</span>
               </div>
-            </div>
-            <div className="flex gap-4">
-              <Button>Get Notified</Button>
-              <button
-                onClick={() => toggleEvent('basketball')}
-                className="text-gray-400 hover:text-white transition-colors text-sm font-medium underline decoration-gold/50 underline-offset-4"
-              >
-                {expandedEvent === 'basketball' ? 'Show Less' : 'More Details'}
-              </button>
+              <span className="inline-block text-teal text-xs font-medium bg-teal/10 px-2 py-1 mb-3 w-fit">PowerPlay X HeroesForIBD</span>
+              <h4 className="font-display font-bold text-2xl md:text-3xl text-charcoal mb-3 uppercase tracking-tight">Pickleball Tournament</h4>
+              <p className="text-charcoal-light leading-relaxed font-light text-sm">
+                Our next doubles pickleball competition is in the works! Compete with friends while raising funds and awareness for pediatric illnesses. Stay tuned for registration details.
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* Past Events Header */}
+        <div className="flex items-center justify-center gap-6 mb-12">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
+          <h3 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">Past Events</h3>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
         </div>
 
         {/* Past/Highlight Grid */}
@@ -461,17 +518,17 @@ export const Events: React.FC = () => {
           {EVENTS.map((event) => (
             <div
               key={event.id}
-              className={`bg-black-card border border-white/5 rounded-sm overflow-hidden hover:border-gold/40 transition-all duration-500 group hover:-translate-y-1 ${expandedEvent === event.id ? 'ring-1 ring-gold/30' : ''}`}
+              className={`bg-white border-l-4 border-charcoal/20 overflow-hidden hover:border-coral transition-all duration-500 group hover:-translate-y-1 shadow-md hover:shadow-lg ${expandedEvent === event.id ? 'ring-2 ring-coral/30' : ''}`}
             >
               <div className="h-56 overflow-hidden relative">
                 {event.badge && (
-                  <div className="absolute top-4 right-4 z-20 bg-white text-black text-[10px] font-bold px-2 py-1 uppercase tracking-wider">{event.badge}</div>
+                  <div className="absolute top-4 right-4 z-20 bg-coral text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider shadow-sm">{event.badge}</div>
                 )}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   onError={(e) => {
                     e.currentTarget.src = event.imageFallback;
                     e.currentTarget.onerror = null;
@@ -479,23 +536,23 @@ export const Events: React.FC = () => {
                 />
               </div>
               <div className="p-8">
-                <h4 className="font-display font-bold text-2xl text-white mb-3">{event.title}</h4>
-                <p className="text-gray-500 text-sm mb-6 font-light">
+                <h4 className="font-display font-bold text-2xl text-charcoal mb-3">{event.title}</h4>
+                <p className="text-charcoal-light text-sm mb-6 font-light">
                   {event.shortDescription}
                 </p>
 
                 {/* Expanded Content - Mobile Only */}
                 <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[500px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-                  <div className="pt-4 border-t border-white/10">
-                    <div className="text-gray-300 text-sm leading-relaxed mb-6">
+                  <div className="pt-4 border-t border-charcoal/10">
+                    <div className="text-charcoal-light text-sm leading-relaxed mb-6">
                       {event.fullDescription}
                     </div>
                     {event.stats && (
                       <div className="grid grid-cols-3 gap-2 mb-2">
                         {event.stats.map((stat, idx) => (
-                          <div key={idx} className="text-center bg-white/5 p-2 rounded">
-                            <div className="text-gold font-bold text-sm">{stat.value}</div>
-                            <div className="text-[10px] text-gray-400 uppercase tracking-wider">{stat.label}</div>
+                          <div key={idx} className="text-center bg-cream-sand p-2">
+                            <div className="text-coral font-bold text-sm">{stat.value}</div>
+                            <div className="text-[10px] text-charcoal-muted uppercase tracking-wider">{stat.label}</div>
                           </div>
                         ))}
                       </div>
@@ -505,7 +562,7 @@ export const Events: React.FC = () => {
 
                 <button
                   onClick={() => toggleEvent(event.id)}
-                  className="text-gold text-xs font-bold uppercase tracking-[0.2em] hover:text-white transition-colors flex items-center gap-2 group-hover:gap-3 outline-none focus:outline-none"
+                  className="text-coral text-xs font-bold uppercase tracking-[0.2em] hover:text-charcoal transition-colors flex items-center gap-2 group-hover:gap-3 outline-none focus:outline-none"
                 >
                   {expandedEvent === event.id ? 'Close Recap' : event.buttonText}
                   <span className={`transition-transform duration-300 ${expandedEvent === event.id ? 'rotate-180' : ''}`}>
@@ -520,23 +577,23 @@ export const Events: React.FC = () => {
         <div className={`hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent ? 'max-h-[1000px] opacity-100 mt-8' : 'max-h-0 opacity-0'}`}>
           {displayEventData && (
             <div
-              className={`bg-black-card border border-white/10 rounded-sm p-10 relative overflow-hidden shadow-2xl transition-all duration-200 ease-out transform ${isContentVisible ? 'opacity-100' : 'opacity-0'} ${getTransformClass()}`}
+              className={`bg-white border-l-4 border-coral p-10 relative overflow-hidden shadow-xl transition-all duration-200 ease-out transform ${isContentVisible ? 'opacity-100' : 'opacity-0'} ${getTransformClass()}`}
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold via-gold/50 to-transparent"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-coral via-coral/50 to-transparent"></div>
 
               {/* Header Row: Title + Stats */}
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
                 <div>
-                  <h3 className="font-display font-bold text-4xl text-white mb-2 tracking-tight">{displayEventData.title}</h3>
-                  <div className="h-1 w-20 bg-gold"></div>
+                  <h3 className="font-display font-bold text-4xl text-charcoal mb-2 tracking-tight">{displayEventData.title}</h3>
+                  <div className="h-1 w-20 bg-coral"></div>
                 </div>
 
                 {displayEventData.stats && (
                   <div className="flex gap-4">
                     {displayEventData.stats.map((stat, idx) => (
-                      <div key={idx} className="bg-white/5 px-4 py-2 rounded-sm text-center border border-white/10 backdrop-blur-sm min-w-[100px]">
-                        <div className="text-gold font-bold text-xl font-display">{stat.value}</div>
-                        <div className="text-gray-400 text-[10px] uppercase tracking-widest font-medium mt-1">{stat.label}</div>
+                      <div key={idx} className="bg-cream-sand px-4 py-2 text-center border-l-2 border-teal backdrop-blur-sm min-w-[100px]">
+                        <div className="text-coral font-bold text-xl font-display">{stat.value}</div>
+                        <div className="text-charcoal-muted text-[10px] uppercase tracking-widest font-medium mt-1">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -544,15 +601,15 @@ export const Events: React.FC = () => {
               </div>
 
               {/* Content Row */}
-              <div className="text-gray-300 text-base leading-relaxed font-light">
+              <div className="text-charcoal-light text-base leading-relaxed font-light">
                 {displayEventData.fullDescription}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/10 flex justify-end">
+              <div className="mt-8 pt-6 border-t border-charcoal/10 flex justify-end">
                 <Button
                   variant="secondary"
                   onClick={() => setExpandedEvent(null)}
-                  className="!py-2 !px-6 text-sm border-white/20 hover:bg-white/10"
+                  className="!py-2 !px-6 text-sm"
                 >
                   Close Details
                 </Button>
@@ -562,7 +619,7 @@ export const Events: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center md:hidden">
-          <a href="#" className="text-gold hover:text-white transition-colors font-medium uppercase text-sm tracking-widest">View All Calendar →</a>
+          <a href="#" className="text-coral hover:text-charcoal transition-colors font-medium uppercase text-sm tracking-widest">View All Calendar →</a>
         </div>
       </div>
     </section>
