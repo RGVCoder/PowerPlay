@@ -26,38 +26,39 @@ export const Gallery: React.FC = () => {
                     <p className="text-charcoal-light font-light text-sm md:text-base">Snapshots from our tournaments, events, and community moments.</p>
                 </div>
 
-                {/* Expanded Bento Grid Layout with Hero Centerpiece */}
+                {/* Grid Layout - Optimized for Mobile Editorial and Desktop Bento Restoration */}
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
 
-                    {/* Row 1: Top surrounding images */}
+                    {/* Row 1: Desktop [sq][sq][wide][sq][sq] */}
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 (1).jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 (2).jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/event-cricket.jpg"
                         alt="Cricket Action"
-                        className="col-span-2 aspect-[2/1] md:aspect-auto md:row-span-1"
+                        className="col-span-2 aspect-[16/9] md:aspect-auto md:col-span-2 md:row-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 (3).jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 (4).jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
 
-                    {/* Row 2-3: Main centerpiece row with Hero */}
-                    <div className="col-span-1 md:col-span-1 grid gap-2 md:gap-4">
+                    {/* Row 2-3: Centerpiece [sq][large][sq] */}
+                    {/* Left Column (Desktop) */}
+                    <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
                         <GalleryImage
                             src="/images/Photo Jul 20 2025.jpg"
                             alt="PowerPlay Event"
@@ -70,14 +71,13 @@ export const Gallery: React.FC = () => {
                         />
                     </div>
 
-                    {/* HERO CENTERPIECE - Large central image */}
-                    <div className="col-span-2 md:col-span-4 row-span-2 relative group overflow-hidden border-l-4 border-coral shadow-2xl">
+                    {/* HERO CENTERPIECE - 4x2 on Desktop. 4:2 = 2:1 aspect ratio. */}
+                    <div className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-coral shadow-2xl">
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent group-hover:from-charcoal/20 transition-all duration-500 z-10"></div>
                         <img
                             src="/images/hero-bg.jpg"
                             alt="PowerPlay Sports - Our Community"
                             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                            style={{ minHeight: '300px' }}
                             onError={(e) => {
                                 e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/E76F51?text=PowerPlay";
                                 e.currentTarget.onerror = null;
@@ -88,7 +88,8 @@ export const Gallery: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="col-span-1 md:col-span-1 grid gap-3 md:gap-4">
+                    {/* Right Column (Desktop) */}
+                    <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
                         <GalleryImage
                             src="/images/Photo Jul 20 2025 from raghavsridhar09.jpg"
                             alt="PowerPlay Event"
@@ -102,67 +103,68 @@ export const Gallery: React.FC = () => {
                     </div>
 
                     {/* Row 4: Bottom surrounding images */}
+                    {/* Row 4: Desktop [wide][sq][sq][sq][sq] */}
+                    <GalleryImage
+                        src="/images/gallery-lineup.jpg"
+                        alt="Team Lineup"
+                        className="col-span-2 aspect-[21/9] md:aspect-[2/1] md:col-span-2 md:row-span-1"
+                    />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 (5).jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 (6).jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
-                    />
-                    <GalleryImage
-                        src="/images/gallery-lineup.jpg"
-                        alt="Team Lineup"
-                        className="col-span-2 aspect-[2/1]"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 from raghavsridhar09.jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025.jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
 
-                    {/* Row 5: Additional images */}
+                    {/* Row 5: Desktop [sq][sq][wide][sq][sq] */}
                     <GalleryImage
                         src="/images/gallery-pickleball.jpg"
                         alt="Pickleball"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/mvp.jpg"
                         alt="MVP"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jul 20 2025 from raghavsridhar09 (2).jpg"
                         alt="PowerPlay Event"
-                        className="col-span-2 aspect-[2/1]"
+                        className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 19 2025.jpg"
                         alt="PowerPlay Event"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/gallery-coach.jpeg"
                         alt="Coach"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/trophy-ceremony.jpg"
                         alt="Trophy Ceremony"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
                         src="/images/cricket-players.jpg"
                         alt="Cricket Players"
-                        className="aspect-square"
+                        className="aspect-square md:col-span-1"
                     />
 
                 </div>

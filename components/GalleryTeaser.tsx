@@ -118,7 +118,7 @@ export const GalleryTeaser: React.FC = () => {
                                 <img
                                     src={image.src}
                                     alt={image.caption}
-                                    className={`h-full w-auto transition-all duration-300 ${isActive ? 'border-2 md:border-4 border-coral shadow-2xl scale-110 md:scale-100' : 'grayscale'}`}
+                                    className={`h-full w-auto object-cover md:object-contain transition-all duration-300 ${isActive ? 'border-2 md:border-4 border-coral shadow-2xl scale-105 md:scale-100' : 'grayscale'}`}
                                     onLoad={(e) => handleImageLoad(idx, e.currentTarget.offsetWidth)}
                                 />
                             </div>
