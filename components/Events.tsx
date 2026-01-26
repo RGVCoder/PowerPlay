@@ -417,7 +417,7 @@ export const Events: React.FC = () => {
             </div>
             <div className="w-full md:w-7/12 relative z-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="text-coral font-mono text-sm uppercase tracking-wider">Saturday, January 17, 2026</span>
+                <span className="text-coral font-mono text-sm uppercase tracking-wider">Sunday, February 8, 2026</span>
                 <span className="text-charcoal/30">•</span>
                 <span className="text-charcoal font-mono text-sm">4:00 - 5:00 PM</span>
                 <span className="text-charcoal/30">•</span>
