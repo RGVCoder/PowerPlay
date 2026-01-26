@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const pillars = [
     {
@@ -34,14 +34,49 @@ const pillars = [
 ];
 
 export const Pillars: React.FC = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const scrollToIndex = (index: number) => {
+        if (!scrollRef.current) return;
+        const cardWidth = scrollRef.current.offsetWidth * 0.85; // Based on min-w-[85%]
+        scrollRef.current.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+        });
+    };
+
+    const handleScroll = () => {
+        if (!scrollRef.current) return;
+        const scrollPosition = scrollRef.current.scrollLeft;
+        const containerWidth = scrollRef.current.offsetWidth;
+        const cardWidth = containerWidth * 0.85;
+        const newIndex = Math.round(scrollPosition / cardWidth);
+        if (newIndex !== activeIndex) {
+            setActiveIndex(newIndex);
+        }
+    };
+
+    useEffect(() => {
+        const currentRef = scrollRef.current;
+        if (currentRef) {
+            currentRef.addEventListener('scroll', handleScroll);
+        }
+        return () => {
+            if (currentRef) {
+                currentRef.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, [activeIndex]);
+
     return (
-        <section className="relative bg-cream py-24">
+        <section className="relative bg-cream py-12 md:py-24">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="flex items-center justify-center gap-6 mb-16">
+                <div className="flex items-center justify-center gap-6 mb-10 md:mb-16">
                     <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
                     <h2 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
                         What We Do
@@ -49,40 +84,78 @@ export const Pillars: React.FC = () => {
                     <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
                 </div>
 
-                {/* Pillar Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {pillars.map((pillar, index) => (
-                        <div
-                            key={index}
-                            className="group relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-white"
+                {/* Pillar Cards - Grid on desktop, Slideshow on mobile */}
+                <div className="relative group/slideshow">
+                    {/* Navigation Arrows - Mobile Only */}
+                    <div className="md:hidden flex justify-between absolute top-1/2 -translate-y-1/2 left-0 right-0 z-30 pointer-events-none px-2">
+                        <button
+                            onClick={() => scrollToIndex(activeIndex - 1)}
+                            disabled={activeIndex === 0}
+                            className={`w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white pointer-events-auto transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-0' : 'opacity-100'}`}
                         >
-                            {/* Background Image */}
-                            <div className="aspect-[4/5] relative">
-                                <img
-                                    src={pillar.image}
-                                    alt={pillar.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent" />
-                            </div>
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button
+                            onClick={() => scrollToIndex(activeIndex + 1)}
+                            disabled={activeIndex === pillars.length - 1}
+                            className={`w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white pointer-events-auto transition-opacity duration-300 ${activeIndex === pillars.length - 1 ? 'opacity-0' : 'opacity-100'}`}
+                        >
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
 
-                            {/* Content Overlay */}
-                            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                                {/* Icon */}
-                                <div className="w-14 h-14 bg-coral flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                    {pillar.icon}
+                    <div
+                        ref={scrollRef}
+                        className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide"
+                    >
+                        {pillars.map((pillar, index) => (
+                            <div
+                                key={index}
+                                className="min-w-[85%] md:min-w-0 group relative overflow-hidden shadow-xl transition-all duration-500 bg-white snap-center"
+                            >
+                                {/* Background Image */}
+                                <div className="aspect-[4/5] relative">
+                                    <img
+                                        src={pillar.image}
+                                        alt={pillar.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent" />
                                 </div>
 
-                                {/* Text */}
-                                <h3 className="font-display font-bold text-2xl mb-3">{pillar.title}</h3>
-                                <p className="text-white/80 text-sm leading-relaxed">{pillar.description}</p>
-                            </div>
+                                {/* Content Overlay */}
+                                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                                    {/* Icon */}
+                                    <div className="w-12 h-12 md:w-14 md:h-14 bg-coral flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                        {pillar.icon}
+                                    </div>
 
-                            {/* Bottom accent border */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                        </div>
-                    ))}
+                                    {/* Text */}
+                                    <h3 className="font-display font-bold text-xl md:text-2xl mb-2 md:mb-3">{pillar.title}</h3>
+                                    <p className="text-white/80 text-sm leading-relaxed">{pillar.description}</p>
+                                </div>
+
+                                {/* Bottom accent border */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Pagination Dots - Mobile Only */}
+                    <div className="flex md:hidden justify-center gap-2 mt-2">
+                        {pillars.map((_, index) => (
+                            <div
+                                key={index}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${index === activeIndex ? 'w-6 bg-coral' : 'w-1.5 bg-charcoal/20'
+                                    }`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

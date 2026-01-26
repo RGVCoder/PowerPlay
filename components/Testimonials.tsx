@@ -29,18 +29,18 @@ export const Testimonials: React.FC = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-24 bg-charcoal relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-charcoal relative overflow-hidden">
       {/* Top decorative border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 text-coral/10 text-[200px] font-serif select-none">"</div>
-      <div className="absolute bottom-20 right-10 text-coral/10 text-[200px] font-serif select-none rotate-180">"</div>
+      <div className="absolute top-10 left-5 md:top-20 md:left-10 text-coral/10 text-[100px] md:text-[200px] font-serif select-none">"</div>
+      <div className="absolute bottom-10 right-5 md:bottom-20 md:right-10 text-coral/10 text-[100px] md:text-[200px] font-serif select-none rotate-180">"</div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex items-center justify-center gap-6 mb-16">
+        <div className="flex items-center justify-center gap-6 mb-12 md:mb-16">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/20"></div>
-          <h2 className="font-display font-bold text-2xl md:text-3xl text-white tracking-wider uppercase whitespace-nowrap">
+          <h2 className="font-display font-bold text-xl md:text-3xl text-white tracking-wider uppercase whitespace-nowrap">
             Athlete Stories
           </h2>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/20"></div>
@@ -49,19 +49,19 @@ export const Testimonials: React.FC = () => {
         {/* Quote Card */}
         <div className="text-center">
           {/* Quote Text */}
-          <p className="text-white/90 text-xl md:text-2xl leading-relaxed font-light mb-12 max-w-3xl mx-auto">
+          <p className="text-white/90 text-lg md:text-2xl leading-relaxed font-light mb-10 md:mb-12 max-w-3xl mx-auto italic">
             "{currentTestimonial.quote}"
           </p>
 
           {/* Author */}
-          <div className="flex items-center justify-center gap-5">
+          <div className="flex items-center justify-center gap-4 md:gap-5">
             {/* Square avatar with initials */}
-            <div className="w-14 h-14 bg-coral flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-coral flex items-center justify-center text-white font-bold text-base md:text-lg">
               {currentTestimonial.initials}
             </div>
             <div className="text-left">
-              <p className="text-white font-semibold text-lg">{currentTestimonial.name}</p>
-              <p className="text-white/50 text-sm">{currentTestimonial.role}</p>
+              <p className="text-white font-semibold text-base md:text-lg">{currentTestimonial.name}</p>
+              <p className="text-white/50 text-xs md:text-sm">{currentTestimonial.role}</p>
             </div>
           </div>
         </div>

@@ -384,19 +384,19 @@ export const Events: React.FC = () => {
   };
 
   return (
-    <section id="events" className="py-24 bg-white">
+    <section id="events" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Upcoming Events Section */}
-        <div className="mb-16">
-          <div className="flex items-center justify-center gap-6 mb-12">
+        <div className="mb-12 md:mb-16">
+          <div className="flex items-center justify-center gap-6 mb-10 md:mb-12">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-coral/20 to-coral/40"></div>
-            <h3 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">Upcoming Events</h3>
+            <h3 className="font-display font-bold text-xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">Upcoming Events</h3>
             <div className="flex-1 h-px bg-gradient-to-l from-transparent via-coral/20 to-coral/40"></div>
           </div>
 
           {/* Featured: Guest Speaker Event */}
-          <div className="relative group bg-white border-l-4 border-coral p-8 mb-8 flex flex-col md:flex-row gap-10 items-start overflow-hidden transition-all duration-500 shadow-lg">
+          <div className="relative group bg-white border-l-4 border-coral p-5 md:p-8 mb-8 flex flex-col md:flex-row gap-6 md:gap-10 items-start overflow-hidden transition-all duration-500 shadow-lg">
             <div className="absolute inset-0 bg-coral/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             {/* Bottom accent border - underline effect */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
@@ -412,18 +412,18 @@ export const Events: React.FC = () => {
                     e.currentTarget.onerror = null;
                   }}
                 />
-                <div className="absolute top-0 left-0 bg-coral text-white font-bold px-4 py-2 text-xs uppercase tracking-widest">Featured</div>
+                <div className="absolute top-0 left-0 bg-coral text-white font-bold px-3 py-1.5 md:px-4 md:py-2 text-[10px] md:text-xs uppercase tracking-widest">Featured</div>
               </div>
             </div>
             <div className="w-full md:w-7/12 relative z-10">
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="text-coral font-mono text-sm uppercase tracking-wider">Sunday, February 8, 2026</span>
+              <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4">
+                <span className="text-coral font-mono text-xs md:text-sm uppercase tracking-wider">Sunday, February 8, 2026</span>
                 <span className="text-charcoal/30">•</span>
-                <span className="text-charcoal font-mono text-sm">4:00 - 5:00 PM</span>
+                <span className="text-charcoal font-mono text-xs md:text-sm">4:00 - 5:00 PM</span>
                 <span className="text-charcoal/30">•</span>
-                <span className="text-teal text-sm font-medium bg-teal/10 px-2 py-1">PowerPlay X HeroesForIBD</span>
+                <span className="text-teal text-[10px] md:text-sm font-medium bg-teal/10 px-2 py-1">PowerPlay X HeroesForIBD</span>
               </div>
-              <h3 className="font-display font-bold text-4xl text-charcoal mb-2 uppercase tracking-tight">Game On: IBD & Youth Sports</h3>
+              <h3 className="font-display font-bold text-2xl md:text-4xl text-charcoal mb-4 uppercase tracking-tight leading-tight">Game On: IBD & Youth Sports</h3>
 
               {/* Location */}
               <div className="mb-4">
@@ -437,7 +437,7 @@ export const Events: React.FC = () => {
                 <p className="text-teal text-sm">Pediatric Gastroenterologist</p>
               </div>
 
-              <p className="text-charcoal-light mb-4 leading-relaxed font-light">
+              <p className="text-charcoal-light mb-6 leading-relaxed font-light text-sm md:text-base">
                 An educational session designed to help young athletes with pediatric illnesses thrive in sports. Discover practical strategies for staying active while managing chronic illness.
               </p>
 
@@ -468,9 +468,9 @@ export const Events: React.FC = () => {
                 href="https://forms.gle/pTVDUCFdMmCCY8FC6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-teal text-white font-bold px-6 py-3 uppercase tracking-wider text-sm hover:bg-teal/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-teal text-white font-bold px-6 py-3 uppercase tracking-wider text-xs md:text-sm hover:bg-teal/90 transition-colors"
               >
-                Volunteer (5 Hours)
+                Volunteer Now (5 Hours)
                 <span>↗</span>
               </a>
             </div>
@@ -481,7 +481,7 @@ export const Events: React.FC = () => {
             {/* Bottom accent border - underline effect */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20"></div>
 
-            <div className="w-full md:w-1/3 h-64 overflow-hidden relative z-10">
+            <div className="w-full md:w-1/3 h-48 md:h-64 overflow-hidden relative z-10">
               <img
                 src="/images/pickleball-upcoming.png"
                 alt="Pickleball Tournament"
@@ -493,12 +493,12 @@ export const Events: React.FC = () => {
               />
               <div className="absolute top-0 left-0 bg-teal text-white font-bold px-3 py-1.5 text-[10px] uppercase tracking-widest">Coming Soon</div>
             </div>
-            <div className="w-full md:w-2/3 p-8 flex flex-col justify-center relative z-10">
+            <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center relative z-10">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-coral font-mono text-sm uppercase tracking-wider">Late February / Early March 2026</span>
+                <span className="text-coral font-mono text-xs md:text-sm uppercase tracking-wider">Late February / Early March 2026</span>
               </div>
-              <span className="inline-block text-teal text-xs font-medium bg-teal/10 px-2 py-1 mb-3 w-fit">PowerPlay X HeroesForIBD</span>
-              <h4 className="font-display font-bold text-2xl md:text-3xl text-charcoal mb-3 uppercase tracking-tight">Pickleball Tournament</h4>
+              <span className="inline-block text-teal text-[10px] md:text-xs font-medium bg-teal/10 px-2 py-1 mb-3 w-fit">PowerPlay X HeroesForIBD</span>
+              <h4 className="font-display font-bold text-xl md:text-3xl text-charcoal mb-3 uppercase tracking-tight">Pickleball Tournament</h4>
               <p className="text-charcoal-light leading-relaxed font-light text-sm">
                 Our next doubles pickleball competition is in the works! Compete with friends while raising funds and awareness for pediatric illnesses. Stay tuned for registration details.
               </p>
@@ -507,22 +507,22 @@ export const Events: React.FC = () => {
         </div>
 
         {/* Past Events Header */}
-        <div className="flex items-center justify-center gap-6 mb-12">
+        <div className="flex items-center justify-center gap-6 mb-10 md:mb-12">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
-          <h3 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">Past Events</h3>
+          <h3 className="font-display font-bold text-xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">Past Events</h3>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
         </div>
 
         {/* Past/Highlight Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative">
           {EVENTS.map((event) => (
             <div
               key={event.id}
               className={`bg-white border-l-4 border-charcoal/20 overflow-hidden hover:border-coral transition-all duration-500 group hover:-translate-y-1 shadow-md hover:shadow-lg ${expandedEvent === event.id ? 'ring-2 ring-coral/30' : ''}`}
             >
-              <div className="h-56 overflow-hidden relative">
+              <div className="h-48 md:h-56 overflow-hidden relative">
                 {event.badge && (
-                  <div className="absolute top-4 right-4 z-20 bg-coral text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider shadow-sm">{event.badge}</div>
+                  <div className="absolute top-3 right-3 z-20 bg-coral text-white text-[9px] md:text-[10px] font-bold px-2 py-1 md:px-3 md:py-1.5 uppercase tracking-wider shadow-sm">{event.badge}</div>
                 )}
                 <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
                 <img
@@ -535,14 +535,14 @@ export const Events: React.FC = () => {
                   }}
                 />
               </div>
-              <div className="p-8">
-                <h4 className="font-display font-bold text-2xl text-charcoal mb-3">{event.title}</h4>
+              <div className="p-6 md:p-8">
+                <h4 className="font-display font-bold text-xl md:text-2xl text-charcoal mb-3">{event.title}</h4>
                 <p className="text-charcoal-light text-sm mb-6 font-light">
                   {event.shortDescription}
                 </p>
 
                 {/* Expanded Content - Mobile Only */}
-                <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[500px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
+                <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[2000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
                   <div className="pt-4 border-t border-charcoal/10">
                     <div className="text-charcoal-light text-sm leading-relaxed mb-6">
                       {event.fullDescription}

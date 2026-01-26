@@ -32,13 +32,13 @@ export const Partners: React.FC = () => {
                 </div>
 
                 {/* Logo Strip */}
-                <div className="flex flex-wrap justify-center items-center gap-16 mb-12">
+                <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 mb-8 md:mb-12">
                     {partners.map((partner, index) => (
                         <div
                             key={index}
                             className="group transition-all duration-300 hover:scale-105"
                         >
-                            <div className="w-32 h-32 rounded-full bg-white border-2 border-coral/30 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-md hover:border-coral/50 transition-all duration-300">
+                            <div className="w-16 h-16 md:w-32 md:h-32 rounded-full bg-white border-2 border-coral/30 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-md hover:border-coral/50 transition-all duration-300">
                                 <img
                                     src={partner.logo}
                                     alt={partner.name}

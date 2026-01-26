@@ -2,12 +2,12 @@ import React from 'react';
 
 export const ImpactVideo: React.FC = () => {
     return (
-        <section className="relative bg-cream py-24 overflow-hidden">
+        <section className="relative bg-cream py-12 md:py-24 overflow-hidden">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-charcoal/10 to-transparent"></div>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="flex items-center justify-center gap-6 mb-16">
+                <div className="flex items-center justify-center gap-6 mb-10 md:mb-16">
                     <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
                     <h2 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
                         Exclusive Interview
@@ -16,7 +16,7 @@ export const ImpactVideo: React.FC = () => {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     {/* Left Side - Asif's Photo & Bio */}
                     <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
                         <div className="relative mb-8">

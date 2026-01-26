@@ -115,42 +115,88 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute w-full bg-cream/98 backdrop-blur-xl border-b border-charcoal/10 transition-all duration-300 overflow-hidden ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-4 pt-2 pb-6 space-y-1">
-          {navLinks.map((link) => (
-            link.isRoute ? (
+      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Backdrop */}
+      <div
+        className={`md:hidden fixed inset-0 bg-charcoal/50 backdrop-blur-sm z-40 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu Slide-in Drawer */}
+      <div
+        className={`md:hidden fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-cream shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+      >
+        {/* Header: Brand Profile */}
+        <div className="flex items-center gap-4 p-8 border-b border-charcoal/5">
+          <div className="h-12 w-12 rounded-full bg-cream-dark flex items-center justify-center overflow-hidden border border-charcoal/10">
+            <img src="/images/logo.jpg" alt="Logo" className="h-full w-full object-cover" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-bold text-charcoal text-lg">PowerPlay</span>
+            <span className="text-charcoal-light text-xs">Youth Sports Non-Profit</span>
+          </div>
+        </div>
+
+        {/* Menu Items List */}
+        <div className="flex-col flex py-6 px-4 gap-2 overflow-y-auto">
+          {navLinks.map((link) => {
+            // Simple icon mapping based on name
+            let iconPath = "";
+            if (link.name === 'Home') iconPath = "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6";
+            else if (link.name === 'About') iconPath = "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z";
+            else if (link.name === 'Events') iconPath = "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z";
+            else if (link.name === 'Gallery') iconPath = "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z";
+
+            const content = (
+              <div className="flex items-center gap-4 w-full">
+                <svg className="h-5 w-5 text-charcoal-light group-hover:text-coral transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d={iconPath} />
+                </svg>
+                <span className="font-sans font-medium text-charcoal group-hover:text-coral transition-colors text-base">{link.name}</span>
+              </div>
+            );
+
+            return link.isRoute ? (
               <Link
                 key={link.name}
                 to={link.href!}
-                className="block px-3 py-3 text-base font-medium text-charcoal-light hover:text-coral hover:bg-coral/5 transition-all"
+                className="px-4 py-4 rounded-xl hover:bg-black/5 transition-all group"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.name}
+                {content}
               </Link>
             ) : (
               <button
                 key={link.name}
-                className="block w-full text-left px-3 py-3 text-base font-medium text-charcoal-light hover:text-coral hover:bg-coral/5 transition-all"
+                className="px-4 py-4 rounded-xl hover:bg-black/5 transition-all w-full text-left group"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   handleAnchorClick(link.anchor!);
                 }}
               >
-                {link.name}
+                {content}
               </button>
-            )
-          ))}
-          <div className="mt-6 px-3">
-            <Button
-              fullWidth
-              onClick={() => {
-                setMobileMenuOpen(false);
-                handleAnchorClick('home');
-              }}
-            >
-              Donate
-            </Button>
-          </div>
+            );
+          })}
+        </div>
+
+        {/* Footer: Donate Button */}
+        <div className="mt-auto p-6 border-t border-charcoal/5">
+          <Button
+            variant="primary"
+            className="w-full py-4 text-sm font-bold tracking-widest shadow-lg transform active:scale-95 transition-all flex items-center justify-center gap-2"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              handleAnchorClick('home');
+            }}
+          >
+            Donate Now
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Button>
         </div>
       </div>
     </nav>

@@ -74,15 +74,15 @@ export const GalleryTeaser: React.FC = () => {
     const visibleOffsets = [-4, -3, -2, -1, 0, 1, 2, 3, 4];
 
     return (
-        <section className="bg-charcoal py-24 overflow-hidden relative">
+        <section className="bg-charcoal py-16 md:py-24 overflow-hidden relative">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
 
             {/* Section Header */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-12">
                 <div className="flex items-center justify-center gap-6">
                     <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/20"></div>
-                    <h2 className="font-display font-bold text-2xl md:text-3xl text-white tracking-wider uppercase whitespace-nowrap">
+                    <h2 className="font-display font-bold text-xl md:text-3xl text-white tracking-wider uppercase whitespace-nowrap">
                         Game Day Moments
                     </h2>
                     <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/20"></div>
@@ -92,11 +92,11 @@ export const GalleryTeaser: React.FC = () => {
             {/* Carousel */}
             <div className="relative">
                 <button onClick={goToPrev} disabled={isAnimating}
-                    className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition-all text-2xl">
+                    className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-12 md:h-12 bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition-all text-xl md:text-2xl rounded-full md:rounded-none">
                     ‹
                 </button>
 
-                <div className="relative h-[300px] md:h-[380px] overflow-hidden">
+                <div className="relative h-[250px] md:h-[380px] overflow-hidden">
                     {visibleOffsets.map(offset => {
                         const idx = ((activeIndex + offset) % total + total) % total;
                         const image = galleryImages[idx];
@@ -118,7 +118,7 @@ export const GalleryTeaser: React.FC = () => {
                                 <img
                                     src={image.src}
                                     alt={image.caption}
-                                    className={`h-full w-auto transition-all duration-300 ${isActive ? 'border-4 border-coral shadow-2xl' : 'grayscale'}`}
+                                    className={`h-full w-auto transition-all duration-300 ${isActive ? 'border-2 md:border-4 border-coral shadow-2xl scale-110 md:scale-100' : 'grayscale'}`}
                                     onLoad={(e) => handleImageLoad(idx, e.currentTarget.offsetWidth)}
                                 />
                             </div>
@@ -127,18 +127,18 @@ export const GalleryTeaser: React.FC = () => {
                 </div>
 
                 <button onClick={goToNext} disabled={isAnimating}
-                    className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition-all text-2xl">
+                    className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-12 md:h-12 bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition-all text-xl md:text-2xl rounded-full md:rounded-none">
                     ›
                 </button>
             </div>
 
             {/* Caption and Thumbnails */}
             <div className="mt-8">
-                <p className="text-center text-white/60 text-sm mb-6">{galleryImages[activeIndex].caption}</p>
-                <div className="flex justify-center items-center gap-2 md:gap-3 px-4">
+                <p className="text-center text-white/60 text-xs md:text-sm mb-6 px-6 italic">{galleryImages[activeIndex].caption}</p>
+                <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 px-4">
                     {galleryImages.map((image, index) => (
                         <button key={index} onClick={() => changeSlide(index)} disabled={isAnimating}
-                            className={`w-11 h-11 md:w-14 md:h-14 overflow-hidden transition-all duration-300 ${index === activeIndex ? 'ring-2 ring-coral ring-offset-2 ring-offset-charcoal opacity-100' : 'opacity-40 hover:opacity-70'
+                            className={`w-9 h-9 md:w-14 md:h-14 overflow-hidden transition-all duration-300 ${index === activeIndex ? 'ring-2 ring-coral ring-offset-2 ring-offset-charcoal opacity-100' : 'opacity-40 hover:opacity-70'
                                 }`}>
                             <img src={image.src} alt="" className="w-full h-full object-cover" />
                         </button>
@@ -148,7 +148,7 @@ export const GalleryTeaser: React.FC = () => {
 
             {/* View Gallery Link */}
             <div className="text-center mt-10">
-                <Link to="/gallery" className="inline-flex items-center gap-2 text-coral hover:text-white transition-colors text-sm font-medium tracking-wide group">
+                <Link to="/gallery" className="inline-flex items-center gap-2 text-coral hover:text-white transition-colors text-xs md:text-sm font-medium tracking-wide group uppercase">
                     View Full Gallery
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>

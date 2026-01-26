@@ -24,7 +24,7 @@ export const GalleryPage: React.FC = () => {
             <Navbar />
             <main className="pt-20">
                 {/* Hero Section - Consistent with About/Events */}
-                <section className="relative py-32 bg-charcoal overflow-hidden">
+                <section className="relative py-20 md:py-32 bg-charcoal overflow-hidden">
                     <div className="absolute inset-0">
                         <img
                             src="/images/hero-bg.jpg"
@@ -35,24 +35,24 @@ export const GalleryPage: React.FC = () => {
                     </div>
 
                     <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <div className="inline-block px-4 py-2 bg-coral/20 text-coral text-sm font-semibold uppercase tracking-widest mb-6">
+                        <div className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 bg-coral/20 text-coral text-xs lg:text-sm font-semibold uppercase tracking-widest mb-6 mt-8 md:mt-0">
                             Photo Gallery
                         </div>
-                        <h1 className="font-display font-bold text-5xl md:text-7xl text-white mb-8 tracking-tight">
+                        <h1 className="font-display font-bold text-3xl md:text-7xl text-white mb-6 lg:mb-8 tracking-tight">
                             Game Day <span className="text-coral">Memories</span>
                         </h1>
-                        <p className="text-xl text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg md:text-xl text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
                             Snapshots from our tournaments, events, and the community moments that make PowerPlay special.
                         </p>
                     </div>
                 </section>
 
-                <section className="py-24 bg-cream relative">
+                <section className="py-12 md:py-24 bg-cream relative">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                         {/* Expanded Bento Grid Layout with Hero Centerpiece */}
-                        <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4">
+                        <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
 
                             {/* Row 1: Top surrounding images */}
                             <GalleryImage
@@ -68,7 +68,7 @@ export const GalleryPage: React.FC = () => {
                             <GalleryImage
                                 src="/images/event-cricket.jpg"
                                 alt="Cricket Action"
-                                className="col-span-2 aspect-[2/1]"
+                                className="col-span-2 aspect-[2/1] md:aspect-auto md:row-span-1"
                             />
                             <GalleryImage
                                 src="/images/Photo Jun 23 2025 (3).jpg"
@@ -82,7 +82,7 @@ export const GalleryPage: React.FC = () => {
                             />
 
                             {/* Row 2-3: Main centerpiece row with Hero */}
-                            <div className="col-span-1 md:col-span-1 grid gap-3 md:gap-4">
+                            <div className="col-span-1 md:col-span-1 grid gap-2 md:gap-4">
                                 <GalleryImage
                                     src="/images/Photo Jul 20 2025.jpg"
                                     alt="PowerPlay Event"
@@ -102,14 +102,14 @@ export const GalleryPage: React.FC = () => {
                                     src="/images/hero-bg.jpg"
                                     alt="PowerPlay Sports - Our Community"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                                    style={{ minHeight: '400px' }}
+                                    style={{ minHeight: '300px' }}
                                     onError={(e) => {
                                         e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/E76F51?text=PowerPlay";
                                         e.currentTarget.onerror = null;
                                     }}
                                 />
-                                <div className="absolute bottom-6 left-6 z-20">
-                                    <span className="bg-teal text-white text-xs font-bold px-4 py-2 uppercase tracking-wider shadow-lg">Our Community</span>
+                                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                                    <span className="bg-teal text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
                                 </div>
                             </div>
 

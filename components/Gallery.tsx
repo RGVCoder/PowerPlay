@@ -18,16 +18,16 @@ export const Gallery: React.FC = () => {
     );
 
     return (
-        <section id="gallery" className="py-24 bg-cream relative">
+        <section id="gallery" className="py-16 md:py-24 bg-cream relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-16">
-                    <span className="text-coral text-sm font-semibold uppercase tracking-widest mb-4 block">Photo Gallery</span>
-                    <h2 className="font-display font-bold text-4xl md:text-5xl text-charcoal mb-4 tracking-tight">Game Day Memories</h2>
-                    <p className="text-charcoal-light font-light">Snapshots from our tournaments, events, and community moments.</p>
+                <div className="mb-10 md:mb-16">
+                    <span className="text-coral text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4 block">Photo Gallery</span>
+                    <h2 className="font-display font-bold text-3xl md:text-5xl text-charcoal mb-3 md:mb-4 tracking-tight">Game Day Memories</h2>
+                    <p className="text-charcoal-light font-light text-sm md:text-base">Snapshots from our tournaments, events, and community moments.</p>
                 </div>
 
                 {/* Expanded Bento Grid Layout with Hero Centerpiece */}
-                <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
 
                     {/* Row 1: Top surrounding images */}
                     <GalleryImage
@@ -43,7 +43,7 @@ export const Gallery: React.FC = () => {
                     <GalleryImage
                         src="/images/event-cricket.jpg"
                         alt="Cricket Action"
-                        className="col-span-2 aspect-[2/1]"
+                        className="col-span-2 aspect-[2/1] md:aspect-auto md:row-span-1"
                     />
                     <GalleryImage
                         src="/images/Photo Jun 23 2025 (3).jpg"
@@ -57,7 +57,7 @@ export const Gallery: React.FC = () => {
                     />
 
                     {/* Row 2-3: Main centerpiece row with Hero */}
-                    <div className="col-span-1 md:col-span-1 grid gap-3 md:gap-4">
+                    <div className="col-span-1 md:col-span-1 grid gap-2 md:gap-4">
                         <GalleryImage
                             src="/images/Photo Jul 20 2025.jpg"
                             alt="PowerPlay Event"
@@ -77,14 +77,14 @@ export const Gallery: React.FC = () => {
                             src="/images/hero-bg.jpg"
                             alt="PowerPlay Sports - Our Community"
                             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                            style={{ minHeight: '400px' }}
+                            style={{ minHeight: '300px' }}
                             onError={(e) => {
                                 e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/E76F51?text=PowerPlay";
                                 e.currentTarget.onerror = null;
                             }}
                         />
-                        <div className="absolute bottom-6 left-6 z-20">
-                            <span className="bg-coral text-white text-xs font-bold px-4 py-2 uppercase tracking-wider shadow-lg">Our Community</span>
+                        <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span className="bg-coral text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
                         </div>
                     </div>
 
