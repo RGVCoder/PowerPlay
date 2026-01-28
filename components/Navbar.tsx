@@ -44,9 +44,9 @@ export const Navbar: React.FC = () => {
         : 'py-4'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex justify-between items-center h-full">
         {/* Logo */}
-        <div className="flex-shrink-0 group">
+        <div className="flex-shrink-0 group relative z-10">
           <Link to="/" className="group-hover:opacity-90 transition-opacity">
             <img
               src="/images/logo-full.png"
@@ -56,8 +56,8 @@ export const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
+        {/* Center: Desktop Menu Links */}
+        <div className="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           {navLinks.map((link) => {
             // Determine if this link is active
             const isActive = link.isRoute
@@ -88,29 +88,35 @@ export const Navbar: React.FC = () => {
               </button>
             );
           })}
-          <Button
-            variant="primary"
-            className="py-2 px-5 text-xs font-bold"
-            onClick={() => handleAnchorClick('home')}
-          >
-            Donate
-          </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-charcoal hover:text-coral focus:outline-none transition-colors"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+        {/* Right: Actions (Donate + Mobile Menu Button) */}
+        <div className="flex items-center gap-4 relative z-10">
+          <div className="hidden md:block">
+            <Button
+              variant="primary"
+              className="py-2 px-5 text-xs font-bold"
+              onClick={() => handleAnchorClick('home')}
+            >
+              Donate
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-charcoal hover:text-coral focus:outline-none transition-colors"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
