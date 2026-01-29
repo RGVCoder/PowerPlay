@@ -69,7 +69,6 @@ export const Donations: React.FC = () => {
                     <div className="bg-white border-l-4 border-coral shadow-xl overflow-hidden">
                         <div className="bg-coral px-6 py-4">
                             <h3 className="text-white font-display font-bold text-xl">Donate Now</h3>
-                            <p className="text-white/80 text-sm font-light">Secure payment via Hack Club Bank</p>
                         </div>
                         <div className="p-2">
                             <iframe

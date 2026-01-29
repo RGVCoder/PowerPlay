@@ -102,7 +102,6 @@ export const Hero: React.FC = () => {
           <div className="bg-charcoal shadow-2xl overflow-hidden border-t-4 border-teal rounded-lg lg:rounded-none">
             <div className="bg-coral px-4 py-3 lg:px-6 lg:py-4">
               <h3 className="text-white font-display font-bold text-lg lg:text-xl">Donate Now</h3>
-              <p className="text-white/80 text-xs lg:text-sm font-light">Secure payment via Hack Club Bank</p>
             </div>
             {/* Iframe container - clips top banner, shows form */}
             <div className="overflow-hidden h-[500px] lg:h-[600px] relative">
