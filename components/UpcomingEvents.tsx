@@ -23,31 +23,7 @@ interface UpcomingEvent {
 }
 
 const UPCOMING_EVENTS: UpcomingEvent[] = [
-    {
-        id: 'guest-speaker-2026',
-        title: 'GAME ON: IBD & YOUTH SPORTS',
-        subtitle: 'PowerPlay X HeroesForIBD',
-        date: '2026-02-08',
-        dateDisplay: 'Sunday, February 8, 2026',
-        time: '4:00 - 5:00 PM',
-        location: 'John and Judy Gay Library JJG – Meeting Room',
-        address: '6861 Eldorado Pkwy, McKinney, TX 75070',
-        speaker: 'Dr. Bhaskar Gurram',
-        speakerTitle: 'Pediatric Gastroenterologist',
-        description: 'An educational session designed to help young athletes with pediatric illnesses thrive in sports. Discover practical strategies for staying active while managing chronic illness.',
-        highlights: [
-            'Strategies for handling flare-ups and fatigue on game day',
-            'Training modifications that keep athletes competitive',
-            'Mental and physical benefits of maintaining an active lifestyle',
-            'Building supportive environments for young athletes with chronic conditions'
-        ],
-        image: '/images/guest-speaker-poster.png',
-        imageFallback: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop',
-        badge: 'Featured',
-        isFeatured: true,
-        partner: 'HeroesForIBD',
-        volunteerFormUrl: 'https://forms.gle/pTVDUCFdMmCCY8FC6'
-    },
+
     {
         id: 'pickleball-2026',
         title: 'PICKLEBALL TOURNAMENT',

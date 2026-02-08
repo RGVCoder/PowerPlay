@@ -75,11 +75,11 @@ export const Donations: React.FC = () => {
                                 src="https://hcb.hackclub.com/donations/start/powerplay"
                                 style={{ border: 'none' }}
                                 name="donateFrame"
-                                scrolling="no"
+                                scrolling="yes"
                                 frameBorder={0}
                                 marginHeight={0}
                                 marginWidth={0}
-                                height="850px"
+                                height="1200px"
                                 width="100%"
                                 allowFullScreen
                                 className="w-full bg-white"

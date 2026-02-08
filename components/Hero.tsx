@@ -104,17 +104,17 @@ export const Hero: React.FC = () => {
               <h3 className="text-white font-display font-bold text-lg lg:text-xl">Donate Now</h3>
             </div>
             {/* Iframe container - clips top banner, shows form */}
-            <div className="overflow-hidden h-[500px] lg:h-[600px] relative">
+            <div className="overflow-hidden h-[680px] lg:h-[600px] relative">
               <iframe
                 src="https://hcb.hackclub.com/donations/start/powerplay"
                 style={{
                   border: 'none',
                   marginTop: '-280px',  /* Crop to show from One-time/Monthly tabs */
-                  height: '900px',      /* Full form height including submit button */
+                  height: '1200px',      /* Full form height including submit button */
                   display: 'block'
                 }}
                 name="heroDonateFrame"
-                scrolling="no"
+                scrolling="yes"
                 frameBorder={0}
                 marginHeight={0}
                 marginWidth={0}

@@ -13,6 +13,14 @@ export const Partners: React.FC = () => {
         {
             name: 'HeroesForIBD',
             logo: '/images/heroesforibd.png',
+        },
+        {
+            name: "Children's Health",
+            logo: '/images/childrens-health.png',
+        },
+        {
+            name: "Crohn's & Colitis Foundation",
+            logo: '/images/crohns-colitis.png',
         }
     ];
 
