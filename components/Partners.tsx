@@ -25,7 +25,7 @@ export const Partners: React.FC = () => {
     ];
 
     return (
-        <section className="relative bg-cream py-24">
+        <section className="relative bg-white py-24">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-teal to-coral"></div>
 

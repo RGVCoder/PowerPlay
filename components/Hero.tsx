@@ -3,14 +3,10 @@ import { Link } from 'react-router-dom';
 
 // Real photos only - curated selection
 const heroImages = [
-  '/images/event-cricket.jpg',
-  '/images/event-guest.jpg',
   '/images/event-pickleball.jpg',
-  '/images/gallery-batting.jpg',
-  '/images/gallery-pickleball.jpg',
+  '/images/event-guest.jpg',
+  '/images/speaker-hero.jpeg',
   '/images/hero-bg.jpg',
-  '/images/Photo Jul 20 2025 from raghavsridhar09.jpg',
-  '/images/trio-pic.jpg',
 ];
 
 export const Hero: React.FC = () => {

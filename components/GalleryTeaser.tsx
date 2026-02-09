@@ -2,14 +2,13 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const galleryImages = [
-    { src: '/images/Photo Jun 23 2025 (1).jpg', caption: 'Teamwork in action at PowerPlay event' },
-    { src: '/images/trophy-ceremony.jpg', caption: 'Champions celebrating their victory' },
-    { src: '/images/mvp.jpg', caption: 'MVP of the tournament receiving recognition' },
-    { src: '/images/gallery-lineup.jpg', caption: 'Teams lining up before the big match' },
-    { src: '/images/Photo Jun 23 2025 (3).jpg', caption: 'Athletes competing at tournament' },
-    { src: '/images/gallery-coach.jpeg', caption: 'Coach mentoring young athletes' },
-    { src: '/images/cricket-players.jpg', caption: 'Cricket players ready for action' },
-    { src: '/images/Photo Jun 19 2025.jpg', caption: 'Community gathering and support' },
+    { src: '/images/gallery-pickleball.jpg', caption: 'Intense duplicate action on the court' },
+    { src: '/images/event-cricket.jpg', caption: 'Cricket highlights from our tournament' },
+    { src: '/images/speaker-slider2.jpeg', caption: 'Inspiring words from our guest speakers' },
+    { src: '/images/speaker-slider.jpeg', caption: 'Sharing knowledge and experience' },
+    { src: '/images/Photo Jul 20 2025 from raghavsridhar09.jpg', caption: 'Community coming together' },
+    { src: '/images/gallery-coach.jpeg', caption: 'Mentorship in action' },
+    { src: '/images/mvp.jpg', caption: 'Celebrating our tournament MVP' },
 ];
 
 const GAP = 6;
@@ -71,21 +70,21 @@ export const GalleryTeaser: React.FC = () => {
         return pos;
     };
 
-    const visibleOffsets = [-4, -3, -2, -1, 0, 1, 2, 3, 4];
+
 
     return (
-        <section className="bg-charcoal py-16 md:py-24 overflow-hidden relative">
+        <section className="bg-cream py-16 md:py-24 overflow-hidden relative">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
 
             {/* Section Header */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-12">
                 <div className="flex items-center justify-center gap-6">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/20"></div>
-                    <h2 className="font-display font-bold text-xl md:text-3xl text-white tracking-wider uppercase whitespace-nowrap">
-                        Game Day Moments
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
+                    <h2 className="font-display font-bold text-xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
+                        Golden Moments
                     </h2>
-                    <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/20"></div>
+                    <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
                 </div>
             </div>
 
@@ -97,29 +96,37 @@ export const GalleryTeaser: React.FC = () => {
                 </button>
 
                 <div className="relative h-[250px] md:h-[380px] overflow-hidden">
-                    {visibleOffsets.map(offset => {
-                        const idx = ((activeIndex + offset) % total + total) % total;
-                        const image = galleryImages[idx];
+                    {galleryImages.map((image, i) => {
+                        // Calculate relative offset (-3 to +3) based on activeIndex
+                        let offset = (i - activeIndex) % total;
+                        if (offset > total / 2) offset -= total;
+                        if (offset < -total / 2) offset += total;
+
                         const isActive = offset === 0;
                         const xPos = getPosition(offset);
-                        const opacity = isActive ? 1 : Math.max(0.4, 1 - Math.abs(offset) * 0.12);
+
+                        // Opacity logic: Fade out edges to mask the wrap-around
+                        const opacity = isActive ? 1 : Math.max(0, 1 - Math.abs(offset) * 0.3); // Stricter fade-out
+
+                        // Z-Index: Center is top, edges are bottom
+                        const zIndex = isActive ? 10 : 5 - Math.abs(offset);
 
                         return (
                             <div
-                                key={`${idx}-${offset}`}
-                                onClick={() => changeSlide(idx)}
-                                className="absolute top-0 left-1/2 h-full cursor-pointer transition-all duration-500 ease-out"
+                                key={i} // Stable key for smooth transition
+                                onClick={() => changeSlide(i)}
+                                className="absolute top-0 left-1/2 h-full cursor-pointer transition-all duration-700 cubic-bezier(0.25, 0.8, 0.25, 1)" // Fluid ease
                                 style={{
-                                    transform: `translateX(calc(-50% + ${xPos}px))`,
+                                    transform: `translateX(calc(-50% + ${xPos}px)) scale(${isActive ? 1 : 0.9})`, // Scale non-active items slightly
                                     opacity,
-                                    zIndex: isActive ? 10 : 5 - Math.abs(offset)
+                                    zIndex
                                 }}
                             >
                                 <img
                                     src={image.src}
                                     alt={image.caption}
-                                    className={`h-full w-auto object-cover md:object-contain transition-all duration-300 ${isActive ? 'border-2 md:border-4 border-coral shadow-2xl scale-105 md:scale-100' : 'grayscale'}`}
-                                    onLoad={(e) => handleImageLoad(idx, e.currentTarget.offsetWidth)}
+                                    className={`h-full w-auto object-cover md:object-contain transition-all duration-500 ${isActive ? 'border-2 md:border-4 border-coral shadow-2xl scale-105 md:scale-100' : 'grayscale'}`}
+                                    onLoad={(e) => handleImageLoad(i, e.currentTarget.offsetWidth)}
                                 />
                             </div>
                         );
@@ -134,7 +141,7 @@ export const GalleryTeaser: React.FC = () => {
 
             {/* Caption and Thumbnails */}
             <div className="mt-8">
-                <p className="text-center text-white/60 text-xs md:text-sm mb-6 px-6 italic">{galleryImages[activeIndex].caption}</p>
+                <p className="text-center text-charcoal/60 text-xs md:text-sm mb-6 px-6 italic">{galleryImages[activeIndex].caption}</p>
                 <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 px-4">
                     {galleryImages.map((image, index) => (
                         <button key={index} onClick={() => changeSlide(index)} disabled={isAnimating}
@@ -148,7 +155,7 @@ export const GalleryTeaser: React.FC = () => {
 
             {/* View Gallery Link */}
             <div className="text-center mt-10">
-                <Link to="/gallery" className="inline-flex items-center gap-2 text-coral hover:text-white transition-colors text-xs md:text-sm font-medium tracking-wide group uppercase">
+                <Link to="/gallery" className="inline-flex items-center gap-2 text-coral hover:text-charcoal transition-colors text-xs md:text-sm font-medium tracking-wide group uppercase">
                     View Full Gallery
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>

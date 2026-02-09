@@ -4,7 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Pillars } from './components/Pillars';
 import { OurImpact } from './components/OurImpact';
-import { ImpactVideo } from './components/ImpactVideo';
+
 import { GalleryTeaser } from './components/GalleryTeaser';
 import { UpcomingEvents } from './components/UpcomingEvents';
 import { Partners } from './components/Partners';
@@ -31,8 +31,7 @@ const HomePage: React.FC = () => (
       {/* 4. Our Impact: Stats section */}
       <OurImpact />
 
-      {/* 5. Impact Video: See the difference we make */}
-      <ImpactVideo />
+
 
       {/* 6. Gallery Teaser: Featured images with link to full gallery */}
       <GalleryTeaser />

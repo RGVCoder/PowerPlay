@@ -12,6 +12,18 @@ const testimonials = [
     name: "Christopher Badr",
     role: "Parent / Supporter",
     initials: "CB",
+  },
+  {
+    quote: "It was a great presentation. I thought it was interesting that there are many people who have overcome it and not let it get to them, while still getting with their lives.",
+    name: "Krisha Nepal",
+    role: "Athlete",
+    initials: "KN",
+  },
+  {
+    quote: "Incredible initiative and impact. Love how PowerPlay is breaking barriers and ensuring kids facing medical challenges stay included and confident in sports. Truly inspiring work!",
+    name: "Sriram Swaminathan",
+    role: "Supporter",
+    initials: "SS",
   }
 ];
 
@@ -24,7 +36,7 @@ export const Testimonials: React.FC = () => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   const currentTestimonial = testimonials[currentIndex];
 

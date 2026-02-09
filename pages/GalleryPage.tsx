@@ -180,7 +180,80 @@ export const GalleryPage: React.FC = () => {
                                 alt="Coach"
                                 className="aspect-square md:col-span-1"
                             />
-                            {/* Cleanup any remaining items that didn't fit the 6-col grid from the previous attempt */}
+                            {/* Row 6: [wide][sq][sq][sq][sq] */}
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.37 PM (10).jpeg"
+                                alt="Gallery Moment"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2 md:row-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (6).jpeg"
+                                alt="Gallery Moment"
+                                className="aspect-square md:col-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (3).jpeg"
+                                alt="Gallery Moment"
+                                className="aspect-square md:col-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (8).jpeg"
+                                alt="Gallery Moment"
+                                className="aspect-square md:col-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (7).jpeg"
+                                alt="Gallery Moment"
+                                className="aspect-square md:col-span-1"
+                            />
+
+                            {/* Row 7: Feature Layout - [stack][HUGE][stack] */}
+                            {/* Left Column Stack */}
+                            <div className="col-span-2 md:col-span-1 md:col-start-1 grid grid-cols-2 md:grid-cols-1 gap-2 md:gap-4">
+                                <GalleryImage
+                                    src="/images/WhatsApp Image 2026-02-09 at 3.19.37 PM.jpeg"
+                                    alt="Gallery Moment"
+                                    className="aspect-square"
+                                />
+                                <GalleryImage
+                                    src="/images/WhatsApp Image 2026-02-09 at 3.19.37 PM (13).jpeg"
+                                    alt="Gallery Moment"
+                                    className="aspect-square"
+                                />
+                            </div>
+
+                            {/* Center Huge Image */}
+                            <div className="col-span-2 md:col-span-4 md:col-start-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-teal shadow-2xl">
+                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent group-hover:from-charcoal/20 transition-all duration-500 z-10"></div>
+                                <img
+                                    src="/images/game-on-ibd-live.jpg"
+                                    alt="Game On: IBD & Sports"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                                    onError={(e) => {
+                                        e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/E76F51?text=PowerPlay";
+                                        e.currentTarget.onerror = null;
+                                    }}
+                                />
+                                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                                    <span className="bg-teal text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Game On: IBD & Sports</span>
+                                </div>
+                            </div>
+
+                            {/* Right Column Stack */}
+                            <div className="col-span-2 md:col-span-1 md:col-start-6 grid grid-cols-2 md:grid-cols-1 gap-2 md:gap-4">
+                                <GalleryImage
+                                    src="/images/WhatsApp Image 2026-02-09 at 3.19.37 PM (5).jpeg"
+                                    alt="Gallery Moment"
+                                    className="aspect-square"
+                                />
+                                <GalleryImage
+                                    src="/images/speaker-slider2.jpeg"
+                                    alt="Speaker Moment"
+                                    className="aspect-square"
+                                />
+                            </div>
+
+                            {/* Row 8: Final Row - [sq][sq][sq][sq][sq][sq] */}
                             <GalleryImage
                                 src="/images/trophy-ceremony.jpg"
                                 alt="Trophy Ceremony"
@@ -189,6 +262,26 @@ export const GalleryPage: React.FC = () => {
                             <GalleryImage
                                 src="/images/cricket-players.jpg"
                                 alt="Cricket Players"
+                                className="aspect-square md:col-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (1).jpeg"
+                                alt="Gallery Moment"
+                                className="aspect-square md:col-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (4).jpeg"
+                                alt="Gallery Moment"
+                                className="aspect-square md:col-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.37 PM (2).jpeg"
+                                alt="Gallery Moment"
+                                className="aspect-square md:col-span-1"
+                            />
+                            <GalleryImage
+                                src="/images/speaker-slider.jpeg"
+                                alt="Speaker Moment"
                                 className="aspect-square md:col-span-1"
                             />
 

@@ -19,7 +19,7 @@ const EVENTS: EventData[] = [
   {
     id: 'guest-speaker-2026',
     title: 'GAME ON: IBD & SPORTS',
-    shortDescription: 'An educational session with Dr. Bhaskar Gurram on helping young athletes with pediatric illnesses thrive in sports.',
+    shortDescription: 'An educational session with Dr. Bhaskar Gurram on helping athletes with pediatric illnesses.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
@@ -448,6 +448,117 @@ export const Events: React.FC = () => {
     }
   };
 
+  const topEvents = EVENTS.slice(0, 3);
+  const bottomEvents = EVENTS.slice(3);
+
+  // Determine where to show the expanded content
+  const isTopExpanded = expandedEvent && topEvents.some(e => e.id === expandedEvent);
+  const isBottomExpanded = expandedEvent && bottomEvents.some(e => e.id === expandedEvent);
+
+  const renderExpandedContent = (isVisible: boolean) => (
+    <div className={`hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${isVisible ? 'max-h-[1000px] opacity-100 mt-8 mb-8' : 'max-h-0 opacity-0'}`}>
+      {displayEventData && (
+        <div
+          className={`bg-white border-l-4 border-coral p-10 relative overflow-hidden shadow-xl transition-all duration-200 ease-out transform ${isContentVisible ? 'opacity-100' : 'opacity-0'} ${getTransformClass()}`}
+        >
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-coral via-coral/50 to-transparent"></div>
+
+          {/* Header Row: Title + Stats */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
+            <div>
+              <h3 className="font-display font-bold text-2xl md:text-3xl text-charcoal mb-2 tracking-tight whitespace-nowrap">{displayEventData.title}</h3>
+              <div className="h-1 w-20 bg-coral"></div>
+            </div>
+
+            {displayEventData.stats && (
+              <div className="flex gap-4">
+                {displayEventData.stats.map((stat, idx) => (
+                  <div key={idx} className="bg-cream-sand px-4 py-2 text-center border-l-2 border-teal backdrop-blur-sm min-w-[100px]">
+                    <div className="text-coral font-bold text-xl font-display">{stat.value}</div>
+                    <div className="text-charcoal-muted text-[10px] uppercase tracking-widest font-medium mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Content Row */}
+          <div className="text-charcoal-light text-base leading-relaxed font-light">
+            {displayEventData.fullDescription}
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-charcoal/10 flex justify-end">
+            <Button
+              variant="secondary"
+              onClick={() => setExpandedEvent(null)}
+              className="!py-2 !px-6 text-sm"
+            >
+              Close Details
+            </Button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  const renderEventCard = (event: EventData) => (
+    <div
+      key={event.id}
+      className={`bg-white border-l-4 border-charcoal/20 overflow-hidden hover:border-coral transition-all duration-500 group hover:-translate-y-1 shadow-md hover:shadow-lg ${expandedEvent === event.id ? 'ring-2 ring-coral/30' : ''}`}
+    >
+      <div className="h-48 md:h-56 overflow-hidden relative">
+        {event.badge && (
+          <div className="absolute top-3 right-3 z-20 bg-coral text-white text-[9px] md:text-[10px] font-bold px-2 py-1 md:px-3 md:py-1.5 uppercase tracking-wider shadow-sm">{event.badge}</div>
+        )}
+        <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
+        <img
+          src={event.image}
+          alt={event.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          onError={(e) => {
+            e.currentTarget.src = event.imageFallback;
+            e.currentTarget.onerror = null;
+          }}
+        />
+      </div>
+      <div className="p-6 md:p-8">
+        <h4 className="font-display font-bold text-lg md:text-xl text-charcoal mb-3 text-center">{event.title}</h4>
+        <p className="text-charcoal-light text-sm mb-6 font-light text-center">
+          {event.shortDescription}
+        </p>
+
+        {/* Expanded Content - Mobile Only */}
+        <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[2000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
+          <div className="pt-4 border-t border-charcoal/10">
+            <div className="text-charcoal-light text-sm leading-relaxed mb-6">
+              {event.fullDescription}
+            </div>
+            {event.stats && (
+              <div className="grid grid-cols-3 gap-2 mb-2">
+                {event.stats.map((stat, idx) => (
+                  <div key={idx} className="text-center bg-cream-sand p-2">
+                    <div className="text-coral font-bold text-sm">{stat.value}</div>
+                    <div className="text-[10px] text-charcoal-muted uppercase tracking-wider">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <button
+          onClick={() => toggleEvent(event.id)}
+          className="text-coral text-xs font-bold uppercase tracking-[0.2em] hover:text-charcoal transition-colors flex items-center justify-center mx-auto gap-2 group-hover:gap-3 outline-none focus:outline-none"
+        >
+          {expandedEvent === event.id ? 'Close Recap' : event.buttonText}
+          <span className={`transition-transform duration-300 ${expandedEvent === event.id ? 'rotate-180' : ''}`}>
+            {expandedEvent === event.id ? '−' : '→'}
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <section id="events" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -499,110 +610,21 @@ export const Events: React.FC = () => {
           <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
         </div>
 
-        {/* Past/Highlight Grid */}
+        {/* Past/Highlight Grid - Top 3 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative">
-          {EVENTS.map((event) => (
-            <div
-              key={event.id}
-              className={`bg-white border-l-4 border-charcoal/20 overflow-hidden hover:border-coral transition-all duration-500 group hover:-translate-y-1 shadow-md hover:shadow-lg ${expandedEvent === event.id ? 'ring-2 ring-coral/30' : ''}`}
-            >
-              <div className="h-48 md:h-56 overflow-hidden relative">
-                {event.badge && (
-                  <div className="absolute top-3 right-3 z-20 bg-coral text-white text-[9px] md:text-[10px] font-bold px-2 py-1 md:px-3 md:py-1.5 uppercase tracking-wider shadow-sm">{event.badge}</div>
-                )}
-                <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  onError={(e) => {
-                    e.currentTarget.src = event.imageFallback;
-                    e.currentTarget.onerror = null;
-                  }}
-                />
-              </div>
-              <div className="p-6 md:p-8">
-                <h4 className="font-display font-bold text-lg md:text-xl text-charcoal mb-3 text-center">{event.title}</h4>
-                <p className="text-charcoal-light text-sm mb-6 font-light">
-                  {event.shortDescription}
-                </p>
-
-                {/* Expanded Content - Mobile Only */}
-                <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[2000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-                  <div className="pt-4 border-t border-charcoal/10">
-                    <div className="text-charcoal-light text-sm leading-relaxed mb-6">
-                      {event.fullDescription}
-                    </div>
-                    {event.stats && (
-                      <div className="grid grid-cols-3 gap-2 mb-2">
-                        {event.stats.map((stat, idx) => (
-                          <div key={idx} className="text-center bg-cream-sand p-2">
-                            <div className="text-coral font-bold text-sm">{stat.value}</div>
-                            <div className="text-[10px] text-charcoal-muted uppercase tracking-wider">{stat.label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => toggleEvent(event.id)}
-                  className="text-coral text-xs font-bold uppercase tracking-[0.2em] hover:text-charcoal transition-colors flex items-center gap-2 group-hover:gap-3 outline-none focus:outline-none"
-                >
-                  {expandedEvent === event.id ? 'Close Recap' : event.buttonText}
-                  <span className={`transition-transform duration-300 ${expandedEvent === event.id ? 'rotate-180' : ''}`}>
-                    {expandedEvent === event.id ? '−' : '→'}
-                  </span>
-                </button>
-              </div>
-            </div>
-          ))}
+          {topEvents.map(renderEventCard)}
         </div>
 
-        <div className={`hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent ? 'max-h-[1000px] opacity-100 mt-8' : 'max-h-0 opacity-0'}`}>
-          {displayEventData && (
-            <div
-              className={`bg-white border-l-4 border-coral p-10 relative overflow-hidden shadow-xl transition-all duration-200 ease-out transform ${isContentVisible ? 'opacity-100' : 'opacity-0'} ${getTransformClass()}`}
-            >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-coral via-coral/50 to-transparent"></div>
+        {/* Expanded Content for Top Events */}
+        {renderExpandedContent(!!isTopExpanded)}
 
-              {/* Header Row: Title + Stats */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
-                <div>
-                  <h3 className="font-display font-bold text-2xl md:text-3xl text-charcoal mb-2 tracking-tight whitespace-nowrap">{displayEventData.title}</h3>
-                  <div className="h-1 w-20 bg-coral"></div>
-                </div>
-
-                {displayEventData.stats && (
-                  <div className="flex gap-4">
-                    {displayEventData.stats.map((stat, idx) => (
-                      <div key={idx} className="bg-cream-sand px-4 py-2 text-center border-l-2 border-teal backdrop-blur-sm min-w-[100px]">
-                        <div className="text-coral font-bold text-xl font-display">{stat.value}</div>
-                        <div className="text-charcoal-muted text-[10px] uppercase tracking-widest font-medium mt-1">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Content Row */}
-              <div className="text-charcoal-light text-base leading-relaxed font-light">
-                {displayEventData.fullDescription}
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-charcoal/10 flex justify-end">
-                <Button
-                  variant="secondary"
-                  onClick={() => setExpandedEvent(null)}
-                  className="!py-2 !px-6 text-sm"
-                >
-                  Close Details
-                </Button>
-              </div>
-            </div>
-          )}
+        {/* Remaining Events Grid (Special Guest) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative mt-8">
+          {bottomEvents.map(renderEventCard)}
         </div>
+
+        {/* Expanded Content for Bottom Events */}
+        {renderExpandedContent(!!isBottomExpanded)}
 
         <div className="mt-12 text-center md:hidden">
           <a href="#" className="text-coral hover:text-charcoal transition-colors font-medium uppercase text-sm tracking-widest">View All Calendar →</a>
