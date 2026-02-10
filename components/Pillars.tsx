@@ -1,161 +1,76 @@
-import React, { useState, useRef, useEffect } from 'react';
-
-const pillars = [
-    {
-        title: 'Sports Tournaments',
-        description: 'Cricket, pickleball, basketball — play sports, save lives.',
-        image: '/images/Photo Jul 20 2025.jpg',
-        icon: (
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-        ),
-    },
-    {
-        title: 'Health Education',
-        description: 'Real doctors. Real talks. Real impact.',
-        image: '/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (5).jpeg',
-        icon: (
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-            </svg>
-        ),
-    },
-    {
-        title: '100% To Families',
-        description: 'Zero admin fees. Every dollar goes directly to those in need.',
-        image: '/images/gallery-lineup.jpg',
-        icon: (
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-            </svg>
-        ),
-    },
-];
+import React from 'react';
 
 export const Pillars: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const scrollRef = useRef<HTMLDivElement>(null);
-
-    const scrollToIndex = (index: number) => {
-        if (!scrollRef.current) return;
-        const cardWidth = scrollRef.current.offsetWidth * 0.85; // Based on min-w-[85%]
-        scrollRef.current.scrollTo({
-            left: index * cardWidth,
-            behavior: 'smooth'
-        });
-    };
-
-    const handleScroll = () => {
-        if (!scrollRef.current) return;
-        const scrollPosition = scrollRef.current.scrollLeft;
-        const containerWidth = scrollRef.current.offsetWidth;
-        const cardWidth = containerWidth * 0.85;
-        const newIndex = Math.round(scrollPosition / cardWidth);
-        if (newIndex !== activeIndex) {
-            setActiveIndex(newIndex);
-        }
-    };
-
-    useEffect(() => {
-        const currentRef = scrollRef.current;
-        if (currentRef) {
-            currentRef.addEventListener('scroll', handleScroll);
-        }
-        return () => {
-            if (currentRef) {
-                currentRef.removeEventListener('scroll', handleScroll);
-            }
-        };
-    }, [activeIndex]);
-
     return (
-        <section className="relative bg-cream py-12 md:py-24">
-            {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
-
+        <section className="bg-black py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="flex items-center justify-center gap-6 mb-10 md:mb-16">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
-                    <h2 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
-                        What We Do
+                <div className="text-center mb-16">
+                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
+                        Why <span className="text-coral">PowerPlay?</span>
                     </h2>
-                    <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
+                    <p className="text-white/60 text-lg max-w-2xl mx-auto">
+                        We're rewriting the rules of charity. No red tape, no hidden fees—just pure impact powered by youth sports.
+                    </p>
                 </div>
 
-                {/* Pillar Cards - Grid on desktop, Slideshow on mobile */}
-                <div className="relative group/slideshow">
-                    {/* Navigation Arrows - Mobile Only */}
-                    <div className="md:hidden flex justify-between absolute top-1/2 -translate-y-1/2 left-0 right-0 z-30 pointer-events-none px-2">
-                        <button
-                            onClick={() => scrollToIndex(activeIndex - 1)}
-                            disabled={activeIndex === 0}
-                            className={`w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white pointer-events-auto transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-0' : 'opacity-100'}`}
-                        >
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-                        <button
-                            onClick={() => scrollToIndex(activeIndex + 1)}
-                            disabled={activeIndex === pillars.length - 1}
-                            className={`w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white pointer-events-auto transition-opacity duration-300 ${activeIndex === pillars.length - 1 ? 'opacity-0' : 'opacity-100'}`}
-                        >
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
+                {/* Bento Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
 
-                    <div
-                        ref={scrollRef}
-                        className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide"
-                    >
-                        {pillars.map((pillar, index) => (
-                            <div
-                                key={index}
-                                className="min-w-[85%] md:min-w-0 group relative overflow-hidden shadow-xl transition-all duration-500 bg-white snap-center"
-                            >
-                                {/* Background Image */}
-                                <div className="aspect-[4/5] relative">
-                                    <img
-                                        src={pillar.image}
-                                        alt={pillar.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                    {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent" />
-                                </div>
-
-                                {/* Content Overlay */}
-                                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                                    {/* Icon */}
-                                    <div className="w-12 h-12 md:w-14 md:h-14 bg-coral flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        {pillar.icon}
-                                    </div>
-
-                                    {/* Text */}
-                                    <h3 className="font-display font-bold text-xl md:text-2xl mb-2 md:mb-3">{pillar.title}</h3>
-                                    <p className="text-white/80 text-sm leading-relaxed">{pillar.description}</p>
-                                </div>
-
-                                {/* Bottom accent border */}
-                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Pagination Dots - Mobile Only */}
-                    <div className="flex md:hidden justify-center gap-2 mt-2">
-                        {pillars.map((_, index) => (
-                            <div
-                                key={index}
-                                className={`h-1.5 rounded-full transition-all duration-300 ${index === activeIndex ? 'w-6 bg-coral' : 'w-1.5 bg-charcoal/20'
-                                    }`}
+                    {/* Card 1: Sports Tournaments (Large, Spans 2 cols on Desktop) */}
+                    <div className="group relative overflow-hidden rounded-[34px] bg-white shadow-xl md:col-span-2 min-h-[400px]">
+                        <div className="absolute inset-0">
+                            <img
+                                src="/images/Photo Jul 20 2025.jpg"
+                                alt="Sports Tournaments"
+                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
-                        ))}
+                            <div className="absolute inset-0 bg-gradient-to-t from-utr-black/90 via-utr-black/40 to-transparent"></div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                            <div className="w-12 h-12 rounded-full bg-coral flex items-center justify-center mb-4 text-white">
+                                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                                </svg>
+                            </div>
+                            <h3 className="font-display font-bold text-3xl text-white mb-2">World-Class Tournaments</h3>
+                            <p className="text-white/80 text-lg leading-relaxed max-w-lg">
+                                From Pickleball to Cricket, we organize professional-grade sports events that bring the community together for a cause.
+                            </p>
+                        </div>
                     </div>
+
+                    {/* Card 2: Health Education (Tall vertical) */}
+                    <div className="group relative overflow-hidden rounded-[34px] bg-black shadow-xl min-h-[400px] border border-white/10">
+                        <div className="absolute inset-0">
+                            <img
+                                src="/images/WhatsApp Image 2026-02-09 at 3.19.36 PM (5).jpeg"
+                                alt="Health Education"
+                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        </div>
+                        <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h3 className="font-display font-bold text-2xl text-white mb-2">Health Education</h3>
+                            <p className="text-white/80 mb-6">Real doctors. Real talks. Real impact. We educate the next generation.</p>
+                        </div>
+                    </div>
+
+                    {/* Card 3: 100% Impact (Full Width Highlight) */}
+                    <div className="md:col-span-1 lg:col-span-3 rounded-[34px] bg-gradient-to-r from-coral to-coral-light shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                        <div className="max-w-2xl">
+                            <h3 className="font-display font-black text-3xl md:text-4xl text-white mb-4">100% of Donations Go To Families</h3>
+                            <p className="text-white/90 text-lg font-medium">
+                                We are student-run. Zero salaries. Zero admin fees taken from donations. Every single dollar you give goes directly to pediatric cancer patients.
+                            </p>
+                        </div>
+                        <div className="flex-shrink-0">
+                            <div className="w-32 h-32 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-4 border-white/30">
+                                <span className="font-display font-black text-4xl text-white">100%</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

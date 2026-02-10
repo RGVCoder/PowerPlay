@@ -7,12 +7,13 @@ export const ImpactVideo: React.FC = () => {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-charcoal/10 to-transparent"></div>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="flex items-center justify-center gap-6 mb-10 md:mb-16">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
-                    <h2 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
-                        Exclusive Interview
+                <div className="text-center mb-10 md:mb-16">
+                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-charcoal mb-4">
+                        Exclusive <span className="text-coral">Interview</span>
                     </h2>
-                    <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
+                    <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
+                        A conversation with a cricket legend about empowering youth through sports.
+                    </p>
                 </div>
 
                 {/* Content Grid */}
@@ -29,14 +30,14 @@ export const ImpactVideo: React.FC = () => {
                                 />
                             </div>
                             {/* Decorative accent */}
-                            <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-teal -z-10"></div>
+                            <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-coral-light -z-10"></div>
                         </div>
 
                         {/* Bio */}
                         <div className="text-center lg:text-left">
                             <h3 className="font-display font-bold text-2xl text-charcoal mb-2">Asif Mujtaba</h3>
                             <div className="w-12 h-1 bg-coral mb-4 mx-auto lg:mx-0"></div>
-                            <p className="text-teal text-sm font-semibold uppercase tracking-wide mb-4">Former Pakistan International Cricketer</p>
+                            <p className="text-coral-light text-sm font-semibold uppercase tracking-wide mb-4">Former Pakistan International Cricketer</p>
                             <p className="text-charcoal-light text-sm leading-relaxed max-w-xs">
                                 25 Tests & 66 ODIs for Pakistan. Now dedicated to empowering youth through sports.
                             </p>
@@ -55,7 +56,7 @@ export const ImpactVideo: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                             {/* Bottom accent */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-teal to-coral"></div>
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-coral-light to-coral"></div>
                         </div>
 
                         {/* Caption */}

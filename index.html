@@ -45,7 +45,7 @@
               dark: '#F5EDE4',
             },
             charcoal: {
-              DEFAULT: '#2D3436',
+              DEFAULT: '#000000', // Pure Black
               light: '#636E72',
               muted: '#B2BEC3',
             },
@@ -54,6 +54,10 @@
               light: '#2AAA8A',
               dark: '#157A5E',
             },
+            // UTR Inspired Colors
+            'utr-black': '#000000', // Pure Black
+            'utr-blue': '#0066CC',  // Classic sports blue
+
             // Keep legacy names for easier migration
             gold: {
               DEFAULT: '#E76F51',
@@ -62,7 +66,7 @@
               dim: 'rgba(231, 111, 81, 0.1)',
             },
             black: {
-              DEFAULT: '#2D3436',
+              DEFAULT: '#000000', // Pure Black
               rich: '#FFFBF5',
               surface: '#FFF7F0',
               card: '#FFF3E6',
@@ -146,8 +150,10 @@
 
     /* Hide scrollbar for IE, Edge and Firefox */
     .scrollbar-hide {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
     }
   </style>
   <script type="importmap">

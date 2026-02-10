@@ -27,16 +27,17 @@ export const Partners: React.FC = () => {
     return (
         <section className="relative bg-white py-24">
             {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-teal to-coral"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-coral-light to-coral"></div>
 
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="flex items-center justify-center gap-6 mb-16">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-teal/30 to-charcoal/20"></div>
-                    <h2 className="font-display font-bold text-2xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
-                        Our Partners
+                <div className="text-center mb-16">
+                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-charcoal mb-4">
+                        Our <span className="text-coral">Partners</span>
                     </h2>
-                    <div className="flex-1 h-px bg-gradient-to-l from-transparent via-teal/30 to-charcoal/20"></div>
+                    <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
+                        Organizations that believe in our mission and help us make a difference.
+                    </p>
                 </div>
 
                 {/* Logo Strip */}

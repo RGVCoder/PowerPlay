@@ -23,7 +23,6 @@ interface UpcomingEvent {
 }
 
 const UPCOMING_EVENTS: UpcomingEvent[] = [
-
     {
         id: 'pickleball-2026',
         title: 'PICKLEBALL TOURNAMENT',
@@ -47,157 +46,83 @@ export const UpcomingEvents: React.FC = () => {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="flex items-center justify-center gap-6 mb-10 md:mb-16">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-coral/20 to-coral/40"></div>
-                    <div className="text-center">
-                        <h2 className="font-display font-bold text-2xl md:text-4xl text-charcoal tracking-wider uppercase whitespace-nowrap">
-                            Upcoming Events
-                        </h2>
-                        <div className="mt-2 h-1 w-24 mx-auto bg-gradient-to-r from-coral to-teal"></div>
-                    </div>
-                    <div className="flex-1 h-px bg-gradient-to-l from-transparent via-coral/20 to-coral/40"></div>
+                <div className="text-center mb-16">
+                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-charcoal mb-4">
+                        Upcoming <span className="text-coral">Events</span>
+                    </h2>
+                    <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
+                        Join us at our next event and be part of the movement.
+                    </p>
                 </div>
 
-                {/* Featured Event */}
-                {featuredEvent && (
-                    <div className="relative group bg-white border-l-4 border-coral p-5 md:p-8 mb-8 md:mb-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start overflow-hidden transition-all duration-500 shadow-lg">
-                        <div className="absolute inset-0 bg-coral/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        {/* Bottom accent border - underline effect */}
-                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-
-                        <div className="w-full md:w-5/12 relative z-10">
-                            <div className="w-full bg-cream-dark overflow-hidden relative shadow-xl">
+                {/* Featured & Upcoming Events - Horizontal Style */}
+                <div className="space-y-8">
+                    {featuredEvent && (
+                        <div className="bg-white rounded-[34px] border border-coral/20 p-6 md:p-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-all duration-300 hover:border-coral group shadow-sm hover:shadow-md gap-8 md:gap-12">
+                            <div className="w-full md:w-1/2 aspect-video rounded-3xl overflow-hidden shadow-inner bg-cream-dark">
                                 <img
                                     src={featuredEvent.image}
                                     alt={featuredEvent.title}
-                                    className="object-contain w-full h-auto"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     onError={(e) => {
                                         e.currentTarget.src = featuredEvent.imageFallback;
                                         e.currentTarget.onerror = null;
                                     }}
                                 />
-                                {featuredEvent.badge && (
-                                    <div className="absolute top-0 left-0 bg-coral text-white font-bold px-4 py-2 text-xs uppercase tracking-widest">
-                                        {featuredEvent.badge}
-                                    </div>
+                            </div>
+                            <div className="w-full md:w-1/2 flex flex-col items-center md:items-start">
+                                <div className="mb-4 text-coral font-mono text-xs md:text-sm uppercase tracking-widest bg-coral/10 px-4 py-1.5 rounded-full inline-block">
+                                    {featuredEvent.dateDisplay}
+                                </div>
+                                <h4 className="font-display font-bold text-2xl md:text-3xl text-charcoal uppercase tracking-wider mb-4">
+                                    {featuredEvent.title}
+                                </h4>
+                                <p className="text-charcoal-light text-base md:text-lg leading-relaxed font-light mb-8">
+                                    {featuredEvent.description}
+                                </p>
+                                {featuredEvent.volunteerFormUrl && (
+                                    <a
+                                        href={featuredEvent.volunteerFormUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-3 bg-coral text-white font-bold px-8 py-3 rounded-full uppercase tracking-wider text-sm hover:bg-charcoal transition-all shadow-lg hover:shadow-coral/20"
+                                    >
+                                        Volunteer Now
+                                        <span className="text-xl">↗</span>
+                                    </a>
                                 )}
                             </div>
                         </div>
+                    )}
 
-                        <div className="w-full md:w-7/12 relative z-10">
-                            <div className="flex flex-wrap items-center gap-3 mb-4">
-                                <span className="text-coral font-mono text-xs md:text-sm uppercase tracking-wider">{featuredEvent.dateDisplay}</span>
-                                {featuredEvent.time && (
-                                    <>
-                                        <span className="text-charcoal/30">•</span>
-                                        <span className="text-charcoal font-mono text-xs md:text-sm">{featuredEvent.time}</span>
-                                    </>
-                                )}
-                                {featuredEvent.partner && (
-                                    <>
-                                        <span className="text-charcoal/30">•</span>
-                                        <span className="text-teal text-xs md:text-sm font-medium">{featuredEvent.partner}</span>
-                                    </>
-                                )}
+                    {otherEvents.map((event) => (
+                        <div key={event.id} className="bg-white rounded-[34px] border border-coral/20 p-6 md:p-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-all duration-300 hover:border-coral group shadow-sm hover:shadow-md gap-8 md:gap-12">
+                            <div className="w-full md:w-5/12 aspect-video rounded-3xl overflow-hidden shadow-inner bg-cream-dark relative">
+                                <img
+                                    src={event.image || event.imageFallback}
+                                    alt={event.title}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    onError={(e) => {
+                                        e.currentTarget.src = event.imageFallback;
+                                        e.currentTarget.onerror = null;
+                                    }}
+                                />
+                                <div className="absolute top-4 left-4 bg-coral-light text-white font-bold px-3 py-1.5 text-xs rounded-lg uppercase tracking-widest shadow-lg">Coming Soon</div>
                             </div>
-                            <h3 className="font-display font-bold text-2xl md:text-4xl text-charcoal mb-2 uppercase tracking-tight">
-                                {featuredEvent.title}
-                            </h3>
-                            <p className="text-coral mb-4 font-mono text-xs md:text-sm border-b border-charcoal/10 pb-4 inline-block">
-                                {featuredEvent.subtitle}
-                            </p>
-
-                            {/* Location */}
-                            {featuredEvent.location && (
-                                <div className="mb-4">
-                                    <p className="text-charcoal font-semibold text-sm">{featuredEvent.location}</p>
-                                    {featuredEvent.address && (
-                                        <p className="text-charcoal-light text-sm">{featuredEvent.address}</p>
-                                    )}
+                            <div className="w-full md:w-7/12 flex flex-col items-center md:items-start">
+                                <div className="mb-4 text-coral font-mono text-xs md:text-sm uppercase tracking-widest bg-coral/10 px-4 py-1.5 rounded-full inline-block">
+                                    {event.dateDisplay}
                                 </div>
-                            )}
-
-                            {/* Speaker */}
-                            {featuredEvent.speaker && (
-                                <div className="mb-4 bg-cream-sand p-3 border-l-4 border-teal inline-block">
-                                    <p className="text-charcoal font-semibold">{featuredEvent.speaker}</p>
-                                    {featuredEvent.speakerTitle && (
-                                        <p className="text-teal text-sm">{featuredEvent.speakerTitle}</p>
-                                    )}
-                                </div>
-                            )}
-
-                            <p className="text-charcoal-light mb-4 leading-relaxed font-light text-sm md:text-base">
-                                {featuredEvent.description}
-                            </p>
-
-                            {/* Highlights */}
-                            {featuredEvent.highlights && featuredEvent.highlights.length > 0 && (
-                                <div className="mb-6">
-                                    <p className="text-charcoal font-semibold text-sm mb-2">Key Takeaways:</p>
-                                    <ul className="space-y-1">
-                                        {featuredEvent.highlights.map((highlight, idx) => (
-                                            <li key={idx} className="text-charcoal-light text-sm flex items-start gap-2">
-                                                <span className="text-teal mt-1">✓</span>
-                                                {highlight}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {featuredEvent.volunteerFormUrl && (
-                                <a
-                                    href={featuredEvent.volunteerFormUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 bg-teal text-white font-bold px-6 py-3 uppercase tracking-wider text-xs md:text-sm hover:bg-teal/90 transition-colors"
-                                >
-                                    Volunteer Now (5 Hours)
-                                    <span>↗</span>
-                                </a>
-                            )}
+                                <h4 className="font-display font-bold text-2xl md:text-3xl text-charcoal uppercase tracking-wider mb-4">
+                                    {event.title}
+                                </h4>
+                                <p className="text-charcoal-light text-base md:text-lg leading-relaxed font-light">
+                                    {event.description}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                )}
-
-                {/* Other Upcoming Events - Full width like featured */}
-                {otherEvents.length > 0 && (
-                    <div className="space-y-6 md:space-y-8">
-                        {otherEvents.map((event) => (
-                            <div
-                                key={event.id}
-                                className="relative group bg-white border-l-4 border-teal overflow-hidden transition-all duration-500 shadow-md hover:shadow-lg flex flex-col md:flex-row"
-                            >
-                                {/* Bottom accent border - underline effect */}
-                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20"></div>
-
-                                <div className="w-full md:w-1/3 h-48 md:h-64 overflow-hidden relative">
-                                    <img
-                                        src={event.image}
-                                        alt={event.title}
-                                        className="w-full h-full object-cover"
-                                        onError={(e) => {
-                                            e.currentTarget.src = event.imageFallback;
-                                            e.currentTarget.onerror = null;
-                                        }}
-                                    />
-                                    <div className="absolute top-0 left-0 bg-teal text-white font-bold px-3 py-1.5 text-[10px] uppercase tracking-widest">Coming Soon</div>
-                                </div>
-                                <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                                    <div className="flex items-center gap-2 mb-3">
-                                        <span className="text-coral font-mono text-xs md:text-sm uppercase tracking-wider">{event.dateDisplay}</span>
-                                    </div>
-                                    {event.partner && (
-                                        <span className="inline-block text-teal text-[10px] md:text-xs font-medium bg-teal/10 px-2 py-1 mb-3 w-fit">{event.partner}</span>
-                                    )}
-                                    <h4 className="font-display font-bold text-xl md:text-3xl text-charcoal mb-3 uppercase">{event.title}</h4>
-                                    <p className="text-charcoal-light text-sm mb-4 font-light leading-relaxed">{event.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
+                    ))}
+                </div>
 
                 {/* View All Link */}
                 <div className="mt-12 text-center">

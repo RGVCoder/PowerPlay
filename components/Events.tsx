@@ -31,15 +31,15 @@ const EVENTS: EventData[] = [
             <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Key Takeaways</h4>
             <ul className="space-y-3">
               <li className="text-charcoal-light text-sm flex items-start gap-3">
-                <span className="text-teal mt-0.5">✓</span>
+                <span className="text-coral-light mt-0.5">✓</span>
                 <span>Strategies for handling flare-ups and fatigue on game day</span>
               </li>
               <li className="text-charcoal-light text-sm flex items-start gap-3">
-                <span className="text-teal mt-0.5">✓</span>
+                <span className="text-coral-light mt-0.5">✓</span>
                 <span>Training modifications that keep athletes competitive</span>
               </li>
               <li className="text-charcoal-light text-sm flex items-start gap-3">
-                <span className="text-teal mt-0.5">✓</span>
+                <span className="text-coral-light mt-0.5">✓</span>
                 <span>Mental and physical benefits of maintaining an active lifestyle</span>
               </li>
             </ul>
@@ -47,7 +47,7 @@ const EVENTS: EventData[] = [
         </div>
 
         <div className="space-y-8">
-          <div className="bg-cream-sand p-6 border-l-4 border-teal">
+          <div className="bg-cream-sand p-6 border-l-4 border-coral-light">
             <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Event Details</h4>
             <div className="space-y-4 font-mono text-sm">
               <div className="flex justify-between items-center border-b border-charcoal/5 pb-2">
@@ -60,7 +60,7 @@ const EVENTS: EventData[] = [
               </div>
               <div className="flex justify-between items-center pt-2">
                 <span className="text-charcoal-light">Partner</span>
-                <span className="font-bold text-teal">HeroesForIBD</span>
+                <span className="font-bold text-coral-light">HeroesForIBD</span>
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ const EVENTS: EventData[] = [
         </div>
 
         <div className="space-y-8">
-          <div className="bg-cream-sand p-6 border-l-4 border-teal overflow-x-auto">
+          <div className="bg-cream-sand p-6 border-l-4 border-coral-light overflow-x-auto">
             <h4 className="text-charcoal font-bold text-sm mb-6 uppercase tracking-widest border-b border-charcoal/10 pb-2">Bracket Highlights</h4>
 
             {/* Custom Bracket Visualization - Compact & Fluid */}
@@ -473,7 +473,7 @@ export const Events: React.FC = () => {
             {displayEventData.stats && (
               <div className="flex gap-4">
                 {displayEventData.stats.map((stat, idx) => (
-                  <div key={idx} className="bg-cream-sand px-4 py-2 text-center border-l-2 border-teal backdrop-blur-sm min-w-[100px]">
+                  <div key={idx} className="bg-cream-sand px-4 py-2 text-center border-l-2 border-coral-light backdrop-blur-sm min-w-[100px]">
                     <div className="text-coral font-bold text-xl font-display">{stat.value}</div>
                     <div className="text-charcoal-muted text-[10px] uppercase tracking-widest font-medium mt-1">{stat.label}</div>
                   </div>
@@ -504,58 +504,57 @@ export const Events: React.FC = () => {
   const renderEventCard = (event: EventData) => (
     <div
       key={event.id}
-      className={`bg-white border-l-4 border-charcoal/20 overflow-hidden hover:border-coral transition-all duration-500 group hover:-translate-y-1 shadow-md hover:shadow-lg ${expandedEvent === event.id ? 'ring-2 ring-coral/30' : ''}`}
+      className={`bg-white rounded-[34px] border border-coral/20 overflow-hidden hover:border-coral transition-all duration-300 group shadow-sm hover:shadow-md flex flex-col items-center text-center p-8 ${expandedEvent === event.id ? 'ring-2 ring-coral/30 border-coral' : ''}`}
     >
-      <div className="h-48 md:h-56 overflow-hidden relative">
+      <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-cream-dark mb-6 relative">
         {event.badge && (
-          <div className="absolute top-3 right-3 z-20 bg-coral text-white text-[9px] md:text-[10px] font-bold px-2 py-1 md:px-3 md:py-1.5 uppercase tracking-wider shadow-sm">{event.badge}</div>
+          <div className="absolute top-3 right-3 z-20 bg-coral text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest rounded-md shadow-lg">{event.badge}</div>
         )}
-        <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
+        <div className="absolute inset-0 bg-charcoal/5 group-hover:bg-transparent transition-colors z-10"></div>
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {
             e.currentTarget.src = event.imageFallback;
             e.currentTarget.onerror = null;
           }}
         />
       </div>
-      <div className="p-6 md:p-8">
-        <h4 className="font-display font-bold text-lg md:text-xl text-charcoal mb-3 text-center">{event.title}</h4>
-        <p className="text-charcoal-light text-sm mb-6 font-light text-center">
-          {event.shortDescription}
-        </p>
 
-        {/* Expanded Content - Mobile Only */}
-        <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[2000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-          <div className="pt-4 border-t border-charcoal/10">
-            <div className="text-charcoal-light text-sm leading-relaxed mb-6">
-              {event.fullDescription}
-            </div>
-            {event.stats && (
-              <div className="grid grid-cols-3 gap-2 mb-2">
-                {event.stats.map((stat, idx) => (
-                  <div key={idx} className="text-center bg-cream-sand p-2">
-                    <div className="text-coral font-bold text-sm">{stat.value}</div>
-                    <div className="text-[10px] text-charcoal-muted uppercase tracking-wider">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            )}
+      <h4 className="font-display font-bold text-lg md:text-xl text-charcoal mb-3 uppercase tracking-wider">{event.title}</h4>
+      <p className="text-charcoal-light text-sm mb-6 font-light leading-relaxed flex-grow">
+        {event.shortDescription}
+      </p>
+
+      {/* Expanded Content - Mobile Only */}
+      <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[2000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
+        <div className="pt-4 border-t border-charcoal/10 text-left">
+          <div className="text-charcoal-light text-sm leading-relaxed mb-6">
+            {event.fullDescription}
           </div>
+          {event.stats && (
+            <div className="grid grid-cols-3 gap-2 mb-2">
+              {event.stats.map((stat, idx) => (
+                <div key={idx} className="text-center bg-cream-sand p-2 rounded-lg">
+                  <div className="text-coral font-bold text-sm">{stat.value}</div>
+                  <div className="text-[10px] text-charcoal-muted uppercase tracking-wider">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-
-        <button
-          onClick={() => toggleEvent(event.id)}
-          className="text-coral text-xs font-bold uppercase tracking-[0.2em] hover:text-charcoal transition-colors flex items-center justify-center mx-auto gap-2 group-hover:gap-3 outline-none focus:outline-none"
-        >
-          {expandedEvent === event.id ? 'Close Recap' : event.buttonText}
-          <span className={`transition-transform duration-300 ${expandedEvent === event.id ? 'rotate-180' : ''}`}>
-            {expandedEvent === event.id ? '−' : '→'}
-          </span>
-        </button>
       </div>
+
+      <button
+        onClick={() => toggleEvent(event.id)}
+        className="text-coral text-xs font-bold uppercase tracking-[0.2em] hover:text-charcoal transition-colors flex items-center justify-center gap-2 outline-none focus:outline-none"
+      >
+        {expandedEvent === event.id ? 'Close Recap' : event.buttonText}
+        <span className={`transition-transform duration-300 ${expandedEvent === event.id ? 'rotate-180' : ''}`}>
+          {expandedEvent === event.id ? '−' : '→'}
+        </span>
+      </button>
     </div>
   );
 
@@ -573,32 +572,30 @@ export const Events: React.FC = () => {
 
 
 
-          {/* Secondary: Pickleball Tournament - Full width like featured */}
-          <div className="relative group bg-white border-l-4 border-teal overflow-hidden transition-all duration-500 shadow-md flex flex-col md:flex-row">
-            {/* Bottom accent border - underline effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20"></div>
-
-            <div className="w-full md:w-1/3 h-48 md:h-64 overflow-hidden relative z-10">
-              <img
-                src="/images/pickleball-upcoming.png"
-                alt="Pickleball Tournament"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop";
-                  e.currentTarget.onerror = null;
-                }}
-              />
-              <div className="absolute top-0 left-0 bg-teal text-white font-bold px-3 py-1.5 text-[10px] uppercase tracking-widest">Coming Soon</div>
-            </div>
-            <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center relative z-10">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-coral font-mono text-xs md:text-sm uppercase tracking-wider">Late February / Early March 2026</span>
+          <div className="space-y-8">
+            <div className="bg-white rounded-[34px] border border-coral/20 p-6 md:p-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-all duration-300 hover:border-coral group shadow-sm hover:shadow-md gap-8 md:gap-12">
+              <div className="w-full md:w-5/12 aspect-video rounded-3xl overflow-hidden shadow-inner bg-cream-dark relative">
+                <img
+                  src="/images/pickleball-upcoming.png"
+                  alt="Pickleball Tournament"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop";
+                    e.currentTarget.onerror = null;
+                  }}
+                />
+                <div className="absolute top-4 left-4 bg-coral-light text-white font-bold px-3 py-1.5 text-xs rounded-lg uppercase tracking-widest shadow-lg">Coming Soon</div>
               </div>
-              <span className="inline-block text-teal text-[10px] md:text-xs font-medium bg-teal/10 px-2 py-1 mb-3 w-fit">PowerPlay X HeroesForIBD</span>
-              <h4 className="font-display font-bold text-xl md:text-3xl text-charcoal mb-3 uppercase tracking-tight">Pickleball Tournament</h4>
-              <p className="text-charcoal-light leading-relaxed font-light text-sm">
-                Our next doubles pickleball competition is in the works! Compete with friends while raising funds and awareness for pediatric illnesses. Stay tuned for registration details.
-              </p>
+              <div className="w-full md:w-7/12 flex flex-col items-center md:items-start">
+                <div className="mb-4 text-coral font-mono text-xs md:text-sm uppercase tracking-widest bg-coral/10 px-4 py-1.5 rounded-full inline-block">
+                  Late February / Early March 2026
+                </div>
+                <h4 className="font-display font-bold text-2xl md:text-3xl text-charcoal uppercase tracking-wider mb-4">Pickleball Tournament</h4>
+                <p className="text-charcoal-light text-base md:text-lg leading-relaxed font-light mb-4">
+                  Our next doubles pickleball competition is in the works! Compete with friends while raising funds and awareness for pediatric illnesses.
+                </p>
+                <span className="text-coral-light text-xs font-medium uppercase tracking-widest bg-coral-light/10 px-3 py-1 rounded-md">PowerPlay X HeroesForIBD</span>
+              </div>
             </div>
           </div>
         </div>

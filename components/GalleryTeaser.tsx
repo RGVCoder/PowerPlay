@@ -79,12 +79,13 @@ export const GalleryTeaser: React.FC = () => {
 
             {/* Section Header */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-12">
-                <div className="flex items-center justify-center gap-6">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent to-charcoal/20"></div>
-                    <h2 className="font-display font-bold text-xl md:text-3xl text-charcoal tracking-wider uppercase whitespace-nowrap">
-                        Golden Moments
+                <div className="text-center">
+                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-charcoal mb-4">
+                        Golden <span className="text-coral">Moments</span>
                     </h2>
-                    <div className="flex-1 h-px bg-gradient-to-l from-transparent to-charcoal/20"></div>
+                    <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
+                        Highlights from our tournaments, events, and community celebrations.
+                    </p>
                 </div>
             </div>
 

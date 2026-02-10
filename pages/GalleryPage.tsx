@@ -97,7 +97,7 @@ export const GalleryPage: React.FC = () => {
                             </div>
 
                             {/* HERO CENTERPIECE - 4x2 on Desktop. 4:2 = 2:1 aspect ratio. */}
-                            <div className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-teal shadow-2xl">
+                            <div className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-coral-light shadow-2xl">
                                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent group-hover:from-charcoal/20 transition-all duration-500 z-10"></div>
                                 <img
                                     src="/images/hero-bg.jpg"
@@ -109,7 +109,7 @@ export const GalleryPage: React.FC = () => {
                                     }}
                                 />
                                 <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                    <span className="bg-teal text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
+                                    <span className="bg-coral-light text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
                                 </div>
                             </div>
 
@@ -223,7 +223,7 @@ export const GalleryPage: React.FC = () => {
                             </div>
 
                             {/* Center Huge Image */}
-                            <div className="col-span-2 md:col-span-4 md:col-start-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-teal shadow-2xl">
+                            <div className="col-span-2 md:col-span-4 md:col-start-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-coral-light shadow-2xl">
                                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent group-hover:from-charcoal/20 transition-all duration-500 z-10"></div>
                                 <img
                                     src="/images/game-on-ibd-live.jpg"
@@ -235,7 +235,7 @@ export const GalleryPage: React.FC = () => {
                                     }}
                                 />
                                 <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                    <span className="bg-teal text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Game On: IBD & Sports</span>
+                                    <span className="bg-coral-light text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Game On: IBD & Sports</span>
                                 </div>
                             </div>
 

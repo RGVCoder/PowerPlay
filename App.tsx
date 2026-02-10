@@ -22,11 +22,11 @@ const HomePage: React.FC = () => (
       {/* 1. Hero: Hook with rotating images + donation form */}
       <Hero />
 
-      {/* 2. Upcoming Events: What's coming up */}
-      <UpcomingEvents />
-
-      {/* 3. Pillars: 3 visual cards showing what we do */}
+      {/* 2. Pillars: 3 visual cards showing what we do */}
       <Pillars />
+
+      {/* 3. Upcoming Events: What's coming up */}
+      <UpcomingEvents />
 
       {/* 4. Our Impact: Stats section */}
       <OurImpact />
@@ -43,7 +43,7 @@ const HomePage: React.FC = () => (
       <Testimonials />
     </main>
     <Footer />
-  </div>
+  </div >
 );
 
 function App() {

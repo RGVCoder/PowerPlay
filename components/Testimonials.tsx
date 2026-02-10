@@ -50,12 +50,13 @@ export const Testimonials: React.FC = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex items-center justify-center gap-6 mb-12 md:mb-16">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/20"></div>
-          <h2 className="font-display font-bold text-xl md:text-3xl text-white tracking-wider uppercase whitespace-nowrap">
-            Athlete Stories
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
+            Athlete <span className="text-coral">Stories</span>
           </h2>
-          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/20"></div>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            Hear from the athletes and supporters who make PowerPlay special.
+          </p>
         </div>
 
         {/* Quote Card */}
@@ -68,7 +69,7 @@ export const Testimonials: React.FC = () => {
           {/* Author */}
           <div className="flex items-center justify-center gap-4 md:gap-5">
             {/* Square avatar with initials */}
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-coral flex items-center justify-center text-white font-bold text-base md:text-lg">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-coral rounded-xl flex items-center justify-center text-white font-bold text-base md:text-lg">
               {currentTestimonial.initials}
             </div>
             <div className="text-left">

@@ -23,8 +23,8 @@ export const Donations: React.FC = () => {
 
                         {/* Trust Badges */}
                         <div className="flex flex-wrap gap-4 mb-10">
-                            <div className="flex items-center gap-2 bg-white border-l-2 border-teal px-4 py-2 text-sm">
-                                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                            <div className="flex items-center gap-2 bg-white border-l-2 border-coral-light px-4 py-2 text-sm">
+                                <span className="w-2 h-2 bg-coral-light rounded-full"></span>
                                 <span className="text-charcoal-light">501(c)(3) Verified</span>
                             </div>
                             <div className="flex items-center gap-2 bg-white border-l-2 border-coral px-4 py-2 text-sm">
@@ -38,7 +38,7 @@ export const Donations: React.FC = () => {
                         </div>
 
                         {/* Impact Stats */}
-                        <div className="bg-charcoal p-6 border-l-4 border-teal">
+                        <div className="bg-charcoal p-6 border-l-4 border-coral-light">
                             <h3 className="text-white font-display font-bold text-lg mb-4">Your Impact So Far</h3>
                             <div className="grid grid-cols-3 gap-4">
                                 <div className="text-center">
@@ -46,11 +46,11 @@ export const Donations: React.FC = () => {
                                     <div className="text-gray-400 text-xs uppercase tracking-wider mt-1">Raised</div>
                                 </div>
                                 <div className="text-center border-x border-white/10">
-                                    <div className="text-teal font-display font-bold text-2xl md:text-3xl">3</div>
+                                    <div className="text-coral-light font-display font-bold text-2xl md:text-3xl">3</div>
                                     <div className="text-gray-400 text-xs uppercase tracking-wider mt-1">Families Helped</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-teal font-display font-bold text-2xl md:text-3xl">0%</div>
+                                    <div className="text-coral-light font-display font-bold text-2xl md:text-3xl">0%</div>
                                     <div className="text-gray-400 text-xs uppercase tracking-wider mt-1">Admin Fees</div>
                                 </div>
                             </div>

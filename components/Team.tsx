@@ -30,7 +30,7 @@ export const Team: React.FC = () => {
               <div key={index} className="group text-center">
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   {/* Rotating Border Effect - Solid & Brighter for Founder */}
-                  <div className={`absolute inset-0 rounded-full border-2 ${isFounder ? 'border-solid border-coral shadow-md' : 'border-dashed border-teal/40'} group-hover:rotate-180 transition-transform duration-1000`}></div>
+                  <div className={`absolute inset-0 rounded-full border-2 ${isFounder ? 'border-solid border-coral shadow-md' : 'border-dashed border-coral-light/40'} group-hover:rotate-180 transition-transform duration-1000`}></div>
                   <div className="absolute inset-2 rounded-full border border-charcoal/10 bg-cream-sand overflow-hidden">
                     {/* Placeholder for team headshots */}
                     <img
@@ -40,7 +40,7 @@ export const Team: React.FC = () => {
                     />
                   </div>
                 </div>
-                <h3 className={`font-bold text-lg mb-2 transition-colors ${isFounder ? 'text-coral' : 'text-charcoal group-hover:text-teal'}`}>{member.name}</h3>
+                <h3 className={`font-bold text-lg mb-2 transition-colors ${isFounder ? 'text-coral' : 'text-charcoal group-hover:text-coral-light'}`}>{member.name}</h3>
                 <p className={`text-xs uppercase tracking-[0.15em] font-medium ${isFounder ? 'text-charcoal-light' : 'text-charcoal-muted'}`}>{member.title}</p>
               </div>
             );
