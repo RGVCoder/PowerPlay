@@ -45,85 +45,87 @@ export const Navbar: React.FC = () => {
   const isHome = location.pathname === '/';
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${!isHome
-        ? scrolled
-          ? 'bg-utr-black/95 backdrop-blur-md py-3 shadow-lg'
-          : 'bg-cream-warm py-5'
-        : scrolled
-          ? 'bg-utr-black/95 backdrop-blur-md py-3 shadow-lg'
-          : 'bg-transparent py-5'
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          {/* Use text logo for cleaner look if image doesn't match dark background, but trying image first */}
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-white/20 group-hover:border-coral transition-colors">
-            <img src="/images/logo.png" alt="Logo" className="h-full w-full object-cover" />
-          </div>
-          <span className={`font-display font-bold text-xl tracking-tight transition-colors ${!isHome ? (scrolled ? 'text-white' : 'text-charcoal') : 'text-white'}`}>
-            POWER<span className="text-coral">PLAY</span>
-          </span>
-        </Link>
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${!isHome
+          ? scrolled
+            ? 'bg-utr-black/95 backdrop-blur-md py-3 shadow-lg'
+            : 'bg-cream-warm py-5'
+          : scrolled
+            ? 'bg-utr-black/95 backdrop-blur-md py-3 shadow-lg'
+            : 'bg-transparent py-5'
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group">
+            {/* Use text logo for cleaner look if image doesn't match dark background, but trying image first */}
+            <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-white/20 group-hover:border-coral transition-colors">
+              <img src="/images/logo.png" alt="Logo" className="h-full w-full object-cover" />
+            </div>
+            <span className={`font-display font-bold text-xl tracking-tight transition-colors ${!isHome ? (scrolled ? 'text-white' : 'text-charcoal') : 'text-white'}`}>
+              POWER<span className="text-coral">PLAY</span>
+            </span>
+          </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`text-sm font-semibold tracking-wide transition-colors ${location.pathname === link.path
-                ? 'text-coral'
-                : !isHome ? (scrolled ? 'text-white/90 hover:text-white' : 'text-charcoal hover:text-coral') : 'text-white/90 hover:text-white'
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center space-x-8">
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`text-sm font-semibold tracking-wide transition-colors ${location.pathname === link.path
+                  ? 'text-coral'
+                  : !isHome ? (scrolled ? 'text-white/90 hover:text-white' : 'text-charcoal hover:text-coral') : 'text-white/90 hover:text-white'
+                  }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Actions */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => window.open('https://hcb.hackclub.com/donations/start/powerplay', '_blank')}
+              className={`hidden md:block px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg ${!isHome
+                ? scrolled
+                  ? 'bg-coral text-white hover:bg-coral-light'
+                  : 'bg-coral text-white hover:bg-coral-light'
+                : 'bg-coral text-white hover:bg-coral-light'
                 }`}
             >
-              {link.name}
-            </Link>
-          ))}
-        </div>
+              Donate Now
+            </button>
 
-        {/* Actions */}
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => window.open('https://hcb.hackclub.com/donations/start/powerplay', '_blank')}
-            className={`hidden md:block px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg ${!isHome
-              ? scrolled
-                ? 'bg-coral text-white hover:bg-coral-light'
-                : 'bg-coral text-white hover:bg-coral-light'
-              : 'bg-coral text-white hover:bg-coral-light'
-              }`}
-          >
-            Donate Now
-          </button>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white focus:outline-none"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-white focus:outline-none"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu Backdrop & Drawer */}
       {mobileMenuOpen && (
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] md:hidden transition-opacity duration-300"
             onClick={() => setMobileMenuOpen(false)}
           ></div>
 
           {/* Drawer */}
-          <div className="fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-cream-warm z-50 shadow-2xl flex flex-col md:hidden animate-in slide-in-from-left duration-300">
+          <div className="fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-cream-warm z-[60] shadow-2xl flex flex-col md:hidden animate-slide-in-left">
             {/* Drawer Header */}
             <div className="p-6 border-b border-charcoal/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -206,6 +208,6 @@ export const Navbar: React.FC = () => {
           </div>
         </>
       )}
-    </nav>
+    </>
   );
 };
