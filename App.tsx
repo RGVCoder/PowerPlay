@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Pillars } from './components/Pillars';
@@ -17,7 +18,6 @@ import { EventsPage } from './pages/EventsPage';
 // Home page component - Streamlined for visual impact
 const HomePage: React.FC = () => (
   <div className="min-h-screen bg-cream font-sans">
-    <Navbar />
     <main>
       {/* 1. Hero: Hook with rotating images + donation form */}
       <Hero />
@@ -42,19 +42,34 @@ const HomePage: React.FC = () => (
       {/* 8. Testimonials: Athlete stories */}
       <Testimonials />
     </main>
-    <Footer />
   </div >
 );
+
+// AppContent component to use hooks inside Router context
+const AppContent: React.FC = () => {
+  const location = useLocation();
+
+  return (
+    <>
+      <ScrollToTop />
+      <Navbar />
+      <div key={location.pathname} className="page-transition">
+        <Routes location={location}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/events" element={<EventsPage />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/events" element={<EventsPage />} />
-      </Routes>
+      <AppContent />
     </Router>
   );
 }

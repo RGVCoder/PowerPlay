@@ -5,7 +5,6 @@ import { Footer } from '../components/Footer';
 export const AboutPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-cream font-sans">
-            <Navbar />
             <main className="pt-20">
                 {/* Hero Section */}
                 <section className="relative py-20 md:py-32 bg-charcoal overflow-hidden">
@@ -153,7 +152,6 @@ export const AboutPage: React.FC = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
 };

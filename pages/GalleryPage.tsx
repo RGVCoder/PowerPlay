@@ -21,7 +21,6 @@ const GalleryImage: React.FC<{ src: string; alt: string; className?: string }> =
 export const GalleryPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-cream font-sans">
-            <Navbar />
             <main className="pt-20">
                 {/* Hero Section - Consistent with About/Events */}
                 <section className="relative py-20 md:py-32 bg-charcoal overflow-hidden">
@@ -289,7 +288,6 @@ export const GalleryPage: React.FC = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
 };

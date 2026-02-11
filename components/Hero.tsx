@@ -56,11 +56,8 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Main Headline - Massive & Bold */}
-        <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl text-white leading-tight mb-6 tracking-tight drop-shadow-lg max-w-4xl mx-auto">
-          PLAY FOR <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral to-coral-light">
-            A CURE
-          </span>
+        <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl text-white leading-tight mb-6 tracking-tight drop-shadow-lg max-w-6xl mx-auto">
+          PLAY FOR <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral to-coral-light">A CURE</span>
         </h1>
 
         {/* Subheadline */}
