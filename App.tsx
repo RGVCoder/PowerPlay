@@ -14,6 +14,7 @@ import { Footer } from './components/Footer';
 import { GalleryPage } from './pages/GalleryPage';
 import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './pages/EventsPage';
+import { ContactPage } from './pages/ContactPage';
 
 // Home page component - Streamlined for visual impact
 const HomePage: React.FC = () => (
@@ -59,6 +60,7 @@ const AppContent: React.FC = () => {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/events" element={<EventsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
       <Footer />

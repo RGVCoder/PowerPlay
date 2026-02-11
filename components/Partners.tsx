@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Partners: React.FC = () => {
     const partners = [
@@ -55,11 +56,11 @@ export const Partners: React.FC = () => {
                                 key={`${partner.name}-${index}`}
                                 className="mx-8 md:mx-16 flex items-center justify-center transition-all duration-300 hover:scale-110"
                             >
-                                <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
+                                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white border-2 border-coral/30 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-md hover:border-coral/50 transition-all duration-300">
                                     <img
                                         src={partner.logo}
                                         alt={partner.name}
-                                        className="max-w-full max-h-full object-contain"
+                                        className="w-full h-full object-cover"
                                         onError={(e) => {
                                             e.currentTarget.src = "https://placehold.co/400x400/ffffff/E76F51?text=" + partner.name.substring(0, 1);
                                             e.currentTarget.onerror = null;
@@ -77,14 +78,14 @@ export const Partners: React.FC = () => {
 
                 {/* Partnership CTA */}
                 <div className="text-center">
-                    <div className="inline-block border-t border-charcoal/20 pt-8">
-                        <a
-                            href="mailto:powerplay@hackclub.com"
+                    <div className="inline-block pt-8">
+                        <Link
+                            to="/contact"
                             className="text-charcoal-light hover:text-coral transition-colors text-sm group"
                         >
                             Interested in partnering?
                             <span className="text-coral font-semibold ml-1 group-hover:ml-2 transition-all">Get in touch →</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
