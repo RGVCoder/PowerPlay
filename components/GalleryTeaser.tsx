@@ -73,7 +73,7 @@ export const GalleryTeaser: React.FC = () => {
 
 
     return (
-        <section className="bg-cream py-16 md:py-24 overflow-hidden relative">
+        <section className="bg-cream py-16 md:py-24 overflow-hidden relative" data-navbar-theme="light">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
 

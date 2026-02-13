@@ -41,7 +41,7 @@ export const Testimonials: React.FC = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16 md:py-24 bg-charcoal relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-charcoal relative overflow-hidden" data-navbar-theme="dark">
       {/* Top decorative border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
       {/* Decorative elements */}

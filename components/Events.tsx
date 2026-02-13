@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
+import { ScrollReveal } from './ScrollReveal';
 
 interface EventData {
   id: string;
@@ -559,7 +560,7 @@ export const Events: React.FC = () => {
   );
 
   return (
-    <section id="events" className="py-16 md:py-24 bg-white">
+    <section id="events" className="py-16 md:py-24 bg-white" data-navbar-theme="light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Upcoming Events Section */}
@@ -573,30 +574,32 @@ export const Events: React.FC = () => {
 
 
           <div className="space-y-8">
-            <div className="bg-white rounded-[34px] border border-coral/20 p-6 md:p-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-all duration-300 hover:border-coral group shadow-sm hover:shadow-md gap-8 md:gap-12">
-              <div className="w-full md:w-5/12 aspect-video rounded-3xl overflow-hidden shadow-inner bg-cream-dark relative">
-                <img
-                  src="/images/pickleball-upcoming.png"
-                  alt="Pickleball Tournament"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop";
-                    e.currentTarget.onerror = null;
-                  }}
-                />
-                <div className="absolute top-4 left-4 bg-coral-light text-white font-bold px-3 py-1.5 text-xs rounded-lg uppercase tracking-widest shadow-lg">Coming Soon</div>
-              </div>
-              <div className="w-full md:w-7/12 flex flex-col items-center md:items-start">
-                <div className="mb-4 text-coral font-mono text-xs md:text-sm uppercase tracking-widest bg-coral/10 px-4 py-1.5 rounded-full inline-block">
-                  Late February / Early March 2026
+            <ScrollReveal width="100%" delay={0.1}>
+              <div className="bg-white rounded-[34px] border border-coral/20 p-6 md:p-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-all duration-300 hover:border-coral group shadow-sm hover:shadow-md gap-8 md:gap-12">
+                <div className="w-full md:w-5/12 aspect-video rounded-3xl overflow-hidden shadow-inner bg-cream-dark relative">
+                  <img
+                    src="/images/pickleball-upcoming.png"
+                    alt="Pickleball Tournament"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop";
+                      e.currentTarget.onerror = null;
+                    }}
+                  />
+                  <div className="absolute top-4 left-4 bg-coral-light text-white font-bold px-3 py-1.5 text-xs rounded-lg uppercase tracking-widest shadow-lg">Coming Soon</div>
                 </div>
-                <h4 className="font-display font-bold text-2xl md:text-3xl text-charcoal uppercase tracking-wider mb-4">Pickleball Tournament</h4>
-                <p className="text-charcoal-light text-base md:text-lg leading-relaxed font-light mb-4">
-                  Our next doubles pickleball competition is in the works! Compete with friends while raising funds and awareness for pediatric illnesses.
-                </p>
-                <span className="text-coral-light text-xs font-medium uppercase tracking-widest bg-coral-light/10 px-3 py-1 rounded-md">PowerPlay X HeroesForIBD</span>
+                <div className="w-full md:w-7/12 flex flex-col items-center md:items-start">
+                  <div className="mb-4 text-coral font-mono text-xs md:text-sm uppercase tracking-widest bg-coral/10 px-4 py-1.5 rounded-full inline-block">
+                    Late February / Early March 2026
+                  </div>
+                  <h4 className="font-display font-bold text-2xl md:text-3xl text-charcoal uppercase tracking-wider mb-4">Pickleball Tournament</h4>
+                  <p className="text-charcoal-light text-base md:text-lg leading-relaxed font-light mb-4">
+                    Our next doubles pickleball competition is in the works! Compete with friends while raising funds and awareness for pediatric illnesses.
+                  </p>
+                  <span className="text-coral-light text-xs font-medium uppercase tracking-widest bg-coral-light/10 px-3 py-1 rounded-md">PowerPlay X HeroesForIBD</span>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -609,7 +612,11 @@ export const Events: React.FC = () => {
 
         {/* Past/Highlight Grid - Top 3 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative">
-          {topEvents.map(renderEventCard)}
+          {topEvents.map((event, index) => (
+            <ScrollReveal key={event.id} width="100%" delay={index * 0.2}>
+              {renderEventCard(event)}
+            </ScrollReveal>
+          ))}
         </div>
 
         {/* Expanded Content for Top Events */}
@@ -617,7 +624,11 @@ export const Events: React.FC = () => {
 
         {/* Remaining Events Grid (Special Guest) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative mt-8">
-          {bottomEvents.map(renderEventCard)}
+          {bottomEvents.map((event, index) => (
+            <ScrollReveal key={event.id} width="100%" delay={index * 0.2}>
+              {renderEventCard(event)}
+            </ScrollReveal>
+          ))}
         </div>
 
         {/* Expanded Content for Bottom Events */}

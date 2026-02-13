@@ -55,7 +55,7 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
 
 export const OurImpact: React.FC = () => {
     return (
-        <section className="relative bg-black py-12 md:py-24 overflow-hidden">
+        <section className="relative bg-black py-12 md:py-24 overflow-hidden" data-navbar-theme="dark">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
             {/* Decorative background elements */}

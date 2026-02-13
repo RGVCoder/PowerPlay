@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-utr-black">
+    <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-utr-black" data-navbar-theme="dark">
       {/* Background Images with Zoom Effect */}
       {heroImages.map((image, index) => (
         <div

@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Donations: React.FC = () => {
     return (
-        <section id="donations" className="py-24 bg-cream relative overflow-hidden">
+        <section id="donations" className="py-24 bg-cream relative overflow-hidden" data-navbar-theme="light">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Two-column layout */}

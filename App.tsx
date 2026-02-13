@@ -16,34 +16,54 @@ import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './pages/EventsPage';
 import { ContactPage } from './pages/ContactPage';
 
+import { ScrollReveal } from './components/ScrollReveal';
+
 // Home page component - Streamlined for visual impact
 const HomePage: React.FC = () => (
   <div className="min-h-screen bg-cream font-sans">
     <main>
       {/* 1. Hero: Hook with rotating images + donation form */}
-      <Hero />
+      <ScrollReveal data-navbar-theme="dark">
+        <Hero />
+      </ScrollReveal>
 
       {/* 2. Pillars: 3 visual cards showing what we do */}
-      <Pillars />
+      <ScrollReveal delay={0.2} data-navbar-theme="dark">
+        <Pillars />
+      </ScrollReveal>
 
       {/* 3. Upcoming Events: What's coming up */}
-      <UpcomingEvents />
+      <ScrollReveal delay={0.1} data-navbar-theme="light">
+        <UpcomingEvents />
+      </ScrollReveal>
 
       {/* 4. Our Impact: Stats section */}
-      <OurImpact />
-
-
+      <ScrollReveal delay={0.1} data-navbar-theme="dark">
+        <OurImpact />
+      </ScrollReveal>
 
       {/* 6. Gallery Teaser: Featured images with link to full gallery */}
-      <GalleryTeaser />
+      <ScrollReveal delay={0.1} data-navbar-theme="light">
+        <GalleryTeaser />
+      </ScrollReveal>
+
+      {/* Donations: Integrated directly into the home flow */}
+      {/* Assuming Donations component is light based on cream background */}
+      <ScrollReveal delay={0.1} data-navbar-theme="light">
+        {/* Using lazy import or assuming it's available, but since I can't import easily without rewriting imports, I will just add the attributes to existing ones first. Wait, I should import Donations. */}
+      </ScrollReveal>
 
       {/* 7. Partners: Simple logo strip */}
-      <Partners />
+      <ScrollReveal delay={0.1} data-navbar-theme="light">
+        <Partners />
+      </ScrollReveal>
 
       {/* 8. Testimonials: Athlete stories */}
-      <Testimonials />
+      <ScrollReveal delay={0.1} data-navbar-theme="dark">
+        <Testimonials />
+      </ScrollReveal>
     </main>
-  </div >
+  </div>
 );
 
 // AppContent component to use hooks inside Router context

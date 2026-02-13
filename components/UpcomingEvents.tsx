@@ -41,7 +41,7 @@ export const UpcomingEvents: React.FC = () => {
     const otherEvents = UPCOMING_EVENTS.filter(e => !e.isFeatured);
 
     return (
-        <section id="upcoming-events" className="relative py-24 bg-white">
+        <section id="upcoming-events" className="relative py-24 bg-white" data-navbar-theme="light">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

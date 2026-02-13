@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Pillars: React.FC = () => {
     return (
-        <section className="bg-black py-24">
+        <section className="bg-black py-24" data-navbar-theme="dark">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">
