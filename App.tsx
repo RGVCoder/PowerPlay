@@ -15,6 +15,7 @@ import { GalleryPage } from './pages/GalleryPage';
 import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './pages/EventsPage';
 import { ContactPage } from './pages/ContactPage';
+import { TeamPage } from './pages/TeamPage';
 
 import { ScrollReveal } from './components/ScrollReveal';
 
@@ -79,6 +80,7 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

@@ -1,12 +1,17 @@
 import { GoogleGenAI } from "@google/genai";
 
 // Initialize Gemini Client
-// IMPORTANT: Accessing process.env.API_KEY as per instructions.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const apiKey = process.env.API_KEY;
+
+if (!apiKey) {
+  console.error("GEMINI_API_KEY is missing. Please check your .env file.");
+}
+
+const ai = new GoogleGenAI({ apiKey: apiKey || 'dummy-key-to-prevent-crash' });
 
 export const editImageWithGemini = async (
-  base64Image: string, 
-  mimeType: string, 
+  base64Image: string,
+  mimeType: string,
   prompt: string
 ): Promise<string | null> => {
   try {
@@ -34,14 +39,14 @@ export const editImageWithGemini = async (
 
     // Extract image from response
     if (response.candidates && response.candidates[0].content.parts) {
-        for (const part of response.candidates[0].content.parts) {
-            if (part.inlineData) {
-                const returnMime = part.inlineData.mimeType || 'image/png';
-                return `data:${returnMime};base64,${part.inlineData.data}`;
-            }
+      for (const part of response.candidates[0].content.parts) {
+        if (part.inlineData) {
+          const returnMime = part.inlineData.mimeType || 'image/png';
+          return `data:${returnMime};base64,${part.inlineData.data}`;
         }
+      }
     }
-    
+
     // Fallback if no image found directly
     return null;
 

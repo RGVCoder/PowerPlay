@@ -57,7 +57,7 @@ export const ContactPage: React.FC = () => {
                     </div>
 
                     <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                        <div className="inline-block px-3 py-1.5 bg-coral/20 text-coral text-xs font-semibold uppercase tracking-widest mb-6">
+                        <div className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 bg-coral/20 text-coral text-xs lg:text-sm font-semibold uppercase tracking-widest mb-6 mt-8 md:mt-0">
                             Get In Touch
                         </div>
                         <h1 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">
