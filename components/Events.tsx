@@ -56,7 +56,7 @@ const EVENTS: EventData[] = [
         </div>
       </div>
     ),
-    image: '/images/giveback.png',
+    image: '/images/giveback2.png',
     imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Giveback+Night',
     buttonText: 'View Recap',
     badge: 'Fundraiser',

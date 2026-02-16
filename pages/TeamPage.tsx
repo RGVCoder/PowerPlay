@@ -133,8 +133,8 @@ export const TeamPage: React.FC = () => {
                                     <div className="absolute inset-0 bg-coral/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     <div className="flex flex-col md:flex-row items-center gap-8 relative z-10 px-4">
                                         <div className="flex-1">
-                                            <h3 className="font-display font-bold text-2xl text-charcoal mb-4 uppercase tracking-tight">Want to start a chapter?</h3>
-                                            <p className="text-charcoal-light max-w-md mx-auto md:mx-0 font-light leading-relaxed mb-6 md:mb-0 text-sm">
+                                            <h3 className="font-display font-bold text-2xl md:text-4xl lg:text-5xl text-charcoal mb-4 uppercase tracking-tighter leading-[0.9]">Want to start a chapter?</h3>
+                                            <p className="text-charcoal-light max-w-2xl mx-auto md:mx-0 font-light leading-relaxed mb-6 md:mb-0 text-xl md:text-2xl">
                                                 Bring PowerPlay to your school or community. We provide the playbook, you provide the passion.
                                             </p>
                                         </div>

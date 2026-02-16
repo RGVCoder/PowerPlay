@@ -330,7 +330,7 @@ export const GalleryPage: React.FC = () => {
 
                             {/* Row 9: Giveback Night Feature */}
                             <GalleryImage
-                                src="/images/gallery-giveback-1.jpg"
+                                src="/images/giveback2.png"
                                 alt="Giveback Night"
                                 className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
                                 delay={0.1}
