@@ -30,6 +30,13 @@ const TEAM_MEMBERS = [
         image: '/images/team-tarun.png',
         objectPosition: 'center',
     },
+    {
+        id: 5,
+        name: 'Yuvi Disawal',
+        role: 'National Chapter Ambassador',
+        image: '/images/team-yuvi.png',
+        objectPosition: 'center',
+    },
 ];
 
 export const TeamPage: React.FC = () => {
@@ -56,32 +63,60 @@ export const TeamPage: React.FC = () => {
                 </section>
 
                 {/* Team Grid */}
-                <ScrollReveal>
-                    <section className="py-16 md:py-24 relative" data-navbar-theme="light">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                                {TEAM_MEMBERS.map((member) => (
-                                    <div key={member.id} className="bg-white rounded-[30px] p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-charcoal/5 group hover:border-coral/20 hover:-translate-y-2">
+                <section className="py-16 md:py-24 relative" data-navbar-theme="light">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        {/* Top Row: CEO, CFO, CTO */}
+                        <ScrollReveal>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                                {TEAM_MEMBERS.slice(0, 3).map((member) => (
+                                    <div key={member.id} className="bg-white rounded-[30px] p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-charcoal/5 group hover:border-coral/20 hover:-translate-y-2 flex flex-col items-center">
                                         <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cream-dark group-hover:border-coral transition-colors duration-300 shadow-inner">
                                             <img
                                                 src={member.image}
                                                 alt={member.name}
                                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                 style={{ objectPosition: member.objectPosition }}
+                                                onError={(e) => {
+                                                    (e.target as HTMLImageElement).src = 'https://placehold.co/400x400/101010/D4AF37?text=Member';
+                                                }}
                                             />
                                         </div>
                                         <h3 className="font-display font-bold text-xl text-charcoal mb-2">{member.name}</h3>
                                         <p className="text-coral font-medium uppercase tracking-widest text-[10px] mb-4">{member.role}</p>
-                                        <div className="w-8 h-1 bg-coral/20 mx-auto rounded-full group-hover:bg-coral transition-colors"></div>
+                                        <div className="w-8 h-1 bg-coral/20 mx-auto rounded-full group-hover:bg-coral transition-colors mt-auto"></div>
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                    </section>
-                </ScrollReveal>
+                        </ScrollReveal>
+
+                        {/* Bottom Row: CMO, Ambassador (Centered) */}
+                        <ScrollReveal delay={0.2}>
+                            <div className="flex flex-col md:flex-row justify-center gap-8">
+                                {TEAM_MEMBERS.slice(3, 5).map((member) => (
+                                    <div key={member.id} className="bg-white rounded-[30px] p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-charcoal/5 group hover:border-coral/20 hover:-translate-y-2 flex flex-col items-center w-full md:w-[calc(33.333%-1.33rem)]">
+                                        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cream-dark group-hover:border-coral transition-colors duration-300 shadow-inner">
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                style={{ objectPosition: member.objectPosition }}
+                                                onError={(e) => {
+                                                    (e.target as HTMLImageElement).src = 'https://placehold.co/400x400/101010/D4AF37?text=Member';
+                                                }}
+                                            />
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-charcoal mb-2">{member.name}</h3>
+                                        <p className="text-coral font-medium uppercase tracking-widest text-[10px] mb-4 whitespace-nowrap">{member.role}</p>
+                                        <div className="w-8 h-1 bg-coral/20 mx-auto rounded-full group-hover:bg-coral transition-colors mt-auto"></div>
+                                    </div>
+                                ))}
+                            </div>
+                        </ScrollReveal>
+                    </div>
+                </section>
 
                 {/* Our Chapters Section */}
-                <ScrollReveal delay={0.2} data-navbar-theme="light">
+                <ScrollReveal delay={0.3} data-navbar-theme="light">
                     <section className="py-16 bg-cream-sand relative">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <div className="flex items-center justify-center gap-6 mb-12">
@@ -93,43 +128,28 @@ export const TeamPage: React.FC = () => {
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                {/* Left: Chapter Ambassador */}
-                                <div className="bg-white rounded-[30px] p-8 text-center shadow-lg border border-charcoal/5 hover:border-coral/20 transition-all duration-300 md:col-span-1 group">
-                                    <div className="w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden border-4 border-cream-dark group-hover:border-coral transition-colors duration-300 shadow-inner">
-                                        <img
-                                            src="/images/team-yuvi.png"
-                                            alt="Yuvi Disawal"
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                            onError={(e) => {
-                                                (e.target as HTMLImageElement).src = 'https://placehold.co/400x400/101010/D4AF37?text=Ambassador';
-                                            }}
-                                        />
-                                    </div>
-                                    <h3 className="font-display font-bold text-lg text-charcoal mb-1">Yuvi Disawal</h3>
-                                    <p className="text-coral font-medium uppercase tracking-widest text-[10px] mb-3">National Chapter Ambassador</p>
-                                    <div className="w-6 h-1 bg-coral/20 mx-auto rounded-full group-hover:bg-coral transition-colors"></div>
-                                </div>
-
-                                {/* Right Wide Box */}
-                                <div className="bg-white rounded-[30px] p-10 shadow-lg border border-charcoal/5 hover:border-coral/20 transition-all duration-300 md:col-span-2 flex items-center justify-center min-h-[250px] relative overflow-hidden group">
+                                {/* CTA Box */}
+                                <div className="bg-white rounded-[30px] py-16 px-10 shadow-lg border border-charcoal/5 hover:border-coral/20 transition-all duration-300 md:col-span-3 flex items-center justify-center min-h-[300px] relative overflow-hidden group text-center md:text-left">
                                     <div className="absolute inset-0 bg-coral/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="text-center relative z-10">
-                                        <h3 className="font-display font-bold text-2xl text-charcoal mb-4">Want to start a chapter?</h3>
-                                        <p className="text-charcoal-light mb-8 max-w-md mx-auto">
-                                            Bring PowerPlay to your school or community. We provide the playbook, you provide the passion.
-                                        </p>
-                                        <a href="/contact" className="inline-block px-8 py-3 rounded-full bg-coral text-white font-bold hover:bg-coral-dark transition-colors shadow-lg hover:shadow-coral/20 transform hover:-translate-y-1">
+                                    <div className="flex flex-col md:flex-row items-center gap-8 relative z-10 px-4">
+                                        <div className="flex-1">
+                                            <h3 className="font-display font-bold text-2xl text-charcoal mb-4 uppercase tracking-tight">Want to start a chapter?</h3>
+                                            <p className="text-charcoal-light max-w-md mx-auto md:mx-0 font-light leading-relaxed mb-6 md:mb-0 text-sm">
+                                                Bring PowerPlay to your school or community. We provide the playbook, you provide the passion.
+                                            </p>
+                                        </div>
+                                        <a href="/contact" className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-coral text-white font-bold hover:bg-charcoal transition-all shadow-lg hover:shadow-coral/20 transform hover:-translate-y-1 uppercase tracking-widest text-xs whitespace-nowrap">
                                             Get Started →
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* New Chapters Grid */}
+                            {/* Chapters Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                                 {[
                                     { name: 'Frisco Chapter', location: 'Frisco, TX', status: 'Active' },
-                                    { name: 'Illinois Chapter', location: 'Illinois', status: 'Active' },
+                                    { name: 'Chicago Chapter', location: 'Chicago, IL', status: 'Active' },
                                     { name: 'California Chapter', location: 'California', status: 'Active' }
                                 ].map((chapter) => (
                                     <div key={chapter.name} className="bg-white rounded-[30px] p-8 text-center shadow-lg border border-charcoal/5 hover:border-coral/20 hover:-translate-y-1 transition-all duration-300 group">

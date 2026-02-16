@@ -12,7 +12,7 @@ interface UpcomingEvent {
     address?: string;
     speaker?: string;
     speakerTitle?: string;
-    description: string;
+    description: string | React.ReactNode;
     highlights?: string[];
     image: string;
     imageFallback: string;
@@ -29,8 +29,12 @@ const UPCOMING_EVENTS: UpcomingEvent[] = [
         subtitle: 'PowerPlay X HeroesForIBD',
         date: '2026-03-16',
         dateDisplay: 'March 16, 2026 • 5pm - 8pm',
-        description: 'Our next doubles pickleball competition is in the works! Compete with friends while raising funds and awareness for pediatric illnesses. Stay tuned for registration details.',
-        image: '/images/pickleball-upcoming.png',
+        description: (
+            <>
+                Our next doubles pickleball competition, sponsored by <strong>Credit Union of Texas</strong>, is in the works! Compete for <strong>$150 (1st)</strong> and <strong>$50 (2nd)</strong>, plus a <strong>$50 gift card</strong> raffle, while raising funds for pediatric illnesses.
+            </>
+        ),
+        image: '/images/pickleball-cnp.jpg',
         imageFallback: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop',
         partner: 'HeroesForIBD'
     }

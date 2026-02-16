@@ -18,9 +18,58 @@ interface EventData {
 
 const EVENTS: EventData[] = [
   {
+    id: 'giveback-night',
+    title: 'GIVEBACK NIGHT',
+    shortDescription: 'A community night at Chicken N Pickle supporting the Crohn\'s & Colitis Foundation.',
+    fullDescription: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="space-y-6">
+          <p className="text-lg font-light leading-relaxed text-charcoal-light">
+            We gathered at <strong>Chicken N Pickle</strong> for a night of food, fun, and fundraising!
+            A portion of all food and drink sales went directly to the <strong>Crohn's & Colitis Foundation</strong> through their "Take Steps" program.
+          </p>
+          <div className="bg-cream-sand p-6 border-l-4 border-coral">
+            <h4 className="text-charcoal font-bold text-base mb-2 uppercase tracking-widest">Impact</h4>
+            <p className="text-charcoal-light font-light text-sm">
+              Community members came together to enjoy pickleball and great food while raising awareness and funds for IBD research and patient support programs.
+            </p>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="bg-white p-6 border border-charcoal/5 shadow-lg rounded-xl">
+            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Event Details</h4>
+            <div className="space-y-3 font-mono text-sm">
+              <div className="flex justify-between">
+                <span className="text-charcoal-light">Date</span>
+                <span className="font-bold text-charcoal">Feb 11, 2026</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-charcoal-light">Location</span>
+                <span className="font-bold text-charcoal text-right">Chicken N Pickle</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-charcoal-light">Beneficiary</span>
+                <span className="font-bold text-coral text-right">Crohn's & Colitis Foundation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    image: '/images/giveback.png',
+    imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Giveback+Night',
+    buttonText: 'View Recap',
+    badge: 'Fundraiser',
+    stats: [
+      { label: 'Partner', value: 'Chicken N\' Pickle' },
+      { label: 'Activity', value: 'Dining & Play' },
+      { label: 'Impact', value: 'Fundraiser' }
+    ]
+  },
+  {
     id: 'guest-speaker-2026',
-    title: 'GAME ON: IBD & SPORTS',
-    shortDescription: 'An educational session with Dr. Bhaskar Gurram on helping athletes with pediatric illnesses.',
+    title: 'DOCTOR GUEST SPEAKER',
+    shortDescription: 'Dr. Bhaskar Gurram shares insights on helping athletes with pediatric illnesses.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
@@ -80,55 +129,6 @@ const EVENTS: EventData[] = [
       { label: 'Speaker', value: 'Dr. Gurram' },
       { label: 'Focus', value: 'Education' },
       { label: 'Partner', value: 'HeroesForIBD' }
-    ]
-  },
-  {
-    id: 'giveback-night',
-    title: 'GIVEBACK NIGHT',
-    shortDescription: 'A community night at Chicken N Pickle supporting the Crohn\'s & Colitis Foundation.',
-    fullDescription: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <p className="text-lg font-light leading-relaxed text-charcoal-light">
-            We gathered at <strong>Chicken N Pickle</strong> for a night of food, fun, and fundraising!
-            A portion of all food and drink sales went directly to the <strong>Crohn's & Colitis Foundation</strong> through their "Take Steps" program.
-          </p>
-          <div className="bg-cream-sand p-6 border-l-4 border-coral">
-            <h4 className="text-charcoal font-bold text-base mb-2 uppercase tracking-widest">Impact</h4>
-            <p className="text-charcoal-light font-light text-sm">
-              Community members came together to enjoy pickleball and great food while raising awareness and funds for IBD research and patient support programs.
-            </p>
-          </div>
-        </div>
-        <div className="space-y-6">
-          <div className="bg-white p-6 border border-charcoal/5 shadow-lg rounded-xl">
-            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Event Details</h4>
-            <div className="space-y-3 font-mono text-sm">
-              <div className="flex justify-between">
-                <span className="text-charcoal-light">Date</span>
-                <span className="font-bold text-charcoal">Feb 11, 2026</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-charcoal-light">Location</span>
-                <span className="font-bold text-charcoal text-right">Chicken N Pickle</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-charcoal-light">Beneficiary</span>
-                <span className="font-bold text-coral text-right">Crohn's & Colitis Foundation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-    image: '/images/giveback.png',
-    imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Giveback+Night',
-    buttonText: 'View Recap',
-    badge: 'Fundraiser',
-    stats: [
-      { label: 'Partner', value: 'C & C Foundation' },
-      { label: 'Activity', value: 'Dining & Play' },
-      { label: 'Impact', value: 'Research' }
     ]
   },
   {
@@ -627,7 +627,7 @@ export const Events: React.FC = () => {
               <div className="bg-white rounded-[34px] border border-coral/20 p-6 md:p-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-all duration-300 hover:border-coral group shadow-sm hover:shadow-md gap-8 md:gap-12">
                 <div className="w-full md:w-5/12 aspect-video rounded-3xl overflow-hidden shadow-inner bg-cream-dark relative">
                   <img
-                    src="/images/pickleball-upcoming.png"
+                    src="/images/pickleball-cnp.jpg"
                     alt="Pickleball Tournament"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {

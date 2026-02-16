@@ -30,9 +30,9 @@ export const Navbar: React.FC = () => {
   const links = [
     { name: 'Home', path: '/', type: 'route' },
     { name: 'About', path: '/about', type: 'route' },
-    { name: 'Team', path: '/team', type: 'route' },
     { name: 'Events', path: '/events', type: 'route' },
     { name: 'Gallery', path: '/gallery', type: 'route' },
+    { name: 'Team', path: '/team', type: 'route' },
     { name: 'Contact', path: '/contact', type: 'route' },
   ];
 
