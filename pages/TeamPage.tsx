@@ -124,6 +124,26 @@ export const TeamPage: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* New Chapters Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                                {[
+                                    { name: 'Frisco Chapter', location: 'Frisco, TX', status: 'Active' },
+                                    { name: 'Illinois Chapter', location: 'Illinois', status: 'Active' },
+                                    { name: 'California Chapter', location: 'California', status: 'Active' }
+                                ].map((chapter) => (
+                                    <div key={chapter.name} className="bg-white rounded-[30px] p-8 text-center shadow-lg border border-charcoal/5 hover:border-coral/20 hover:-translate-y-1 transition-all duration-300 group">
+                                        <div className="w-16 h-16 mx-auto mb-4 bg-cream-dark rounded-full flex items-center justify-center text-charcoal group-hover:bg-coral group-hover:text-white transition-colors duration-300">
+                                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="font-display font-bold text-xl text-charcoal mb-1">{chapter.name}</h3>
+                                        <p className="text-coral font-medium uppercase tracking-widest text-[10px]">{chapter.location}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </section>
                 </ScrollReveal>

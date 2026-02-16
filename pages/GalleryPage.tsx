@@ -5,8 +5,7 @@ import { ScrollReveal } from '../components/ScrollReveal';
 
 // Gallery image component for consistent styling
 // Gallery image component for consistent styling
-// Gallery image component for consistent styling
-const GalleryImage: React.FC<{ src: string; alt: string; className?: string; delay?: number }> = ({ src, alt, className = '', delay = 0 }) => (
+const GalleryImage: React.FC<{ src: string; alt: string; className?: string; delay?: number; objectPosition?: string }> = ({ src, alt, className = '', delay = 0, objectPosition = 'center' }) => (
     <ScrollReveal className={`${className}`} width="100%" delay={delay}>
         <div className="relative group overflow-hidden border-l-4 border-coral shadow-lg w-full h-full">
             <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
@@ -14,6 +13,7 @@ const GalleryImage: React.FC<{ src: string; alt: string; className?: string; del
                 src={src}
                 alt={alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                style={{ objectPosition }}
                 onError={(e) => {
                     e.currentTarget.src = "https://placehold.co/400x400/FFF3E6/E76F51?text=Photo";
                     e.currentTarget.onerror = null;
@@ -326,6 +326,27 @@ export const GalleryPage: React.FC = () => {
                                 alt="Speaker Moment"
                                 className="aspect-square md:col-span-1"
                                 delay={1.1}
+                            />
+
+                            {/* Row 9: Giveback Night Feature */}
+                            <GalleryImage
+                                src="/images/gallery-giveback-1.jpg"
+                                alt="Giveback Night"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
+                                delay={0.1}
+                            />
+                            <GalleryImage
+                                src="/images/gallery-giveback-2.jpg"
+                                alt="Giveback Night"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
+                                objectPosition="top"
+                                delay={0.3}
+                            />
+                            <GalleryImage
+                                src="/images/gallery-giveback-3.jpg"
+                                alt="Giveback Night"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
+                                delay={0.5}
                             />
 
                         </div>
