@@ -2,16 +2,16 @@ import React from 'react';
 
 export const ImpactVideo: React.FC = () => {
     return (
-        <section className="relative bg-cream py-12 md:py-24 overflow-hidden">
+        <section className="relative bg-white py-12 md:py-24 overflow-hidden" data-navbar-theme="light">
             {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-charcoal/10 to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-black-cortex/10 to-transparent"></div>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">
-                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-charcoal mb-4">
-                        Exclusive <span className="text-coral">Interview</span>
+                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-black-cortex mb-4">
+                        Exclusive <span className="text-orange-cortex">Interview</span>
                     </h2>
-                    <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
+                    <p className="text-black-cortex/60 text-lg max-w-2xl mx-auto">
                         A conversation with a cricket legend about empowering youth through sports.
                     </p>
                 </div>
@@ -30,15 +30,15 @@ export const ImpactVideo: React.FC = () => {
                                 />
                             </div>
                             {/* Decorative accent */}
-                            <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-coral-light -z-10"></div>
+                            <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-orange-cortex -z-10"></div>
                         </div>
 
                         {/* Bio */}
                         <div className="text-center lg:text-left">
-                            <h3 className="font-display font-bold text-2xl text-charcoal mb-2">Asif Mujtaba</h3>
-                            <div className="w-12 h-1 bg-coral mb-4 mx-auto lg:mx-0"></div>
-                            <p className="text-coral-light text-sm font-semibold uppercase tracking-wide mb-4">Former Pakistan International Cricketer</p>
-                            <p className="text-charcoal-light text-sm leading-relaxed max-w-xs">
+                            <h3 className="font-display font-bold text-2xl text-black-cortex mb-2">Asif Mujtaba</h3>
+                            <div className="w-12 h-1 bg-orange-cortex mb-4 mx-auto lg:mx-0"></div>
+                            <p className="text-orange-cortex text-sm font-semibold uppercase tracking-wide mb-4">Former Pakistan International Cricketer</p>
+                            <p className="text-black-cortex/60 text-sm leading-relaxed max-w-xs">
                                 25 Tests & 66 ODIs for Pakistan. Now dedicated to empowering youth through sports.
                             </p>
                         </div>
@@ -56,11 +56,11 @@ export const ImpactVideo: React.FC = () => {
                                 Your browser does not support the video tag.
                             </video>
                             {/* Bottom accent */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-coral-light to-coral"></div>
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-cortex via-orange-cortex to-orange-cortex"></div>
                         </div>
 
                         {/* Caption */}
-                        <p className="text-center text-charcoal-light mt-6 text-sm italic">
+                        <p className="text-center text-black-cortex/60 mt-6 text-sm italic">
                             Hear how PowerPlay is making a difference in children's lives
                         </p>
                     </div>

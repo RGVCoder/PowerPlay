@@ -55,50 +55,41 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
 
 export const OurImpact: React.FC = () => {
     return (
-        <section className="relative bg-black py-12 md:py-24 overflow-hidden" data-navbar-theme="dark">
-            {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
-            {/* Decorative background elements */}
-            <div className="absolute top-0 left-1/4 w-64 h-64 bg-coral/5 blur-[100px]"></div>
-            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-coral-light/5 blur-[100px]"></div>
-
-            <div className="max-w-6xl mx-auto px-6 lg:px-12 relative">
+        <section className="relative py-16 md:py-24 overflow-hidden bg-white" data-navbar-theme="light">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
-                        Our <span className="text-coral">Impact</span>
+                    <h2 className="font-sans font-black text-4xl md:text-5xl text-black-cortex mb-4">
+                        Our <span className="text-coral-cortex">Impact</span>
                     </h2>
-                    <p className="text-white/60 text-lg max-w-2xl mx-auto">
+                    <p className="text-black-cortex/60 text-lg max-w-2xl mx-auto">
                         Real numbers. Real change. See the difference we're making together.
                     </p>
                 </div>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    <div className="text-center group bg-white/5 rounded-[34px] p-8 hover:bg-white/10 transition-all duration-300">
-                        <div className="font-display font-bold text-5xl md:text-7xl text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                {/* Stats Grid - ClickHouse Style with Coral Accents */}
+                <div className="grid grid-cols-1 md:grid-cols-3 border-t-2 border-l-2 border-coral-cortex/20">
+                    <div className="text-center group p-12 border-r-2 border-b-2 border-coral-cortex/20 bg-cream hover:bg-coral-cortex/[0.05] transition-all duration-300">
+                        <div className="font-sans font-bold text-5xl md:text-7xl text-coral-cortex mb-4 group-hover:scale-105 transition-transform duration-300">
                             <AnimatedCounter end={5} prefix="$" suffix="K+" />
                         </div>
-                        <div className="w-12 h-1 bg-coral mx-auto mb-4"></div>
-                        <div className="text-white/60 text-sm font-medium tracking-wider uppercase">
+                        <div className="text-black-cortex/40 text-[10px] font-bold tracking-[0.2em] uppercase">
                             Raised for Pediatric Care
                         </div>
                     </div>
-                    <div className="text-center group bg-white/5 rounded-[34px] p-8 hover:bg-white/10 transition-all duration-300">
-                        <div className="font-display font-bold text-5xl md:text-7xl text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="text-center group p-12 border-r-2 border-b-2 border-coral-cortex/20 bg-cream hover:bg-coral-cortex/[0.05] transition-all duration-300">
+                        <div className="font-sans font-bold text-5xl md:text-7xl text-coral-cortex mb-4 group-hover:scale-105 transition-transform duration-300">
                             <AnimatedCounter end={500} suffix="+" />
                         </div>
-                        <div className="w-12 h-1 bg-coral-light mx-auto mb-4"></div>
-                        <div className="text-white/60 text-sm font-medium tracking-wider uppercase">
+                        <div className="text-black-cortex/40 text-[10px] font-bold tracking-[0.2em] uppercase">
                             Athletes United
                         </div>
                     </div>
-                    <div className="text-center group bg-white/5 rounded-[34px] p-8 hover:bg-white/10 transition-all duration-300">
-                        <div className="font-display font-bold text-5xl md:text-7xl text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="text-center group p-12 border-r-2 border-b-2 border-coral-cortex/20 bg-cream hover:bg-coral-cortex/[0.05] transition-all duration-300">
+                        <div className="font-sans font-bold text-5xl md:text-7xl text-coral-cortex mb-4 group-hover:scale-105 transition-transform duration-300">
                             <AnimatedCounter end={100} suffix="%" />
                         </div>
-                        <div className="w-12 h-1 bg-coral mx-auto mb-4"></div>
-                        <div className="text-white/60 text-sm font-medium tracking-wider uppercase">
+                        <div className="text-black-cortex/40 text-[10px] font-bold tracking-[0.2em] uppercase">
                             Goes to Families in Need
                         </div>
                     </div>

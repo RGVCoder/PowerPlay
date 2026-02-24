@@ -7,15 +7,15 @@ import { ScrollReveal } from '../components/ScrollReveal';
 // Gallery image component for consistent styling
 const GalleryImage: React.FC<{ src: string; alt: string; className?: string; delay?: number; objectPosition?: string }> = ({ src, alt, className = '', delay = 0, objectPosition = 'center' }) => (
     <ScrollReveal className={`${className}`} width="100%" delay={delay}>
-        <div className="relative group overflow-hidden border-l-4 border-coral shadow-lg w-full h-full">
-            <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
+        <div className="relative group overflow-hidden border-l-4 border-coral-cortex shadow-lg w-full h-full">
+            <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10"></div>
             <img
                 src={src}
                 alt={alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                 style={{ objectPosition }}
                 onError={(e) => {
-                    e.currentTarget.src = "https://placehold.co/400x400/FFF3E6/E76F51?text=Photo";
+                    e.currentTarget.src = "https://placehold.co/400x400/f3f4f6/111827?text=Photo";
                     e.currentTarget.onerror = null;
                 }}
             />
@@ -25,35 +25,29 @@ const GalleryImage: React.FC<{ src: string; alt: string; className?: string; del
 
 export const GalleryPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-cream font-sans">
+        <div className="min-h-screen bg-white font-sans text-black-cortex">
             <main className="pt-20">
                 {/* Hero Section - Consistent with About/Events */}
-                <section className="relative py-20 bg-charcoal overflow-hidden" data-navbar-theme="dark">
-                    <div className="absolute inset-0">
-                        <img
-                            src="/images/hero-bg.jpg"
-                            alt="PowerPlay Gallery"
-                            className="w-full h-full object-cover opacity-20"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
-                    </div>
-
-                    <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <div className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 bg-coral/20 text-coral text-xs lg:text-sm font-semibold uppercase tracking-widest mb-6 mt-8 md:mt-0">
-                            Photo Gallery
+                <section className="relative py-24 bg-black-cortex overflow-hidden" data-navbar-theme="dark">
+                    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-coral-cortex/10 border border-coral-cortex/20 mb-8 mx-auto">
+                            <span className="relative flex h-1.5 w-1.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-coral-cortex opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-coral-cortex"></span>
+                            </span>
+                            <span className="text-[10px] font-extrabold text-coral-cortex tracking-widest uppercase">Photo Gallery</span>
                         </div>
-                        <h1 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">
-                            Game Day <span className="text-coral">Memories</span>
+                        <h1 className="font-sans font-black text-5xl md:text-7xl text-white mb-6 tracking-tight">
+                            Game Day <span className="text-coral-cortex">Memories.</span>
                         </h1>
-                        <p className="text-lg text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
-                            Snapshots from our tournaments, events, and the community moments that make PowerPlay special.
+                        <p className="text-xl text-white/70 font-medium max-w-2xl mx-auto leading-relaxed">
+                            Relive the highlights from our tournaments, chapter events, and community gatherings.
                         </p>
                     </div>
                 </section>
 
 
-                <section className="py-12 md:py-24 bg-cream relative" data-navbar-theme="light">
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
+                <section className="py-12 md:py-24 bg-white relative" data-navbar-theme="light">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                         {/* Grid Layout - Optimized for Mobile Editorial and Desktop Bento Restoration */}
@@ -110,19 +104,19 @@ export const GalleryPage: React.FC = () => {
 
                             {/* HERO CENTERPIECE - 4x2 on Desktop. 4:2 = 2:1 aspect ratio. */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden border-l-4 border-coral-light shadow-2xl w-full h-full">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent group-hover:from-charcoal/20 transition-all duration-500 z-10"></div>
+                                <div className="relative group overflow-hidden border-l-4 border-coral-cortex shadow-2xl w-full h-full">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/20 transition-all duration-500 z-10"></div>
                                     <img
                                         src="/images/hero-bg.jpg"
                                         alt="PowerPlay Sports - Our Community"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                                         onError={(e) => {
-                                            e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/E76F51?text=PowerPlay";
+                                            e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/FFA100?text=PowerPlay";
                                             e.currentTarget.onerror = null;
                                         }}
                                     />
                                     <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                        <span className="bg-coral-light text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
+                                        <span className="bg-coral-cortex text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
                                     </div>
                                 </div>
                             </ScrollReveal>
@@ -257,19 +251,19 @@ export const GalleryPage: React.FC = () => {
 
                             {/* Center Huge Image */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:col-start-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden border-l-4 border-coral-light shadow-2xl w-full h-full">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent group-hover:from-charcoal/20 transition-all duration-500 z-10"></div>
+                                <div className="relative group overflow-hidden border-l-4 border-coral-cortex shadow-2xl w-full h-full">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/20 transition-all duration-500 z-10"></div>
                                     <img
                                         src="/images/game-on-ibd-live.jpg"
                                         alt="Game On: IBD & Sports"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                                         onError={(e) => {
-                                            e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/E76F51?text=PowerPlay";
+                                            e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/FFA100?text=PowerPlay";
                                             e.currentTarget.onerror = null;
                                         }}
                                     />
                                     <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                        <span className="bg-coral-light text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Game On: IBD & Sports</span>
+                                        <span className="bg-coral-cortex text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Game On: IBD & Sports</span>
                                     </div>
                                 </div>
                             </ScrollReveal>

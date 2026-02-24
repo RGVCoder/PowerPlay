@@ -34,16 +34,13 @@ export const Partners: React.FC = () => {
 
     return (
         <section className="relative bg-white py-24 overflow-hidden" data-navbar-theme="light">
-            {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral via-coral-light to-coral"></div>
-
             <div className="w-full">
                 {/* Section Header */}
                 <div className="text-center mb-16 px-4">
-                    <h2 className="font-display font-extrabold text-4xl md:text-5xl text-charcoal mb-4">
-                        Our <span className="text-coral">Partners</span>
+                    <h2 className="font-sans font-black text-4xl md:text-5xl text-black-cortex mb-4">
+                        Our <span className="text-coral-cortex">Partners</span>
                     </h2>
-                    <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
+                    <p className="text-black-cortex/60 text-lg max-w-2xl mx-auto">
                         Organizations that believe in our mission and help us make a difference.
                     </p>
                 </div>
@@ -56,13 +53,13 @@ export const Partners: React.FC = () => {
                                 key={`${partner.name}-${index}`}
                                 className="mx-8 md:mx-16 flex items-center justify-center transition-all duration-300 hover:scale-110"
                             >
-                                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white border-2 border-coral/30 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-md hover:border-coral/50 transition-all duration-300">
+                                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white border border-black/5 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-md hover:border-coral-cortex/20 transition-all duration-300">
                                     <img
                                         src={partner.logo}
                                         alt={partner.name}
                                         className="w-full h-full object-cover"
                                         onError={(e) => {
-                                            e.currentTarget.src = "https://placehold.co/400x400/ffffff/E76F51?text=" + partner.name.substring(0, 1);
+                                            e.currentTarget.src = "https://placehold.co/400x400/ffffff/FF7F50?text=" + partner.name.substring(0, 1);
                                             e.currentTarget.onerror = null;
                                         }}
                                     />
@@ -81,10 +78,10 @@ export const Partners: React.FC = () => {
                     <div className="inline-block pt-8">
                         <Link
                             to="/contact"
-                            className="text-charcoal-light hover:text-coral transition-colors text-sm group"
+                            className="text-black-cortex/50 hover:text-coral-cortex transition-colors text-sm group"
                         >
                             Interested in partnering?
-                            <span className="text-coral font-semibold ml-1 group-hover:ml-2 transition-all">Get in touch →</span>
+                            <span className="text-coral-cortex font-bold ml-1 group-hover:ml-2 transition-all">Get in touch →</span>
                         </Link>
                     </div>
                 </div>

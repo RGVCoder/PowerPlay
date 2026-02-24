@@ -21,7 +21,7 @@ import { ScrollReveal } from './components/ScrollReveal';
 
 // Home page component - Streamlined for visual impact
 const HomePage: React.FC = () => (
-  <div className="min-h-screen bg-cream font-sans">
+  <div className="min-h-screen font-sans">
     <main>
       {/* 1. Hero: Hook with rotating images + donation form */}
       <ScrollReveal data-navbar-theme="dark">
@@ -29,29 +29,28 @@ const HomePage: React.FC = () => (
       </ScrollReveal>
 
       {/* 2. Pillars: 3 visual cards showing what we do */}
-      <ScrollReveal delay={0.2} data-navbar-theme="dark">
+      <ScrollReveal delay={0.2} data-navbar-theme="light">
         <Pillars />
       </ScrollReveal>
 
       {/* 3. Upcoming Events: What's coming up */}
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <UpcomingEvents />
+        <UpcomingEvents bgClass="bg-cream" />
       </ScrollReveal>
 
       {/* 4. Our Impact: Stats section */}
-      <ScrollReveal delay={0.1} data-navbar-theme="dark">
+      <ScrollReveal delay={0.1} data-navbar-theme="light">
         <OurImpact />
       </ScrollReveal>
 
       {/* 6. Gallery Teaser: Featured images with link to full gallery */}
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <GalleryTeaser />
+        <GalleryTeaser bgClass="bg-cream" />
       </ScrollReveal>
 
       {/* Donations: Integrated directly into the home flow */}
-      {/* Assuming Donations component is light based on cream background */}
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        {/* Using lazy import or assuming it's available, but since I can't import easily without rewriting imports, I will just add the attributes to existing ones first. Wait, I should import Donations. */}
+        {/* Donations would go here */}
       </ScrollReveal>
 
       {/* 7. Partners: Simple logo strip */}
@@ -60,8 +59,8 @@ const HomePage: React.FC = () => (
       </ScrollReveal>
 
       {/* 8. Testimonials: Athlete stories */}
-      <ScrollReveal delay={0.1} data-navbar-theme="dark">
-        <Testimonials />
+      <ScrollReveal delay={0.1} data-navbar-theme="light">
+        <Testimonials bgClass="bg-cream" />
       </ScrollReveal>
     </main>
   </div>

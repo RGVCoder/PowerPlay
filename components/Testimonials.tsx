@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const testimonials = [
   {
@@ -27,70 +27,48 @@ const testimonials = [
   }
 ];
 
-export const Testimonials: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+interface TestimonialsProps {
+  bgClass?: string;
+}
 
-  // Auto-rotate every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
-
-  const currentTestimonial = testimonials[currentIndex];
+export const Testimonials: React.FC<TestimonialsProps> = ({ bgClass = 'bg-black-cortex' }) => {
+  const isLight = bgClass === 'bg-white' || bgClass === 'bg-cream';
 
   return (
-    <section className="py-16 md:py-24 bg-charcoal relative overflow-hidden" data-navbar-theme="dark">
-      {/* Top decorative border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral/30 to-transparent"></div>
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-5 md:top-20 md:left-10 text-coral/10 text-[100px] md:text-[200px] font-serif select-none">"</div>
-      <div className="absolute bottom-10 right-5 md:bottom-20 md:right-10 text-coral/10 text-[100px] md:text-[200px] font-serif select-none rotate-180">"</div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+    <section className={`py-16 md:py-24 ${bgClass} relative overflow-hidden`} data-navbar-theme={isLight ? "light" : "dark"}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
-            Athlete <span className="text-coral">Stories</span>
+          <h2 className={`font-display font-black text-4xl md:text-5xl mb-4 ${isLight ? 'text-black-cortex' : 'text-white'}`}>
+            Athlete <span className="text-coral-cortex">Stories</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Hear from the athletes and supporters who make PowerPlay special.
+          <p className={`${isLight ? 'text-black-cortex/60' : 'text-white/60'} text-lg max-w-2xl mx-auto`}>
+            Hear from the families, athletes, and partners we've had the privilege to work with.
           </p>
         </div>
 
-        {/* Quote Card */}
-        <div className="text-center">
-          {/* Quote Text */}
-          <p className="text-white/90 text-lg md:text-2xl leading-relaxed font-light mb-10 md:mb-12 max-w-3xl mx-auto italic">
-            "{currentTestimonial.quote}"
-          </p>
-
-          {/* Author */}
-          <div className="flex items-center justify-center gap-4 md:gap-5">
-            {/* Square avatar with initials */}
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-coral rounded-xl flex items-center justify-center text-white font-bold text-base md:text-lg">
-              {currentTestimonial.initials}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className={`${isLight ? 'bg-white border-black/5 shadow-sm' : 'bg-white/5 border-coral-cortex/20'} rounded-2xl p-8 border-2 transition-all duration-300 hover:border-coral-cortex group`}>
+              <div className="flex items-center gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-coral-cortex fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote className={`text-lg italic leading-relaxed mb-6 ${isLight ? 'text-black-cortex/80' : 'text-white/80'}`}>
+                "{testimonial.quote}"
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className={`w-12 h-12 rounded-full ${isLight ? 'bg-black/5' : 'bg-coral-cortex/20'} flex items-center justify-center font-bold text-coral-cortex`}>
+                  {testimonial.name[0]}
+                </div>
+                <div>
+                  <div className={`font-bold ${isLight ? 'text-black-cortex' : 'text-white'}`}>{testimonial.name}</div>
+                  <div className="text-coral-cortex text-xs uppercase tracking-widest">{testimonial.role}</div>
+                </div>
+              </div>
             </div>
-            <div className="text-left">
-              <p className="text-white font-semibold text-base md:text-lg">{currentTestimonial.name}</p>
-              <p className="text-white/50 text-xs md:text-sm">{currentTestimonial.role}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="flex justify-center gap-3 mt-14">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2 transition-all duration-300 ${index === currentIndex
-                ? 'bg-coral w-10'
-                : 'bg-white/30 w-2 hover:bg-white/50'
-                }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
           ))}
         </div>
       </div>

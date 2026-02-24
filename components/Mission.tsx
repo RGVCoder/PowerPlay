@@ -3,12 +3,12 @@ import { Button } from './Button';
 
 export const Mission: React.FC = () => {
     return (
-        <section id="mission" className="py-24 bg-white relative">
+        <section id="mission" className="py-24 bg-cream relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header - Matches site style */}
                 <div className="mb-16">
-                    <span className="text-coral text-sm font-semibold uppercase tracking-widest mb-4 block">Our Mission</span>
+                    <span className="text-orange-cortex text-sm font-semibold uppercase tracking-widest mb-4 block">Our Mission</span>
                     <h2 className="font-display font-bold text-4xl md:text-5xl text-charcoal mb-4 tracking-tight">
                         How Your Support Helps
                     </h2>
@@ -24,7 +24,7 @@ export const Mission: React.FC = () => {
                     <div className="md:col-span-7 bg-cream rounded-[34px] p-6 md:p-8 shadow-sm">
                         <div className="flex flex-col h-full">
                             <div className="mb-4">
-                                <span className="text-coral font-semibold text-sm uppercase tracking-wide">What We Do</span>
+                                <span className="text-orange-cortex font-semibold text-sm uppercase tracking-wide">What We Do</span>
                             </div>
                             <h3 className="font-display font-bold text-2xl text-charcoal mb-4">
                                 We run sports tournaments for kids
@@ -45,7 +45,7 @@ export const Mission: React.FC = () => {
                     {/* Stacked Smaller Cards */}
                     <div className="md:col-span-5 flex flex-col gap-6">
                         <div className="bg-charcoal p-6 text-white flex-1 rounded-[34px] shadow-sm">
-                            <span className="text-coral-light font-semibold text-sm uppercase tracking-wide">Health Education</span>
+                            <span className="text-orange-cortex font-semibold text-sm uppercase tracking-wide">Health Education</span>
                             <h3 className="font-display font-bold text-xl mt-3 mb-2">
                                 Real doctors. Real talks.
                             </h3>
@@ -54,8 +54,8 @@ export const Mission: React.FC = () => {
                             </p>
                         </div>
 
-                        <div className="bg-coral/10 p-6 flex-1 rounded-[34px] shadow-sm border border-coral/20">
-                            <span className="text-coral font-semibold text-sm uppercase tracking-wide">100% Goes to Families</span>
+                        <div className="bg-orange-cortex/10 p-6 flex-1 rounded-[34px] shadow-sm border border-orange-cortex/20">
+                            <span className="text-orange-cortex font-semibold text-sm uppercase tracking-wide">100% Goes to Families</span>
                             <h3 className="font-display font-bold text-xl text-charcoal mt-3 mb-2">
                                 No admin fees. Ever.
                             </h3>
@@ -67,7 +67,7 @@ export const Mission: React.FC = () => {
                 </div>
 
                 {/* Quote Section - More Personal */}
-                <div className="border-l-4 border-coral pl-6 py-2 mb-14">
+                <div className="border-l-4 border-orange-cortex pl-6 py-2 mb-14">
                     <blockquote className="text-xl md:text-2xl text-charcoal font-display italic mb-3">
                         "Every kid deserves the chance to grow up and play."
                     </blockquote>
@@ -83,7 +83,7 @@ export const Mission: React.FC = () => {
                         Donate Now
                     </Button>
                     <span className="text-charcoal-light text-sm">
-                        or <a href="#events" className="text-coral hover:underline" onClick={(e) => { e.preventDefault(); document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' }); }}>join our next event</a>
+                        or <a href="#events" className="text-orange-cortex hover:underline" onClick={(e) => { e.preventDefault(); document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' }); }}>join our next event</a>
                     </span>
                 </div>
             </div>

@@ -12,13 +12,13 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseStyles = "font-display font-semibold tracking-wide py-3 px-8 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-coral focus:ring-opacity-50 relative overflow-hidden group";
+  const baseStyles = "font-display font-semibold tracking-wide py-3 px-8 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-orange-cortex focus:ring-opacity-50 relative overflow-hidden group";
 
   const variants = {
-    primary: "bg-coral hover:bg-coral-dark text-white shadow-lg shadow-coral/20 hover:shadow-xl hover:shadow-coral/30 border border-transparent",
-    secondary: "bg-cream-sand text-charcoal hover:bg-cream-dark border border-charcoal/10 hover:border-charcoal/20 backdrop-blur-sm",
-    outline: "bg-transparent border-2 border-coral text-coral hover:bg-coral hover:text-white",
-    text: "bg-transparent text-coral hover:text-coral-dark px-0 py-2 hover:translate-y-0 rounded-none",
+    primary: "bg-orange-cortex hover:bg-orange-cortex text-white shadow-lg shadow-orange-cortex/20 hover:shadow-xl hover:shadow-orange-cortex/30 border border-transparent",
+    secondary: "bg-black/5 text-black-cortex hover:bg-black/10 border border-black-cortex/10 hover:border-black-cortex/20 backdrop-blur-sm",
+    outline: "bg-transparent border-2 border-orange-cortex text-orange-cortex hover:bg-orange-cortex hover:text-white",
+    text: "bg-transparent text-orange-cortex hover:text-orange-cortex px-0 py-2 hover:translate-y-0 rounded-none",
   };
 
   return (

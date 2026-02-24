@@ -3,7 +3,7 @@ import React from 'react';
 export const Gallery: React.FC = () => {
     // Gallery image component for consistent styling
     const GalleryImage: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className = '' }) => (
-        <div className={`relative group overflow-hidden border-l-4 border-coral shadow-lg ${className}`}>
+        <div className={`relative group overflow-hidden border-l-4 border-orange-cortex shadow-lg ${className}`}>
             <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10"></div>
             <img
                 src={src}
@@ -21,7 +21,7 @@ export const Gallery: React.FC = () => {
         <section id="gallery" className="py-16 md:py-24 bg-cream relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-10 md:mb-16">
-                    <span className="text-coral text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4 block">Photo Gallery</span>
+                    <span className="text-orange-cortex text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4 block">Photo Gallery</span>
                     <h2 className="font-display font-bold text-3xl md:text-5xl text-charcoal mb-3 md:mb-4 tracking-tight">Game Day Memories</h2>
                     <p className="text-charcoal-light font-light text-sm md:text-base">Snapshots from our tournaments, events, and community moments.</p>
                 </div>
@@ -72,7 +72,7 @@ export const Gallery: React.FC = () => {
                     </div>
 
                     {/* HERO CENTERPIECE - 4x2 on Desktop. 4:2 = 2:1 aspect ratio. */}
-                    <div className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-coral shadow-2xl">
+                    <div className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1] relative group overflow-hidden border-l-4 border-orange-cortex shadow-2xl">
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent group-hover:from-charcoal/20 transition-all duration-500 z-10"></div>
                         <img
                             src="/images/hero-bg.jpg"
@@ -84,7 +84,7 @@ export const Gallery: React.FC = () => {
                             }}
                         />
                         <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                            <span className="bg-coral text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
+                            <span className="bg-orange-cortex text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
                         </div>
                     </div>
 

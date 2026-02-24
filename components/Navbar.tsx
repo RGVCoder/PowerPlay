@@ -39,19 +39,19 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white/95 backdrop-blur-md py-3 shadow-lg border-b border-charcoal/5'
-          : 'bg-white py-5 shadow-sm'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${scrolled
+          ? 'bg-white/90 backdrop-blur-md py-3 border-black/5'
+          : 'bg-white py-5 border-black/5'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-charcoal/10 group-hover:border-coral transition-colors">
+            <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-black/5 group-hover:border-orange-cortex transition-colors">
               <img src="/images/logo.png" alt="Logo" className="h-full w-full object-cover" />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight text-charcoal transition-colors">
-              POWER<span className="text-coral">PLAY</span>
+            <span className="font-sans font-bold text-xl tracking-tight text-black-cortex transition-colors">
+              POWER<span className="text-orange-cortex">PLAY</span>
             </span>
           </Link>
 
@@ -62,8 +62,8 @@ export const Navbar: React.FC = () => {
                 key={link.name}
                 to={link.path}
                 className={`text-sm font-semibold tracking-wide transition-colors ${location.pathname === link.path
-                  ? 'text-coral'
-                  : 'text-charcoal hover:text-coral'
+                  ? 'text-orange-cortex'
+                  : 'text-black-cortex/70 hover:text-orange-cortex'
                   }`}
               >
                 {link.name}
@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => window.open('https://hcb.hackclub.com/donations/start/powerplay', '_blank')}
-              className="hidden md:block px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg bg-coral text-white hover:bg-coral-light"
+              className="hidden md:block px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 bg-orange-cortex text-white hover:bg-orange-cortex/90"
             >
               Donate Now
             </button>
@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden focus:outline-none transition-colors text-charcoal"
+              className="md:hidden focus:outline-none transition-colors text-black-cortex"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
           ></div>
 
           {/* Drawer */}
-          <div className="fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-cream-warm z-[60] shadow-2xl flex flex-col md:hidden animate-slide-in-left">
+          <div className="fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-white z-[60] shadow-2xl flex flex-col md:hidden animate-slide-in-left">
             {/* Drawer Header */}
             <div className="p-6 border-b border-charcoal/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -121,7 +121,7 @@ export const Navbar: React.FC = () => {
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-charcoal-light hover:text-coral transition-colors p-1"
+                className="text-charcoal-light hover:text-orange-cortex transition-colors p-1"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -136,13 +136,13 @@ export const Navbar: React.FC = () => {
                   key={link.name}
                   to={link.path}
                   className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${location.pathname === link.path
-                    ? 'bg-white shadow-sm text-coral font-bold'
-                    : 'text-charcoal hover:bg-white/50 hover:text-coral font-medium'
+                    ? 'bg-gray-50 shadow-sm text-orange-cortex font-bold'
+                    : 'text-charcoal hover:bg-gray-50/50 hover:text-orange-cortex font-medium'
                     }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {/* Icons for each link type */}
-                  <span className={`text-xl ${location.pathname === link.path ? 'text-coral' : 'text-charcoal-light'}`}>
+                  <span className={`text-xl ${location.pathname === link.path ? 'text-orange-cortex' : 'text-charcoal-light'}`}>
                     {link.name === 'Home' && (
                       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -180,10 +180,10 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Drawer Footer */}
-            <div className="p-6 border-t border-charcoal/10 bg-white/50">
+            <div className="p-6 border-t border-charcoal/10 bg-gray-50">
               <button
                 onClick={() => window.open('https://hcb.hackclub.com/donations/start/powerplay', '_blank')}
-                className="w-full py-3.5 rounded-xl bg-coral text-white font-bold text-center shadow-lg shadow-coral/20 hover:shadow-xl hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2 group"
+                className="w-full py-3.5 rounded-xl bg-orange-cortex text-white font-bold text-center shadow-lg shadow-orange-cortex/20 hover:shadow-xl hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2 group"
               >
                 Donate Now
                 <span className="group-hover:translate-x-1 transition-transform">→</span>

@@ -27,72 +27,74 @@
       theme: {
         extend: {
           colors: {
-            coral: {
-              DEFAULT: '#E76F51',
-              light: '#F4A261',
-              dark: '#C65D3C',
-              dim: 'rgba(231, 111, 81, 0.1)',
-            },
-            sage: {
-              DEFAULT: '#81B29A',
-              light: '#A8DABC',
-              dark: '#5E9178',
-            },
-            cream: {
-              DEFAULT: '#FFFBF5',
-              warm: '#FFF7F0',
-              sand: '#FFF3E6',
-              dark: '#F5EDE4',
-            },
-            charcoal: {
-              DEFAULT: '#000000', // Pure Black
-              light: '#636E72',
-              muted: '#B2BEC3',
-            },
-            teal: {
-              DEFAULT: '#1D8A6E',
-              light: '#2AAA8A',
-              dark: '#157A5E',
-            },
-            // UTR Inspired Colors
-            'utr-black': '#000000', // Pure Black
-            'utr-blue': '#0066CC',  // Classic sports blue
-
-            // Keep legacy names for easier migration
-            gold: {
-              DEFAULT: '#E76F51',
-              light: '#F4A261',
-              dark: '#C65D3C',
-              dim: 'rgba(231, 111, 81, 0.1)',
+            'coral-cortex': '#FF7F50',
+            'orange-cortex': '#FF7F50', // Using Coral for better pop on both B&W
+            'black-cortex': '#000000',
+            'white-cortex': '#ffffff',
+            'dark-grey': '#1a1a1a', // Keep existing dark-grey
+            orange: {
+              cortex: '#FF7F50',
             },
             black: {
-              DEFAULT: '#000000', // Pure Black
-              rich: '#FFFBF5',
-              surface: '#FFF7F0',
-              card: '#FFF3E6',
-              lighter: '#F5EDE4',
+              cortex: '#000000',
+            },
+            cream: {
+              DEFAULT: '#fdfaf3',
+              warm: '#f9f6ef',
+              sand: '#f3efdf',
+              dark: '#e5e1d3',
+            },
+            charcoal: {
+              DEFAULT: '#111827',
+              light: '#4b5563',
+              muted: '#9ca3af',
+            },
+            // UTR Inspired Colors
+            'utr-black': '#000000',
+            'utr-blue': '#3b82f6',
+
+            // Keep names for easier migration, pointing to standardized values
+            gold: {
+              DEFAULT: '#FF7F50',
+              light: '#ff9a76',
+              dark: '#ff6347',
+              dim: 'rgba(255, 127, 80, 0.1)',
+            },
+            coral: {
+              DEFAULT: '#FF7F50',
+              dim: 'rgba(255, 127, 80, 0.1)',
+            },
+            black: {
+              DEFAULT: '#000000',
+              rich: '#000000',
+              surface: '#ffffff',
+              card: '#f9fafb',
+              lighter: '#1f2937',
             },
             gray: {
-              slate: '#636E72',
-              light: '#2D3436',
+              slate: '#4b5563',
+              light: '#f3f4f6',
             }
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           },
           backgroundImage: {
-            'gold-gradient': 'linear-gradient(135deg, #F4A261 0%, #E76F51 50%, #C65D3C 100%)',
-            'coral-gradient': 'linear-gradient(135deg, #F4A261 0%, #E76F51 50%, #C65D3C 100%)',
-            'gold-text': 'linear-gradient(to right, #F4A261, #E76F51, #F4A261)',
-            'dark-gradient': 'linear-gradient(to bottom, #FFFBF5, #FFF7F0)',
-            'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(231, 111, 81, 0.12) 0%, transparent 50%)',
-            'warm-gradient': 'linear-gradient(135deg, #FFFBF5 0%, #FFF7F0 100%)',
+            'orange-gradient': 'linear-gradient(135deg, #FF7F50 0%, #ff9a76 50%, #ff6347 100%)',
+            'coral-gradient': 'linear-gradient(135deg, #FF7F50 0%, #ff9a76 50%, #ff6347 100%)',
+            'gold-gradient': 'linear-gradient(135deg, #FF7F50 0%, #ff9a76 50%, #ff6347 100%)',
+            'gold-text': 'linear-gradient(to right, #FF7F50, #ff9a76, #FF7F50)',
+            'dark-gradient': 'linear-gradient(to bottom, #0a0a0a, #1a1a1a)',
+            'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(255, 127, 80, 0.05) 0%, transparent 50%)',
+            'warm-gradient': 'linear-gradient(135deg, #0a0a0a 0%, #121212 100%)',
           },
           animation: {
             'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'float': 'float 6s ease-in-out infinite',
             'slide-in-left': 'slideInLeft 0.3s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
           },
           keyframes: {
             float: {
@@ -102,6 +104,10 @@
             slideInLeft: {
               '0%': { transform: 'translateX(-100%)' },
               '100%': { transform: 'translateX(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             }
           }
         }
@@ -110,8 +116,14 @@
   </script>
   <style>
     body {
-      background-color: #FFFBF5;
-      color: #2D3436;
+      background-color: #0a0a0a;
+      color: #FFFFFF;
+      position: relative;
+    }
+
+    section {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
     }
 
     /* Custom scrollbar */
@@ -120,20 +132,20 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #FFF7F0;
+      background: #0a0a0a;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #DDD;
+      background: #333;
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #E76F51;
+      background: #FF7F50;
     }
 
     .text-gold-gradient {
-      background: linear-gradient(to right, #F4A261, #E76F51, #C65D3C);
+      background: linear-gradient(to right, #FF7F50, #ff9a76, #ff6347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -141,7 +153,7 @@
     }
 
     .text-coral-gradient {
-      background: linear-gradient(to right, #F4A261, #E76F51, #C65D3C);
+      background: linear-gradient(to right, #FF7F50, #ff9a76, #ff6347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -173,7 +185,7 @@
 </script>
 </head>
 
-<body class="bg-cream text-charcoal antialiased selection:bg-coral selection:text-white">
+<body class="bg-black-cortex text-charcoal antialiased selection:bg-coral-cortex selection:text-white">
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

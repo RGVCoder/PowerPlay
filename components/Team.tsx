@@ -16,7 +16,7 @@ export const Team: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-charcoal mb-6 tracking-tight">
-            MEET THE <span className="text-coral">TEAM</span>
+            MEET THE <span className="text-orange-cortex">TEAM</span>
           </h2>
           <p className="text-charcoal-light max-w-2xl mx-auto font-light">
             The passionate students driving PowerPlay forward.
@@ -30,8 +30,8 @@ export const Team: React.FC = () => {
               <div key={index} className="group text-center">
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   {/* Rotating Border Effect - Solid & Brighter for Founder */}
-                  <div className={`absolute inset-0 rounded-full border-2 ${isFounder ? 'border-solid border-coral shadow-md' : 'border-dashed border-coral-light/40'} group-hover:rotate-180 transition-transform duration-1000`}></div>
-                  <div className="absolute inset-2 rounded-full border border-charcoal/10 bg-cream-sand overflow-hidden">
+                  <div className={`absolute inset-0 rounded-full border-2 ${isFounder ? 'border-solid border-orange-cortex shadow-md' : 'border-dashed border-orange-cortex/40'} group-hover:rotate-180 transition-transform duration-1000`}></div>
+                  <div className="absolute inset-2 rounded-full border border-charcoal/10 bg-cream-dark overflow-hidden">
                     {/* Placeholder for team headshots */}
                     <img
                       src={`https://placehold.co/150x150/FFF3E6/E76F51?text=${member.name.charAt(0)}`}
@@ -40,7 +40,7 @@ export const Team: React.FC = () => {
                     />
                   </div>
                 </div>
-                <h3 className={`font-bold text-lg mb-2 transition-colors ${isFounder ? 'text-coral' : 'text-charcoal group-hover:text-coral-light'}`}>{member.name}</h3>
+                <h3 className={`font-bold text-lg mb-2 transition-colors ${isFounder ? 'text-orange-cortex' : 'text-charcoal group-hover:text-orange-cortex'}`}>{member.name}</h3>
                 <p className={`text-xs uppercase tracking-[0.15em] font-medium ${isFounder ? 'text-charcoal-light' : 'text-charcoal-muted'}`}>{member.title}</p>
               </div>
             );
