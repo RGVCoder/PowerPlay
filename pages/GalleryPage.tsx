@@ -343,6 +343,60 @@ export const GalleryPage: React.FC = () => {
                                 delay={0.5}
                             />
 
+                            {/* Row 10: Pickleball Tournament Highlights */}
+                            <GalleryImage
+                                src="/images/pickleball-gal-3.jpg"
+                                alt="Pickleball Action"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
+                                delay={0.1}
+                            />
+                            <GalleryImage
+                                src="/images/pickleball-gal-1.jpg"
+                                alt="Tournament Winners"
+                                className="aspect-square md:col-span-1"
+                                delay={0.3}
+                            />
+                            <GalleryImage
+                                src="/images/pickleball-gal-2.jpg"
+                                alt="Pickleball Play"
+                                className="aspect-square md:col-span-1"
+                                delay={0.5}
+                            />
+                            <GalleryImage
+                                src="/images/pickleball-gal-4.jpg"
+                                alt="Pickleball Match"
+                                className="aspect-square md:col-span-1"
+                                delay={0.7}
+                            />
+                            <GalleryImage
+                                src="/images/pickleball-gal-5.jpg"
+                                alt="Tournament Finalists"
+                                className="aspect-square md:col-span-1"
+                                delay={0.9}
+                            />
+
+                            {/* Row 11: More Pickleball Tournament Action */}
+                            <GalleryImage
+                                src="/images/pickleball-gal-6.jpg"
+                                alt="Pickleball Match Action"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
+                                delay={0.1}
+                            />
+                            <GalleryImage
+                                src="/images/pickleball-gal-7.jpg"
+                                alt="Pickleball Court"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
+                                delay={0.3}
+                            />
+                            <GalleryImage
+                                src="/images/pickleball-gal-8.jpg"
+                                alt="Pickleball Tournament Overview"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2"
+                                delay={0.5}
+                            />
+
+
+
                         </div>
                     </div>
                 </section>

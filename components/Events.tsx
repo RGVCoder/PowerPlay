@@ -18,9 +18,66 @@ interface EventData {
 
 const EVENTS: EventData[] = [
   {
+    id: 'heart-to-heart-pickleball',
+    title: 'PICKLEBALL TOURNAMENT',
+    shortDescription: 'A highly successful doubles tournament with amazing community turnout.',
+    fullDescription: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="space-y-6">
+          <p className="text-lg font-light leading-relaxed text-charcoal-light">
+            We’re excited to share that the <strong>PowerPlay x Heart to Heart Doubles Pickleball Tournament</strong> was a huge success, filled with great energy, competitive matches, and an amazing community turnout from start to finish.
+          </p>
+          <div className="bg-cream-dark p-6 border-l-4 border-orange-cortex">
+            <h4 className="text-charcoal font-bold text-base mb-2 uppercase tracking-widest">Special Thanks</h4>
+            <p className="text-charcoal-light font-light text-sm">
+              Thank you to <strong>Chicken N Pickle Allen</strong> for the beautiful venue and our sponsor, <strong>Credit Union of Texas</strong>, for helping make this event possible. More coming soon!
+            </p>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="bg-cream p-6 border border-charcoal/5 shadow-lg rounded-xl">
+            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Tournament Winners</h4>
+            <div className="space-y-4 font-mono text-sm">
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">🏆</span>
+                  <span className="text-orange-cortex font-bold">1st Place</span>
+                </div>
+                <span className="text-charcoal text-right font-bold">Arhaan & Varun</span>
+              </div>
+              <div className="flex justify-between items-center pt-2 border-t border-charcoal/5">
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">🥈</span>
+                  <span className="text-charcoal-light font-bold">2nd Place</span>
+                </div>
+                <span className="text-charcoal-light text-right font-medium">Vinay & Ishaan</span>
+              </div>
+              <div className="flex justify-between items-center pt-2 border-t border-charcoal/5">
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">🎖️</span>
+                  <span className="text-charcoal font-bold">Backdraw</span>
+                </div>
+                <span className="text-charcoal text-right font-medium">Yash & Kashyap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    image: '/images/pickleball-winners.jpg',
+    imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Pickleball+Winners',
+    buttonText: 'View Recap',
+    badge: 'Tournament',
+    stats: [
+      { label: 'Venue', value: 'Chicken N Pickle' },
+      { label: 'Sponsor', value: 'Credit Union TX' },
+      { label: 'Raised', value: '$800+' }
+    ]
+  },
+  {
     id: 'giveback-night',
     title: 'GIVEBACK NIGHT',
-    shortDescription: 'A community night at Chicken N Pickle supporting the Crohn\'s & Colitis Foundation.',
+    shortDescription: 'Community night at Chicken N Pickle helping the Crohn\'s & Colitis Foundation.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
@@ -624,29 +681,16 @@ export const Events: React.FC = () => {
 
             <div className="space-y-8">
               <ScrollReveal width="100%" delay={0.1}>
-                <div className="bg-white rounded-[34px] border-2 border-black/5 p-6 md:p-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-all duration-300 hover:border-coral-cortex group shadow-sm hover:shadow-md gap-8 md:gap-12">
-                  <div className="w-full md:w-5/12 aspect-video rounded-3xl overflow-hidden shadow-inner bg-black/5 relative">
-                    <img
-                      src="/images/pickleball-cnp.jpg"
-                      alt="Pickleball Tournament"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop";
-                        e.currentTarget.onerror = null;
-                      }}
-                    />
-                    <div className="absolute top-4 left-4 bg-coral-cortex text-white font-bold px-3 py-1.5 text-xs rounded-lg uppercase tracking-widest shadow-lg">Coming Soon</div>
+                <div className="bg-white rounded-[34px] border-2 border-black/5 p-6 md:p-10 flex flex-col items-center text-center transition-all duration-300 hover:border-coral-cortex group shadow-sm hover:shadow-md">
+                  <div className="w-16 h-16 bg-coral-cortex/10 text-coral-cortex rounded-full flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
                   </div>
-                  <div className="w-full md:w-7/12 flex flex-col items-center md:items-start">
-                    <div className="mb-4 text-coral-cortex font-mono text-xs md:text-sm uppercase tracking-widest bg-coral-cortex/10 px-4 py-1.5 rounded-full inline-block">
-                      March 16, 2026 • 5pm - 8pm
-                    </div>
-                    <h4 className="font-display font-bold text-2xl md:text-3xl text-black-cortex uppercase tracking-wider mb-4">Pickleball Tournament</h4>
-                    <p className="text-black-cortex/70 text-base md:text-lg leading-relaxed font-light mb-4">
-                      Our next doubles pickleball competition, sponsored by <strong>Credit Union of Texas</strong>, is in the works! Compete for <strong>$150 (1st)</strong> and <strong>$50 (2nd)</strong>, plus a <strong>$50 gift card</strong> raffle, while raising funds for pediatric illnesses.
-                    </p>
-                    <span className="text-coral-cortex text-xs font-medium uppercase tracking-widest bg-coral-cortex/10 px-3 py-1 rounded-md">PowerPlay X HeroesForIBD</span>
-                  </div>
+                  <h4 className="font-display font-bold text-2xl md:text-3xl text-black-cortex uppercase tracking-wider mb-4">More Events Coming Soon</h4>
+                  <p className="text-black-cortex/70 text-base md:text-lg leading-relaxed font-light max-w-2xl mx-auto">
+                    We are currently planning our next opportunities to bring athletes together for a cause. Check back soon for updates!
+                  </p>
                 </div>
               </ScrollReveal>
             </div>

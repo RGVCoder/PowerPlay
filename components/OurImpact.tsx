@@ -67,29 +67,29 @@ export const OurImpact: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Stats Grid - ClickHouse Style with Coral Accents */}
-                <div className="grid grid-cols-1 md:grid-cols-3 border-t-2 border-l-2 border-coral-cortex/20">
-                    <div className="text-center group p-12 border-r-2 border-b-2 border-coral-cortex/20 bg-cream hover:bg-coral-cortex/[0.05] transition-all duration-300">
-                        <div className="font-sans font-bold text-5xl md:text-7xl text-coral-cortex mb-4 group-hover:scale-105 transition-transform duration-300">
+                {/* Stats Grid - Standalone Cards to match Pillars */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="text-center group px-8 py-12 bg-cream rounded-[48px] border-[1.5px] border-coral-cortex/20 shadow-[0_4px_20px_-4px_rgba(255,127,80,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(255,127,80,0.2)] hover:-translate-y-1 transition-all duration-300">
+                        <div className="font-sans font-black text-6xl md:text-[80px] text-charcoal mb-4 group-hover:text-coral-cortex transition-colors duration-300 leading-none">
                             <AnimatedCounter end={5} prefix="$" suffix="K+" />
                         </div>
-                        <div className="text-black-cortex/40 text-[10px] font-bold tracking-[0.2em] uppercase">
+                        <div className="text-charcoal-light text-sm font-bold tracking-[0.2em] uppercase">
                             Raised for Pediatric Care
                         </div>
                     </div>
-                    <div className="text-center group p-12 border-r-2 border-b-2 border-coral-cortex/20 bg-cream hover:bg-coral-cortex/[0.05] transition-all duration-300">
-                        <div className="font-sans font-bold text-5xl md:text-7xl text-coral-cortex mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="text-center group px-8 py-12 bg-cream rounded-[48px] border-[1.5px] border-coral-cortex/20 shadow-[0_4px_20px_-4px_rgba(255,127,80,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(255,127,80,0.2)] hover:-translate-y-1 transition-all duration-300">
+                        <div className="font-sans font-black text-6xl md:text-[80px] text-charcoal mb-4 group-hover:text-coral-cortex transition-colors duration-300 leading-none">
                             <AnimatedCounter end={500} suffix="+" />
                         </div>
-                        <div className="text-black-cortex/40 text-[10px] font-bold tracking-[0.2em] uppercase">
+                        <div className="text-charcoal-light text-sm font-bold tracking-[0.2em] uppercase">
                             Athletes United
                         </div>
                     </div>
-                    <div className="text-center group p-12 border-r-2 border-b-2 border-coral-cortex/20 bg-cream hover:bg-coral-cortex/[0.05] transition-all duration-300">
-                        <div className="font-sans font-bold text-5xl md:text-7xl text-coral-cortex mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="text-center group px-8 py-12 bg-cream rounded-[48px] border-[1.5px] border-coral-cortex/20 shadow-[0_4px_20px_-4px_rgba(255,127,80,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(255,127,80,0.2)] hover:-translate-y-1 transition-all duration-300">
+                        <div className="font-sans font-black text-6xl md:text-[80px] text-charcoal mb-4 group-hover:text-coral-cortex transition-colors duration-300 leading-none">
                             <AnimatedCounter end={100} suffix="%" />
                         </div>
-                        <div className="text-black-cortex/40 text-[10px] font-bold tracking-[0.2em] uppercase">
+                        <div className="text-charcoal-light text-sm font-bold tracking-[0.2em] uppercase">
                             Goes to Families in Need
                         </div>
                     </div>

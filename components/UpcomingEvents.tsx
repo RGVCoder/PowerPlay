@@ -24,19 +24,15 @@ interface UpcomingEvent {
 
 const UPCOMING_EVENTS: UpcomingEvent[] = [
     {
-        id: 'pickleball-2026',
-        title: 'PICKLEBALL TOURNAMENT',
-        subtitle: 'PowerPlay X HeroesForIBD',
-        date: '2026-03-16',
-        dateDisplay: 'March 16, 2026 • 5pm - 8pm',
-        description: (
-            <>
-                Our next doubles pickleball competition, sponsored by <strong>Credit Union of Texas</strong>, is in the works! Compete for <strong>$150 (1st)</strong> and <strong>$50 (2nd)</strong>, plus a <strong>$50 gift card</strong> raffle, while raising funds for pediatric illnesses.
-            </>
-        ),
-        image: '/images/pickleball-cnp.jpg',
+        id: 'coming-soon',
+        title: 'MORE EVENTS COMING SOON',
+        subtitle: 'Stay Tuned',
+        date: '',
+        dateDisplay: 'TBD',
+        description: 'We are currently planning our next opportunities to bring athletes together for a cause. Check back soon for updates!',
+        image: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop',
         imageFallback: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1000&auto=format&fit=crop',
-        partner: 'HeroesForIBD'
+        isFeatured: true
     }
 ];
 

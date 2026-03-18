@@ -100,7 +100,7 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-blac
                     ‹
                 </button>
 
-                <div className="relative h-[250px] md:h-[380px] overflow-hidden">
+                <div className="relative h-[250px] md:h-[380px] overflow-hidden rounded-3xl">
                     {galleryImages.map((image, i) => {
                         let offset = (i - activeIndex) % total;
                         if (offset > total / 2) offset -= total;
@@ -145,7 +145,7 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-blac
                 <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 px-4">
                     {galleryImages.map((image, index) => (
                         <button key={index} onClick={() => changeSlide(index)} disabled={isAnimating}
-                            className={`w-9 h-9 md:w-14 md:h-14 overflow-hidden transition-all duration-300 ${index === activeIndex ? 'ring-2 ring-coral-cortex ring-offset-2 opacity-100' : 'opacity-40 hover:opacity-70'} ${index === activeIndex ? (isLight ? 'ring-offset-white' : 'ring-offset-black-cortex') : ''}`}>
+                            className={`w-9 h-9 md:w-14 md:h-14 overflow-hidden rounded-xl transition-all duration-300 ${index === activeIndex ? 'ring-2 ring-coral-cortex ring-offset-2 opacity-100' : 'opacity-40 hover:opacity-70'} ${index === activeIndex ? (isLight ? 'ring-offset-white' : 'ring-offset-black-cortex') : ''}`}>
                             <img src={image.src} alt="" className="w-full h-full object-cover" />
                         </button>
                     ))}

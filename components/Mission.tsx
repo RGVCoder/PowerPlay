@@ -21,7 +21,7 @@ export const Mission: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
 
                     {/* Large Feature Card */}
-                    <div className="md:col-span-7 bg-cream rounded-[34px] p-6 md:p-8 shadow-sm">
+                    <div className="md:col-span-7 bg-cream rounded-[48px] p-6 md:p-8 shadow-sm">
                         <div className="flex flex-col h-full">
                             <div className="mb-4">
                                 <span className="text-orange-cortex font-semibold text-sm uppercase tracking-wide">What We Do</span>
@@ -44,7 +44,7 @@ export const Mission: React.FC = () => {
 
                     {/* Stacked Smaller Cards */}
                     <div className="md:col-span-5 flex flex-col gap-6">
-                        <div className="bg-charcoal p-6 text-white flex-1 rounded-[34px] shadow-sm">
+                        <div className="bg-charcoal p-6 text-white flex-1 rounded-[48px] shadow-sm">
                             <span className="text-orange-cortex font-semibold text-sm uppercase tracking-wide">Health Education</span>
                             <h3 className="font-display font-bold text-xl mt-3 mb-2">
                                 Real doctors. Real talks.
@@ -54,7 +54,7 @@ export const Mission: React.FC = () => {
                             </p>
                         </div>
 
-                        <div className="bg-orange-cortex/10 p-6 flex-1 rounded-[34px] shadow-sm border border-orange-cortex/20">
+                        <div className="bg-orange-cortex/10 p-6 flex-1 rounded-[48px] shadow-sm border border-orange-cortex/20">
                             <span className="text-orange-cortex font-semibold text-sm uppercase tracking-wide">100% Goes to Families</span>
                             <h3 className="font-display font-bold text-xl text-charcoal mt-3 mb-2">
                                 No admin fees. Ever.
