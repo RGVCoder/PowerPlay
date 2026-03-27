@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 // Real photos only - curated selection
 const heroImages = [
+  '/images/pickleball-winners.jpg',
+  '/images/gallery-giveback-1.jpg',
   '/images/event-pickleball.jpg',
   '/images/event-guest.jpg',
   '/images/speaker-hero.jpeg',

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 const galleryImages = [
     { src: '/images/giveback2.png', caption: 'Giveback Night at Chicken N Pickle' },
+    { src: '/images/pickleball-winners.jpg', caption: 'Celebrating our tournament winners' },
+    { src: '/images/pickleball-gal-2.jpg', caption: 'Tournament action' },
     { src: '/images/gallery-pickleball.jpg', caption: 'Intense duplicate action on the court' },
     { src: '/images/event-cricket.jpg', caption: 'Cricket highlights from our tournament' },
     { src: '/images/speaker-slider2.jpeg', caption: 'Inspiring words from our guest speakers' },

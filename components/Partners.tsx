@@ -26,6 +26,10 @@ export const Partners: React.FC = () => {
         {
             name: 'Chicken N Pickle',
             logo: '/images/Chicken N Pickle Logo.png',
+        },
+        {
+            name: 'Credit Union of Texas',
+            logo: '/images/cutx.png',
         }
     ];
 

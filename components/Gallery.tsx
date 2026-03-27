@@ -36,6 +36,21 @@ export const Gallery: React.FC = () => {
                         className="aspect-square md:col-span-1"
                     />
                     <GalleryImage
+                        src="/images/pickleball-gal-2.jpg"
+                        alt="Tournament Action"
+                        className="aspect-square md:col-span-1"
+                    />
+                    <GalleryImage
+                        src="/images/pickleball-winners.jpg"
+                        alt="Pickleball Winners"
+                        className="aspect-square md:col-span-1"
+                    />
+                    <GalleryImage
+                        src="/images/gallery-giveback-1.jpg"
+                        alt="Giveback Night"
+                        className="aspect-square md:col-span-1"
+                    />
+                    <GalleryImage
                         src="/images/Photo Jun 23 2025 (2).jpg"
                         alt="PowerPlay Event"
                         className="aspect-square md:col-span-1"
