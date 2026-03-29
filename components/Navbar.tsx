@@ -40,30 +40,30 @@ export const Navbar: React.FC = () => {
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${scrolled
-          ? 'bg-white/90 backdrop-blur-md py-3 border-black/5'
-          : 'bg-white py-5 border-black/5'
+          ? 'bg-white/95 backdrop-blur-sm py-3 border-gray-200/60'
+          : 'bg-white py-4 border-gray-100'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-black/5 group-hover:border-orange-cortex transition-colors">
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <div className="relative h-9 w-9 overflow-hidden rounded-full border border-gray-200">
               <img src="/images/logo.png" alt="Logo" className="h-full w-full object-cover" />
             </div>
-            <span className="font-sans font-bold text-xl tracking-tight text-black-cortex transition-colors">
-              POWER<span className="text-orange-cortex">PLAY</span>
+            <span className="font-sans font-semibold text-lg tracking-tight text-charcoal">
+              PowerPlay
             </span>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-7">
             {links.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-semibold tracking-wide transition-colors ${location.pathname === link.path
-                  ? 'text-orange-cortex'
-                  : 'text-black-cortex/70 hover:text-orange-cortex'
+                className={`text-sm font-medium transition-colors ${location.pathname === link.path
+                  ? 'text-coral'
+                  : 'text-charcoal/60 hover:text-charcoal'
                   }`}
               >
                 {link.name}
@@ -75,15 +75,15 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => window.open('https://hcb.hackclub.com/donations/start/powerplay', '_blank')}
-              className="hidden md:block px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 bg-orange-cortex text-white hover:bg-orange-cortex/90"
+              className="hidden md:block px-5 py-2 rounded-lg font-semibold text-sm transition-all bg-coral text-white hover:bg-charcoal"
             >
-              Donate Now
+              Donate
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden focus:outline-none transition-colors text-black-cortex"
+              className="md:hidden focus:outline-none transition-colors text-charcoal"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
@@ -102,93 +102,92 @@ export const Navbar: React.FC = () => {
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] md:hidden transition-opacity duration-300"
+            className="fixed inset-0 bg-black/40 z-[55] md:hidden transition-opacity duration-300"
             onClick={() => setMobileMenuOpen(false)}
           ></div>
 
           {/* Drawer */}
-          <div className="fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-white z-[60] shadow-2xl flex flex-col md:hidden animate-slide-in-left">
+          <div className="fixed top-0 left-0 h-full w-[85%] max-w-[320px] bg-white z-[60] shadow-xl flex flex-col md:hidden animate-slide-in-left">
             {/* Drawer Header */}
-            <div className="p-6 border-b border-charcoal/10 flex items-center justify-between">
+            <div className="p-6 border-b border-gray-100 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 overflow-hidden rounded-full border border-charcoal/10">
+                <div className="h-9 w-9 overflow-hidden rounded-full border border-gray-200">
                   <img src="/images/logo.png" alt="Logo" className="h-full w-full object-cover" />
                 </div>
                 <div>
-                  <h2 className="font-display font-bold text-lg text-charcoal leading-none">PowerPlay</h2>
-                  <p className="text-[10px] text-charcoal-light uppercase tracking-wider mt-0.5">Youth Sports Non-Profit</p>
+                  <h2 className="font-display font-semibold text-base text-charcoal leading-none">PowerPlay</h2>
+                  <p className="text-[11px] text-charcoal-light mt-0.5">Youth Sports Non-Profit</p>
                 </div>
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-charcoal-light hover:text-orange-cortex transition-colors p-1"
+                className="text-charcoal-light hover:text-charcoal transition-colors p-1"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
 
             {/* Drawer Links */}
-            <div className="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+            <div className="flex-1 overflow-y-auto py-4 px-4 space-y-1">
               {links.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${location.pathname === link.path
-                    ? 'bg-gray-50 shadow-sm text-orange-cortex font-bold'
-                    : 'text-charcoal hover:bg-gray-50/50 hover:text-orange-cortex font-medium'
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-150 ${location.pathname === link.path
+                    ? 'bg-gray-50 text-coral font-semibold'
+                    : 'text-charcoal hover:bg-gray-50 font-medium'
                     }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {/* Icons for each link type */}
-                  <span className={`text-xl ${location.pathname === link.path ? 'text-orange-cortex' : 'text-charcoal-light'}`}>
+                  <span className={`${location.pathname === link.path ? 'text-coral' : 'text-charcoal-light'}`}>
                     {link.name === 'Home' && (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                       </svg>
                     )}
                     {link.name === 'About' && (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     )}
                     {link.name === 'Team' && (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     )}
                     {link.name === 'Events' && (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     )}
                     {link.name === 'Gallery' && (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     )}
                     {link.name === 'Contact' && (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     )}
                   </span>
-                  {link.name}
+                  <span className="text-sm">{link.name}</span>
                 </Link>
               ))}
             </div>
 
             {/* Drawer Footer */}
-            <div className="p-6 border-t border-charcoal/10 bg-gray-50">
+            <div className="p-6 border-t border-gray-100">
               <button
                 onClick={() => window.open('https://hcb.hackclub.com/donations/start/powerplay', '_blank')}
-                className="w-full py-3.5 rounded-xl bg-orange-cortex text-white font-bold text-center shadow-lg shadow-orange-cortex/20 hover:shadow-xl hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2 group"
+                className="w-full py-3 rounded-lg bg-coral text-white font-semibold text-center hover:bg-charcoal transition-colors text-sm"
               >
                 Donate Now
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </button>
-              <p className="text-center text-[10px] text-charcoal-light mt-4">
+              <p className="text-center text-[11px] text-charcoal-muted mt-4">
                 © 2026 PowerPlay NPO
               </p>
             </div>

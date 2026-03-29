@@ -41,22 +41,16 @@ const TEAM_MEMBERS = [
 
 export const TeamPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-black-cortex font-sans text-white">
+        <div className="min-h-screen bg-white font-sans text-charcoal">
             <main className="pt-20">
-                {/* Hero Section */}
-                <section className="relative py-24 bg-black-cortex overflow-hidden" data-navbar-theme="dark">
+                {/* Hero Section — clean, no pulsing badge */}
+                <section className="relative py-24 bg-black overflow-hidden" data-navbar-theme="dark">
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-coral-cortex/10 border border-coral-cortex/20 mb-8 mx-auto">
-                            <span className="relative flex h-1.5 w-1.5">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-coral-cortex opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-coral-cortex"></span>
-                            </span>
-                            <span className="text-[10px] font-extrabold text-coral-cortex tracking-widest uppercase">The People Behind The Mission</span>
-                        </div>
-                        <h1 className="font-sans font-black text-5xl md:text-7xl text-white mb-6 tracking-tight">
-                            Meet Our <span className="text-coral-cortex">Team.</span>
+                        <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">The People Behind the Mission</p>
+                        <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
+                            Meet Our Team
                         </h1>
-                        <p className="text-xl text-white/70 font-medium max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             United by a passion for sports and a commitment to making a difference.
                         </p>
                     </div>
@@ -67,23 +61,22 @@ export const TeamPage: React.FC = () => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         {/* Top Row: CEO, CFO, CTO */}
                         <ScrollReveal>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                                 {TEAM_MEMBERS.slice(0, 3).map((member) => (
-                                    <div key={member.id} className="bg-white rounded-[30px] p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-black/5 group hover:border-coral-cortex/20 hover:-translate-y-2 flex flex-col items-center">
-                                        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-black/5 group-hover:border-coral-cortex transition-colors duration-300 shadow-inner">
+                                    <div key={member.id} className="bg-white rounded-2xl p-8 text-center border border-gray-100 transition-colors duration-200 hover:border-gray-200 flex flex-col items-center">
+                                        <div className="w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-2 border-gray-100">
                                             <img
                                                 src={member.image}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                className="w-full h-full object-cover"
                                                 style={{ objectPosition: member.objectPosition }}
                                                 onError={(e) => {
                                                     (e.target as HTMLImageElement).src = 'https://placehold.co/400x400/f3f4f6/111827?text=Member';
                                                 }}
                                             />
                                         </div>
-                                        <h3 className="font-display font-bold text-xl text-black-cortex mb-2">{member.name}</h3>
-                                        <p className="text-coral-cortex font-medium uppercase tracking-widest text-[10px] mb-4">{member.role}</p>
-                                        <div className="w-8 h-1 bg-coral-cortex/20 mx-auto rounded-full group-hover:bg-coral-cortex transition-colors mt-auto"></div>
+                                        <h3 className="font-sans font-semibold text-lg text-charcoal mb-1">{member.name}</h3>
+                                        <p className="text-charcoal-light text-sm">{member.role}</p>
                                     </div>
                                 ))}
                             </div>
@@ -91,23 +84,22 @@ export const TeamPage: React.FC = () => {
 
                         {/* Bottom Row: CMO, Ambassador (Centered) */}
                         <ScrollReveal delay={0.2}>
-                            <div className="flex flex-col md:flex-row justify-center gap-8">
+                            <div className="flex flex-col md:flex-row justify-center gap-6">
                                 {TEAM_MEMBERS.slice(3, 5).map((member) => (
-                                    <div key={member.id} className="bg-white rounded-[30px] p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-black/5 group hover:border-coral-cortex/20 hover:-translate-y-2 flex flex-col items-center w-full md:w-[calc(33.333%-1.33rem)]">
-                                        <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-black/5 group-hover:border-coral-cortex transition-colors duration-300 shadow-inner">
+                                    <div key={member.id} className="bg-white rounded-2xl p-8 text-center border border-gray-100 transition-colors duration-200 hover:border-gray-200 flex flex-col items-center w-full md:w-[calc(33.333%-0.75rem)]">
+                                        <div className="w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-2 border-gray-100">
                                             <img
                                                 src={member.image}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                className="w-full h-full object-cover"
                                                 style={{ objectPosition: member.objectPosition }}
                                                 onError={(e) => {
                                                     (e.target as HTMLImageElement).src = 'https://placehold.co/400x400/f3f4f6/111827?text=Member';
                                                 }}
                                             />
                                         </div>
-                                        <h3 className="font-display font-bold text-xl text-black-cortex mb-2">{member.name}</h3>
-                                        <p className="text-coral-cortex font-medium uppercase tracking-widest text-[10px] mb-4 whitespace-nowrap">{member.role}</p>
-                                        <div className="w-8 h-1 bg-coral-cortex/20 mx-auto rounded-full group-hover:bg-coral-cortex transition-colors mt-auto"></div>
+                                        <h3 className="font-sans font-semibold text-lg text-charcoal mb-1">{member.name}</h3>
+                                        <p className="text-charcoal-light text-sm">{member.role}</p>
                                     </div>
                                 ))}
                             </div>
@@ -116,49 +108,48 @@ export const TeamPage: React.FC = () => {
                 </section>
 
                 <ScrollReveal delay={0.3} data-navbar-theme="light">
-                    <section className="py-24 bg-cream relative">
+                    <section className="py-20 md:py-28 bg-gray-50 relative">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="text-center mb-16">
-                                <h2 className="font-sans font-black text-3xl md:text-5xl text-black-cortex tracking-tight">
-                                    Our <span className="text-coral-cortex">Chapters</span>
+                            <div className="text-center mb-14">
+                                <h2 className="font-sans font-bold text-3xl md:text-4xl text-charcoal tracking-tight">
+                                    Our Chapters
                                 </h2>
                             </div>
 
                             {/* Chapters Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-16">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                                 {[
                                     { name: 'Frisco Chapter', location: 'Frisco, TX', status: 'Active' },
                                     { name: 'Chicago Chapter', location: 'Chicago, IL', status: 'Active' },
                                     { name: 'California Chapter', location: 'California', status: 'Active' }
                                 ].map((chapter) => (
-                                    <div key={chapter.name} className="bg-white rounded-[30px] p-8 text-center shadow-lg border border-black/5 hover:border-coral-cortex/20 hover:-translate-y-1 transition-all duration-300 group">
-                                        <div className="w-16 h-16 mx-auto mb-4 bg-black/5 rounded-full flex items-center justify-center text-black-cortex group-hover:bg-coral-cortex group-hover:text-white transition-colors duration-300">
-                                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div key={chapter.name} className="bg-white rounded-2xl p-8 text-center border border-gray-100 transition-colors duration-200 hover:border-gray-200">
+                                        <div className="w-14 h-14 mx-auto mb-4 bg-coral/10 rounded-xl flex items-center justify-center text-coral">
+                                            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                             </svg>
                                         </div>
-                                        <h3 className="font-display font-bold text-xl text-black-cortex mb-1">{chapter.name}</h3>
-                                        <p className="text-coral-cortex font-medium uppercase tracking-widest text-[10px]">{chapter.location}</p>
+                                        <h3 className="font-sans font-semibold text-lg text-charcoal mb-1">{chapter.name}</h3>
+                                        <p className="text-charcoal-light text-sm">{chapter.location}</p>
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                {/* CTA Box */}
-                                <div className="bg-white rounded-[30px] py-16 px-10 shadow-lg border border-black/5 hover:border-coral-cortex/20 transition-all duration-300 md:col-span-3 flex items-center justify-center min-h-[300px] relative overflow-hidden group text-center md:text-left">
-                                    <div className="absolute inset-0 bg-coral-cortex/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="flex flex-col md:flex-row items-center gap-8 relative z-10 px-4">
-                                        <div className="flex-1">
-                                            <h3 className="font-display font-bold text-2xl md:text-4xl lg:text-5xl text-black-cortex mb-4 uppercase tracking-tighter leading-[0.9]">Want to start a chapter?</h3>
-                                            <p className="text-black-cortex/60 max-w-2xl mx-auto md:mx-0 font-light leading-relaxed mb-6 md:mb-0 text-xl md:text-2xl">
-                                                Bring PowerPlay to your school or community. We provide the playbook, you provide the passion.
-                                            </p>
-                                        </div>
-                                        <a href="/contact" className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-coral-cortex text-white font-bold hover:bg-black-cortex transition-all shadow-lg hover:shadow-coral-cortex/20 transform hover:-translate-y-1 uppercase tracking-widest text-xs whitespace-nowrap">
-                                            Get Started →
-                                        </a>
+                            {/* CTA Box — simplified */}
+                            <div className="bg-white rounded-2xl p-10 md:p-14 border border-gray-100 text-center md:text-left">
+                                <div className="flex flex-col md:flex-row items-center gap-8">
+                                    <div className="flex-1">
+                                        <h3 className="font-sans font-bold text-2xl md:text-3xl text-charcoal mb-3">
+                                            Want to start a chapter?
+                                        </h3>
+                                        <p className="text-charcoal-light text-base leading-relaxed">
+                                            Bring PowerPlay to your school or community. We provide the playbook, you provide the passion.
+                                        </p>
                                     </div>
+                                    <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-coral text-white font-semibold text-sm hover:bg-charcoal transition-colors whitespace-nowrap">
+                                        Get Started →
+                                    </a>
                                 </div>
                             </div>
                         </div>

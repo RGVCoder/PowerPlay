@@ -7,8 +7,7 @@ import { ScrollReveal } from '../components/ScrollReveal';
 // Gallery image component for consistent styling
 const GalleryImage: React.FC<{ src: string; alt: string; className?: string; delay?: number; objectPosition?: string }> = ({ src, alt, className = '', delay = 0, objectPosition = 'center' }) => (
     <ScrollReveal className={`${className}`} width="100%" delay={delay}>
-        <div className="relative group overflow-hidden border-l-4 border-coral-cortex shadow-lg w-full h-full">
-            <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10"></div>
+        <div className="relative group overflow-hidden rounded-lg w-full h-full">
             <img
                 src={src}
                 alt={alt}
@@ -25,22 +24,16 @@ const GalleryImage: React.FC<{ src: string; alt: string; className?: string; del
 
 export const GalleryPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-white font-sans text-black-cortex">
+        <div className="min-h-screen bg-white font-sans text-charcoal">
             <main className="pt-20">
-                {/* Hero Section - Consistent with About/Events */}
-                <section className="relative py-24 bg-black-cortex overflow-hidden" data-navbar-theme="dark">
+                {/* Hero Section — clean, no pulsing badge */}
+                <section className="relative py-24 bg-black overflow-hidden" data-navbar-theme="dark">
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-coral-cortex/10 border border-coral-cortex/20 mb-8 mx-auto">
-                            <span className="relative flex h-1.5 w-1.5">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-coral-cortex opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-coral-cortex"></span>
-                            </span>
-                            <span className="text-[10px] font-extrabold text-coral-cortex tracking-widest uppercase">Photo Gallery</span>
-                        </div>
-                        <h1 className="font-sans font-black text-5xl md:text-7xl text-white mb-6 tracking-tight">
-                            Game Day <span className="text-coral-cortex">Memories.</span>
+                        <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Photo Gallery</p>
+                        <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
+                            Game Day Memories
                         </h1>
-                        <p className="text-xl text-white/70 font-medium max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             Relive the highlights from our tournaments, chapter events, and community gatherings.
                         </p>
                     </div>
@@ -104,8 +97,8 @@ export const GalleryPage: React.FC = () => {
 
                             {/* HERO CENTERPIECE - 4x2 on Desktop. 4:2 = 2:1 aspect ratio. */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden border-l-4 border-coral-cortex shadow-2xl w-full h-full">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/20 transition-all duration-500 z-10"></div>
+                                <div className="relative group overflow-hidden rounded-lg shadow-lg w-full h-full">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
                                     <img
                                         src="/images/hero-bg.jpg"
                                         alt="PowerPlay Sports - Our Community"
@@ -116,7 +109,7 @@ export const GalleryPage: React.FC = () => {
                                         }}
                                     />
                                     <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                        <span className="bg-coral-cortex text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Our Community</span>
+                                        <span className="bg-coral text-white text-xs font-medium px-3 py-1.5 rounded-md">Our Community</span>
                                     </div>
                                 </div>
                             </ScrollReveal>
@@ -251,8 +244,8 @@ export const GalleryPage: React.FC = () => {
 
                             {/* Center Huge Image */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:col-start-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden border-l-4 border-coral-cortex shadow-2xl w-full h-full">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/20 transition-all duration-500 z-10"></div>
+                                <div className="relative group overflow-hidden rounded-lg shadow-lg w-full h-full">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
                                     <img
                                         src="/images/game-on-ibd-live.jpg"
                                         alt="Game On: IBD & Sports"
@@ -263,7 +256,7 @@ export const GalleryPage: React.FC = () => {
                                         }}
                                     />
                                     <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                        <span className="bg-coral-cortex text-white text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 uppercase tracking-wider shadow-lg">Game On: IBD & Sports</span>
+                                        <span className="bg-coral text-white text-xs font-medium px-3 py-1.5 rounded-md">Game On: IBD & Sports</span>
                                     </div>
                                 </div>
                             </ScrollReveal>

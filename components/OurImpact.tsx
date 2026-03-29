@@ -54,45 +54,37 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
 };
 
 export const OurImpact: React.FC = () => {
+    const stats = [
+        { end: 5, prefix: '$', suffix: 'K+', label: 'Raised for Pediatric Care' },
+        { end: 500, suffix: '+', label: 'Athletes United' },
+        { end: 100, suffix: '%', label: 'Goes to Families' },
+    ];
+
     return (
-        <section className="relative py-16 md:py-24 overflow-hidden bg-white" data-navbar-theme="light">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-                {/* Section Header */}
-                <div className="text-center mb-16">
-                    <h2 className="font-sans font-black text-4xl md:text-5xl text-black-cortex mb-4">
-                        Our <span className="text-coral-cortex">Impact</span>
+        <section className="relative py-20 md:py-28 overflow-hidden bg-white" data-navbar-theme="light">
+            <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
+                {/* Section Header — no split color */}
+                <div className="text-center mb-14">
+                    <h2 className="font-sans font-bold text-3xl md:text-4xl text-charcoal tracking-tight">
+                        Our Impact
                     </h2>
-                    <p className="text-black-cortex/60 text-lg max-w-2xl mx-auto">
+                    <p className="text-charcoal-light text-base mt-3 max-w-xl mx-auto">
                         Real numbers. Real change. See the difference we're making together.
                     </p>
                 </div>
 
-                {/* Stats Grid - Standalone Cards to match Pillars */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="text-center group px-8 py-12 bg-cream rounded-[48px] border-[1.5px] border-coral-cortex/20 shadow-[0_4px_20px_-4px_rgba(255,127,80,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(255,127,80,0.2)] hover:-translate-y-1 transition-all duration-300">
-                        <div className="font-sans font-black text-6xl md:text-[80px] text-charcoal mb-4 group-hover:text-coral-cortex transition-colors duration-300 leading-none">
-                            <AnimatedCounter end={5} prefix="$" suffix="K+" />
+                {/* Stats — simpler, no pill cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {stats.map((stat, i) => (
+                        <div key={i} className="text-center px-6 py-10 bg-gray-50 rounded-2xl border border-gray-100">
+                            <div className="font-sans font-bold text-5xl md:text-6xl text-charcoal mb-3 leading-none">
+                                <AnimatedCounter end={stat.end} prefix={stat.prefix} suffix={stat.suffix} />
+                            </div>
+                            <div className="text-charcoal-light text-sm font-medium">
+                                {stat.label}
+                            </div>
                         </div>
-                        <div className="text-charcoal-light text-sm font-bold tracking-[0.2em] uppercase">
-                            Raised for Pediatric Care
-                        </div>
-                    </div>
-                    <div className="text-center group px-8 py-12 bg-cream rounded-[48px] border-[1.5px] border-coral-cortex/20 shadow-[0_4px_20px_-4px_rgba(255,127,80,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(255,127,80,0.2)] hover:-translate-y-1 transition-all duration-300">
-                        <div className="font-sans font-black text-6xl md:text-[80px] text-charcoal mb-4 group-hover:text-coral-cortex transition-colors duration-300 leading-none">
-                            <AnimatedCounter end={500} suffix="+" />
-                        </div>
-                        <div className="text-charcoal-light text-sm font-bold tracking-[0.2em] uppercase">
-                            Athletes United
-                        </div>
-                    </div>
-                    <div className="text-center group px-8 py-12 bg-cream rounded-[48px] border-[1.5px] border-coral-cortex/20 shadow-[0_4px_20px_-4px_rgba(255,127,80,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(255,127,80,0.2)] hover:-translate-y-1 transition-all duration-300">
-                        <div className="font-sans font-black text-6xl md:text-[80px] text-charcoal mb-4 group-hover:text-coral-cortex transition-colors duration-300 leading-none">
-                            <AnimatedCounter end={100} suffix="%" />
-                        </div>
-                        <div className="text-charcoal-light text-sm font-bold tracking-[0.2em] uppercase">
-                            Goes to Families in Need
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

@@ -37,14 +37,14 @@ export const Partners: React.FC = () => {
     const carouselPartners = [...partners, ...partners];
 
     return (
-        <section className="relative bg-white py-24 overflow-hidden" data-navbar-theme="light">
+        <section className="relative bg-white py-20 md:py-28 overflow-hidden" data-navbar-theme="light">
             <div className="w-full">
-                {/* Section Header */}
-                <div className="text-center mb-16 px-4">
-                    <h2 className="font-sans font-black text-4xl md:text-5xl text-black-cortex mb-4">
-                        Our <span className="text-coral-cortex">Partners</span>
+                {/* Section Header — no split color */}
+                <div className="text-center mb-14 px-4">
+                    <h2 className="font-sans font-bold text-3xl md:text-4xl text-charcoal tracking-tight">
+                        Our Partners
                     </h2>
-                    <p className="text-black-cortex/60 text-lg max-w-2xl mx-auto">
+                    <p className="text-charcoal-light text-base mt-3 max-w-xl mx-auto">
                         Organizations that believe in our mission and help us make a difference.
                     </p>
                 </div>
@@ -55,9 +55,9 @@ export const Partners: React.FC = () => {
                         {carouselPartners.map((partner, index) => (
                             <div
                                 key={`${partner.name}-${index}`}
-                                className="mx-8 md:mx-16 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                                className="mx-8 md:mx-14 flex items-center justify-center"
                             >
-                                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white border border-black/5 flex items-center justify-center overflow-hidden shadow-sm hover:shadow-md hover:border-coral-cortex/20 transition-all duration-300">
+                                <div className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-white border border-gray-100 flex items-center justify-center overflow-hidden">
                                     <img
                                         src={partner.logo}
                                         alt={partner.name}
@@ -82,10 +82,10 @@ export const Partners: React.FC = () => {
                     <div className="inline-block pt-8">
                         <Link
                             to="/contact"
-                            className="text-black-cortex/50 hover:text-coral-cortex transition-colors text-sm group"
+                            className="text-charcoal-light hover:text-coral transition-colors text-sm"
                         >
-                            Interested in partnering?
-                            <span className="text-coral-cortex font-bold ml-1 group-hover:ml-2 transition-all">Get in touch →</span>
+                            Interested in partnering?{' '}
+                            <span className="text-coral font-medium ml-0.5 hover:ml-1.5 transition-all">Get in touch →</span>
                         </Link>
                     </div>
                 </div>
