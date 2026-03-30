@@ -53,7 +53,7 @@ export const Pillars: React.FC = () => {
                             <div className="w-12 h-12 rounded bg-coral/10 flex items-center justify-center text-coral mb-6">
                                 {pillar.icon}
                             </div>
-                            <h3 className="font-sans font-semibold text-lg text-charcoal mb-3">
+                            <h3 className="font-sans font-semibold text-lg text-orange-cortex mb-3">
                                 {pillar.title}
                             </h3>
                             <p className="text-charcoal-light text-[15px] leading-relaxed">

@@ -55,7 +55,7 @@ export const ContactPage: React.FC = () => {
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
                         <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Get In Touch</p>
                         <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
-                            Contact Us
+                            Contact <span className="text-orange-cortex">Us</span>
                         </h1>
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             Have questions? Want to start a chapter? We'd love to hear from you.

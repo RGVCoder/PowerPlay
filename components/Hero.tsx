@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-black" data-navbar-theme="dark">
+    <section id="home" className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-black" data-navbar-theme="dark">
       {/* Background Images with Crossfade */}
       {heroImages.map((image, index) => (
         <div
@@ -46,14 +46,14 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/90 z-10" />
 
       {/* Content Container */}
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+      <div className="relative z-20 w-full max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-24 md:pt-0">
 
         {/* Simple label — no pulsing dot */}
 
 
         {/* Main Headline — mixed case, less extreme weight */}
-        <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-white leading-tight mb-4 tracking-tight max-w-5xl mx-auto">
-          Empowering Tomorrow's Champions
+        <h1 className="font-display font-bold text-4xl sm:text-6xl md:text-7xl text-white leading-tight mb-4 tracking-tight max-w-5xl mx-auto">
+          Empowering Tomorrow's <span className="text-orange-cortex">Champions</span>
         </h1>
 
         {/* Subheadline */}

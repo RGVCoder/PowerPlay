@@ -43,7 +43,7 @@ export const TeamMembers: React.FC = () => {
     return (
         <section id="team" className="py-24 md:py-28 bg-gray-50 overflow-hidden" data-navbar-theme="light">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="font-sans font-bold text-3xl md:text-5xl text-charcoal tracking-tight mb-4">

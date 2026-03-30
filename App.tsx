@@ -10,9 +10,8 @@ import { GalleryTeaser } from './components/GalleryTeaser';
 import { UpcomingEvents } from './components/UpcomingEvents';
 import { Partners } from './components/Partners';
 import { Testimonials } from './components/Testimonials';
-import { TeamMembers } from './components/TeamMembers';
-import { Chapters } from './components/Chapters';
 import { Footer } from './components/Footer';
+import { TeamPage } from './pages/TeamPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './pages/EventsPage';
@@ -46,19 +45,7 @@ const HomePage: React.FC = () => (
         <UpcomingEvents bgClass="bg-white" />
       </ScrollReveal>
 
-      {/* 5. Team: The student leadership */}
-      <hr className="border-gray-100/30" />
-      <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <TeamMembers />
-      </ScrollReveal>
-
-      {/* 6. Chapters: Expansion */}
-      <hr className="border-gray-100/30" />
-      <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <Chapters />
-      </ScrollReveal>
-
-      {/* 7. Partners: Sponsors */}
+      {/* 5. Partners: Sponsors */}
       <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
         <Partners bgClass="bg-gray-50" />
@@ -92,6 +79,7 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

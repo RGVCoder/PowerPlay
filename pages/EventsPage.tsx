@@ -13,7 +13,7 @@ export const EventsPage: React.FC = () => {
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
                         <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Our Events</p>
                         <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
-                            Play Sports. Save Lives.
+                            Play Sports. <span className="text-orange-cortex">Save Lives.</span>
                         </h1>
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             Join us in our mission to create life-changing opportunities for underprivileged youth through competitive athletic events.

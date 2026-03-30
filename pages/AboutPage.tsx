@@ -12,7 +12,7 @@ export const AboutPage: React.FC = () => {
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
                         <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Our Story</p>
                         <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
-                            Play for Good.
+                            Play for <span className="text-orange-cortex">Good</span>.
                         </h1>
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             A student-led initiative dedicated to making a tangible impact through sports, community engagement, and purposeful action.
@@ -29,7 +29,7 @@ export const AboutPage: React.FC = () => {
                                 <h2 className="font-sans font-bold text-3xl md:text-4xl text-charcoal tracking-tight mb-6">
                                     Our Mission
                                 </h2>
-                                <p className="text-charcoal/80 text-lg leading-relaxed mb-4">
+                                <p className="text-orange-cortex font-bold text-lg leading-relaxed mb-4">
                                     PowerPlay exists to unite young athletes through the power of sports, raising critical funds to provide resources and opportunities for underprivileged youth and their families.
                                 </p>
                                 <p className="text-charcoal-light text-base leading-relaxed">

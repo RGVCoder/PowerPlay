@@ -31,7 +31,7 @@ export const GalleryPage: React.FC = () => {
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
                         <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Photo Gallery</p>
                         <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
-                            Game Day Memories
+                            Game Day <span className="text-orange-cortex">Memories</span>
                         </h1>
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             Relive the highlights from our tournaments, chapter events, and community gatherings.
