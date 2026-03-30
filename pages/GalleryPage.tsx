@@ -7,7 +7,7 @@ import { ScrollReveal } from '../components/ScrollReveal';
 // Gallery image component for consistent styling
 const GalleryImage: React.FC<{ src: string; alt: string; className?: string; delay?: number; objectPosition?: string }> = ({ src, alt, className = '', delay = 0, objectPosition = 'center' }) => (
     <ScrollReveal className={`${className}`} width="100%" delay={delay}>
-        <div className="relative group overflow-hidden rounded-lg w-full h-full">
+        <div className="relative group overflow-hidden rounded w-full h-full">
             <img
                 src={src}
                 alt={alt}
@@ -40,7 +40,9 @@ export const GalleryPage: React.FC = () => {
                 </section>
 
 
-                <section className="py-12 md:py-24 bg-white relative" data-navbar-theme="light">
+                <hr className="border-gray-100/30" />
+
+                <section className="py-24 bg-white relative" data-navbar-theme="light">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                         {/* Grid Layout - Optimized for Mobile Editorial and Desktop Bento Restoration */}
@@ -97,7 +99,7 @@ export const GalleryPage: React.FC = () => {
 
                             {/* HERO CENTERPIECE - 4x2 on Desktop. 4:2 = 2:1 aspect ratio. */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden rounded-lg shadow-lg w-full h-full">
+                                <div className="relative group overflow-hidden rounded shadow-lg w-full h-full">
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
                                     <img
                                         src="/images/hero-bg.jpg"
@@ -109,7 +111,7 @@ export const GalleryPage: React.FC = () => {
                                         }}
                                     />
                                     <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                        <span className="bg-coral text-white text-xs font-medium px-3 py-1.5 rounded-md">Our Community</span>
+                                        <span className="bg-coral text-white text-xs font-medium px-3 py-1.5 rounded">Our Community</span>
                                     </div>
                                 </div>
                             </ScrollReveal>
@@ -244,7 +246,7 @@ export const GalleryPage: React.FC = () => {
 
                             {/* Center Huge Image */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:col-start-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden rounded-lg shadow-lg w-full h-full">
+                                <div className="relative group overflow-hidden rounded shadow-lg w-full h-full">
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
                                     <img
                                         src="/images/game-on-ibd-live.jpg"
@@ -256,7 +258,7 @@ export const GalleryPage: React.FC = () => {
                                         }}
                                     />
                                     <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
-                                        <span className="bg-coral text-white text-xs font-medium px-3 py-1.5 rounded-md">Game On: IBD & Sports</span>
+                                        <span className="bg-coral text-white text-xs font-medium px-3 py-1.5 rounded">Game On: IBD & Sports</span>
                                     </div>
                                 </div>
                             </ScrollReveal>

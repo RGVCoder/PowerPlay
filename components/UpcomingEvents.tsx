@@ -46,7 +46,7 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ bgClass = 'bg-wh
     const isLight = bgClass === 'bg-white' || bgClass === 'bg-cream';
 
     return (
-        <section id="upcoming-events" className={`relative py-20 md:py-28 ${bgClass}`} data-navbar-theme={isLight ? "light" : "dark"}>
+        <section id="upcoming-events" className={`relative py-24 md:py-28 ${bgClass}`} data-navbar-theme={isLight ? "light" : "dark"}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header — no split color */}
                 <div className="text-center mb-12 md:mb-14">
@@ -61,8 +61,8 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ bgClass = 'bg-wh
                 {/* Events */}
                 <div className="space-y-6">
                     {featuredEvent && (
-                        <div className={`${isLight ? 'bg-white border-gray-100' : 'bg-white/5 border-white/10'} rounded-2xl border p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-colors duration-200 hover:border-gray-200 group gap-6 md:gap-10`}>
-                            <div className={`w-full md:w-1/2 aspect-video rounded-xl overflow-hidden ${isLight ? 'bg-gray-50' : 'bg-white/5'}`}>
+                        <div className={`${isLight ? 'bg-white border-gray-100' : 'bg-white/5 border-white/10'} rounded border p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-colors duration-200 hover:border-gray-200 group gap-6 md:gap-10`}>
+                            <div className={`w-full md:w-1/2 aspect-video rounded overflow-hidden ${isLight ? 'bg-gray-50' : 'bg-white/5'}`}>
                                 <img
                                     src={featuredEvent.image}
                                     alt={featuredEvent.title}
@@ -74,7 +74,7 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ bgClass = 'bg-wh
                                 />
                             </div>
                             <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-left">
-                                <span className="text-xs font-medium text-coral bg-coral/8 px-3 py-1 rounded-md mb-4">
+                                <span className="text-xs font-medium text-coral bg-coral/8 px-3 py-1 rounded mb-4">
                                     {featuredEvent.dateDisplay}
                                 </span>
                                 <h4 className="font-sans font-semibold text-xl md:text-2xl text-charcoal mb-3">
@@ -88,7 +88,7 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ bgClass = 'bg-wh
                                         href={featuredEvent.volunteerFormUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-2.5 rounded-lg text-sm hover:bg-charcoal transition-colors"
+                                        className="inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-2.5 rounded text-sm hover:bg-charcoal transition-colors"
                                     >
                                         Volunteer Now
                                         <span>↗</span>
@@ -99,8 +99,8 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ bgClass = 'bg-wh
                     )}
 
                     {otherEvents.map((event) => (
-                        <div key={event.id} className={`${isLight ? 'bg-white border-gray-100' : 'bg-white/5 border-white/10'} rounded-2xl border p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-colors duration-200 hover:border-gray-200 group gap-6 md:gap-10`}>
-                            <div className={`w-full md:w-5/12 aspect-video rounded-xl overflow-hidden ${isLight ? 'bg-gray-50' : 'bg-white/5'} relative`}>
+                        <div key={event.id} className={`${isLight ? 'bg-white border-gray-100' : 'bg-white/5 border-white/10'} rounded border p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left transition-colors duration-200 hover:border-gray-200 group gap-6 md:gap-10`}>
+                            <div className={`w-full md:w-5/12 aspect-video rounded overflow-hidden ${isLight ? 'bg-gray-50' : 'bg-white/5'} relative`}>
                                 <img
                                     src={event.image || event.imageFallback}
                                     alt={event.title}
@@ -114,7 +114,7 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ bgClass = 'bg-wh
                                 <div className="absolute top-3 left-3 bg-coral text-white font-medium px-3 py-1 text-xs rounded">Coming Soon</div>
                             </div>
                             <div className="w-full md:w-7/12 flex flex-col items-center md:items-start text-left">
-                                <span className="text-xs font-medium text-coral bg-coral/8 px-3 py-1 rounded-md mb-4">
+                                <span className="text-xs font-medium text-coral bg-coral/8 px-3 py-1 rounded mb-4">
                                     {event.dateDisplay}
                                 </span>
                                 <h4 className="font-sans font-semibold text-xl md:text-2xl text-charcoal mb-3">

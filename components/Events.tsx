@@ -611,9 +611,9 @@ export const Events: React.FC = () => {
   const renderEventCard = (event: EventData) => (
     <div
       key={event.id}
-      className={`bg-white rounded-2xl border border-black/5 overflow-hidden hover:border-coral transition-all duration-300 group shadow-sm hover:shadow-md flex flex-col items-center text-center p-8 ${expandedEvent === event.id ? 'ring-2 ring-coral/30 border-coral shadow-lg' : ''}`}
+      className={`bg-white rounded border border-black/5 overflow-hidden hover:border-gray-200 transition-all duration-300 group shadow-sm hover:shadow-md flex flex-col items-center text-center p-8 ${expandedEvent === event.id ? 'ring-1 ring-gray-100 border-gray-200 shadow-md' : ''}`}
     >
-      <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-black/5 mb-6 relative">
+      <div className="w-full aspect-video rounded overflow-hidden shadow-inner bg-black/5 mb-6 relative">
         {event.badge && (
           <div className="absolute top-3 right-3 z-20 bg-coral text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest rounded-md shadow-lg">{event.badge}</div>
         )}
@@ -668,18 +668,18 @@ export const Events: React.FC = () => {
   return (
     <section id="events" className="py-0">
       {/* Upcoming Events Section - White Background */}
-      <div className="bg-white py-16 md:py-24" data-navbar-theme="light">
+      <div className="bg-white py-24 md:py-28" data-navbar-theme="light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Upcoming Events Section */}
           <div className="mb-12 md:mb-16">
-              <div className="text-center mb-10 md:mb-12">
+            <div className="text-center mb-10 md:mb-12">
               <h3 className="font-sans font-bold text-2xl md:text-3xl text-charcoal tracking-tight">Upcoming Events</h3>
-              </div>
+            </div>
 
             <div className="space-y-8">
               <ScrollReveal width="100%" delay={0.1}>
-                <div className="bg-white rounded-2xl border-2 border-black/5 p-6 md:p-10 flex flex-col items-center text-center transition-all duration-300 hover:border-coral group shadow-sm hover:shadow-md">
+                <div className="bg-white rounded border-2 border-black/5 p-6 md:p-10 flex flex-col items-center text-center transition-all duration-300 hover:border-gray-200 group shadow-sm hover:shadow-md">
                   <div className="w-16 h-16 bg-coral/10 text-coral rounded-full flex items-center justify-center mb-6">
                     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -696,13 +696,13 @@ export const Events: React.FC = () => {
         </div>
       </div>
 
-      {/* Past Events Section - Tan Background */}
-      <div className="bg-cream py-16 md:py-24 border-t border-black/5" data-navbar-theme="light">
+      {/* Past Events Section - Standard Gray Background */}
+      <div className="bg-gray-50 py-24 md:py-28 border-t border-black/5" data-navbar-theme="light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Past Events Header */}
-            <div className="text-center mb-12 md:mb-16 mt-4">
+          <div className="text-center mb-12 md:mb-16 mt-4">
             <h3 className="font-sans font-bold text-2xl md:text-3xl text-charcoal tracking-tight">Past Events</h3>
-            </div>
+          </div>
 
           {/* Past/Highlight Grid - Top 3 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative">

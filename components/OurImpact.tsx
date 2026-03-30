@@ -53,7 +53,7 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
     );
 };
 
-export const OurImpact: React.FC = () => {
+export const OurImpact: React.FC<{ bgClass?: string }> = ({ bgClass = 'bg-white' }) => {
     const stats = [
         { end: 5, prefix: '$', suffix: 'K+', label: 'Raised for Pediatric Care' },
         { end: 500, suffix: '+', label: 'Athletes United' },
@@ -61,7 +61,7 @@ export const OurImpact: React.FC = () => {
     ];
 
     return (
-        <section className="relative py-20 md:py-28 overflow-hidden bg-white" data-navbar-theme="light">
+        <section className={`relative py-24 md:py-28 overflow-hidden ${bgClass}`} data-navbar-theme="light">
             <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
                 {/* Section Header — no split color */}
                 <div className="text-center mb-14">
@@ -76,8 +76,8 @@ export const OurImpact: React.FC = () => {
                 {/* Stats — simpler, no pill cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {stats.map((stat, i) => (
-                        <div key={i} className="text-center px-6 py-10 bg-gray-50 rounded-2xl border border-gray-100">
-                            <div className="font-sans font-bold text-5xl md:text-6xl text-charcoal mb-3 leading-none">
+                        <div key={i} className="text-center px-6 py-10 bg-gray-50 rounded border border-gray-100 transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:bg-white hover:border-gray-200">
+                            <div className="font-sans font-bold text-5xl md:text-6xl text-orange-cortex mb-3 leading-none">
                                 <AnimatedCounter end={stat.end} prefix={stat.prefix} suffix={stat.suffix} />
                             </div>
                             <div className="text-charcoal-light text-sm font-medium">

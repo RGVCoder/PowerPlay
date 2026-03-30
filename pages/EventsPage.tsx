@@ -16,10 +16,12 @@ export const EventsPage: React.FC = () => {
                             Play Sports. Save Lives.
                         </h1>
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-                            Join us in our mission to support cancer research through competitive athletic events and community-driven initiatives.
+                            Join us in our mission to create life-changing opportunities for underprivileged youth through competitive athletic events.
                         </p>
                     </div>
                 </section>
+
+                <hr className="border-gray-100/30" />
 
                 {/* Events Component */}
                 <ScrollReveal data-navbar-theme="light">

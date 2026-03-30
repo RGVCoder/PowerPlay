@@ -44,10 +44,10 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ bgClass = 'bg-white'
 
   const currentTestimonial = testimonials[currentIndex];
 
-  const isLight = bgClass === 'bg-white' || bgClass === 'bg-cream';
+  const isLight = bgClass === 'bg-white' || bgClass === 'bg-cream' || bgClass === 'bg-gray-50';
 
   return (
-    <section className={`py-20 md:py-28 ${bgClass} relative overflow-hidden`} data-navbar-theme={isLight ? "light" : "dark"}>
+    <section className={`py-24 md:py-28 ${bgClass} relative overflow-hidden`} data-navbar-theme={isLight ? "light" : "dark"}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className={`font-sans font-bold text-3xl md:text-4xl tracking-tight ${isLight ? 'text-charcoal' : 'text-white'}`}>
@@ -83,7 +83,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ bgClass = 'bg-white'
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-1.5 rounded-full transition-all duration-300 ${index === currentIndex
-                ? 'bg-coral w-8'
+                ? 'bg-orange-cortex w-8'
                 : `${isLight ? 'bg-charcoal/15 hover:bg-charcoal/30' : 'bg-white/20 hover:bg-white/40'} w-1.5`
                 }`}
               aria-label={`Go to testimonial ${index + 1}`}

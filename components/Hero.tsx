@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-black" data-navbar-theme="dark">
+    <section id="home" className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-black" data-navbar-theme="dark">
       {/* Background Images with Crossfade */}
       {heroImages.map((image, index) => (
         <div
@@ -49,17 +49,17 @@ export const Hero: React.FC = () => {
       <div className="relative z-20 w-full max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
 
         {/* Simple label — no pulsing dot */}
-        
+
 
         {/* Main Headline — mixed case, less extreme weight */}
-        <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-white leading-tight mb-6 tracking-tight max-w-5xl mx-auto">
+        <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-white leading-tight mb-4 tracking-tight max-w-5xl mx-auto">
           Empowering Tomorrow's Champions
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg sm:text-xl text-white/70 mb-10 max-w-2xl mx-auto font-normal leading-relaxed">
-          Uniting athletes through sports tournaments to raise critical funds for pediatric illness.{' '}
-          <span className="text-white font-medium">100% of donations go to families.</span>
+        <p className="text-lg sm:text-xl text-white/70 mb-8 max-w-2xl mx-auto font-normal leading-relaxed">
+          Uniting athletes through sports tournaments to create life-changing opportunities for underprivileged youth.{' '}
+          <span className="text-white font-medium">100% of proceeds go directly to the community.</span>
         </p>
 
         {/* CTA Buttons — rounded rectangle, not pills */}

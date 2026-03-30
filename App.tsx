@@ -10,12 +10,13 @@ import { GalleryTeaser } from './components/GalleryTeaser';
 import { UpcomingEvents } from './components/UpcomingEvents';
 import { Partners } from './components/Partners';
 import { Testimonials } from './components/Testimonials';
+import { TeamMembers } from './components/TeamMembers';
+import { Chapters } from './components/Chapters';
 import { Footer } from './components/Footer';
 import { GalleryPage } from './pages/GalleryPage';
 import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './pages/EventsPage';
 import { ContactPage } from './pages/ContactPage';
-import { TeamPage } from './pages/TeamPage';
 
 import { ScrollReveal } from './components/ScrollReveal';
 
@@ -28,39 +29,51 @@ const HomePage: React.FC = () => (
         <Hero />
       </ScrollReveal>
 
-      {/* 2. Pillars: 3 visual cards showing what we do */}
+      {/* 2. Pillars: Why PowerPlay? */}
       <ScrollReveal delay={0.2} data-navbar-theme="light">
         <Pillars />
       </ScrollReveal>
 
-      {/* 3. Upcoming Events: What's coming up */}
+      {/* 3. Our Impact: Stats section */}
+      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <UpcomingEvents bgClass="bg-cream" />
+        <OurImpact bgClass="bg-gray-50" />
       </ScrollReveal>
 
-      {/* 4. Our Impact: Stats section */}
+      {/* 4. Upcoming Events: Tournament schedule */}
+      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <OurImpact />
+        <UpcomingEvents bgClass="bg-white" />
       </ScrollReveal>
 
-      {/* 6. Gallery Teaser: Featured images with link to full gallery */}
+      {/* 5. Team: The student leadership */}
+      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <GalleryTeaser bgClass="bg-cream" />
+        <TeamMembers />
       </ScrollReveal>
 
-      {/* Donations: Integrated directly into the home flow */}
+      {/* 6. Chapters: Expansion */}
+      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        {/* Donations would go here */}
+        <Chapters />
       </ScrollReveal>
 
-      {/* 7. Partners: Simple logo strip */}
+      {/* 7. Partners: Sponsors */}
+      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <Partners />
+        <Partners bgClass="bg-gray-50" />
       </ScrollReveal>
 
-      {/* 8. Testimonials: Athlete stories */}
+      {/* 8. Gallery: High-impact visuals */}
+      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <Testimonials bgClass="bg-cream" />
+        <GalleryTeaser bgClass="bg-white" />
+      </ScrollReveal>
+
+      {/* 9. Testimonials: What People Say */}
+      <hr className="border-gray-100" />
+      <ScrollReveal delay={0.1} data-navbar-theme="light">
+        <Testimonials bgClass="bg-gray-50" />
       </ScrollReveal>
     </main>
   </div>
@@ -79,7 +92,6 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/team" element={<TeamPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

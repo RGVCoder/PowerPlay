@@ -63,14 +63,16 @@ export const ContactPage: React.FC = () => {
                     </div>
                 </section>
 
+                <hr className="border-gray-100/30" />
+
                 {/* Contact Form Section */}
                 <ScrollReveal data-navbar-theme="light">
-                    <section className="py-16 md:py-24 relative bg-white" data-navbar-theme="light">
+                    <section className="py-24 md:py-28 relative bg-gray-50" data-navbar-theme="light">
                         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10 border border-gray-100">
+                            <div className="bg-white rounded shadow-sm p-8 md:p-10 border border-gray-100">
                                 {status === 'success' ? (
                                     <div className="text-center py-10">
-                                        <div className="w-14 h-14 bg-green-50 text-green-500 rounded-xl flex items-center justify-center mx-auto mb-5">
+                                        <div className="w-14 h-14 bg-green-50 text-green-500 rounded flex items-center justify-center mx-auto mb-5">
                                             <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                                             </svg>
@@ -81,7 +83,7 @@ export const ContactPage: React.FC = () => {
                                         </p>
                                         <button
                                             onClick={() => setStatus('idle')}
-                                            className="px-6 py-2.5 rounded-lg bg-coral text-white font-semibold text-sm hover:bg-charcoal transition-colors"
+                                            className="px-6 py-2.5 rounded bg-coral text-white font-semibold text-sm hover:bg-charcoal transition-colors"
                                         >
                                             Send Another Message
                                         </button>
@@ -89,7 +91,7 @@ export const ContactPage: React.FC = () => {
                                 ) : (
                                     <form ref={form} onSubmit={sendEmail} className="space-y-5">
                                         {status === 'error' && (
-                                            <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">
+                                            <div className="p-3 bg-red-50 text-red-600 rounded text-sm">
                                                 {errorMessage || 'Something went wrong. Please try again later.'}
                                             </div>
                                         )}
@@ -102,7 +104,7 @@ export const ContactPage: React.FC = () => {
                                                     name="user_name"
                                                     id="user_name"
                                                     required
-                                                    className="w-full px-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
+                                                    className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
                                                     placeholder="Your Name"
                                                 />
                                             </div>
@@ -113,7 +115,7 @@ export const ContactPage: React.FC = () => {
                                                     name="user_email"
                                                     id="user_email"
                                                     required
-                                                    className="w-full px-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
+                                                    className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
                                                     placeholder="your@email.com"
                                                 />
                                             </div>
@@ -127,7 +129,7 @@ export const ContactPage: React.FC = () => {
                                                     id="topic"
                                                     value={topic}
                                                     onChange={(e) => setTopic(e.target.value)}
-                                                    className="w-full px-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all appearance-none cursor-pointer text-charcoal text-sm"
+                                                    className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all appearance-none cursor-pointer text-charcoal text-sm"
                                                 >
                                                     <option value="General Inquiry">General Inquiries</option>
                                                     <option value="Starting a Chapter">Starting a Chapter</option>
@@ -150,7 +152,7 @@ export const ContactPage: React.FC = () => {
                                                 id="message"
                                                 required
                                                 rows={5}
-                                                className="w-full px-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all resize-none text-charcoal placeholder-charcoal/30 text-sm"
+                                                className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all resize-none text-charcoal placeholder-charcoal/30 text-sm"
                                                 placeholder="How can we help?"
                                             ></textarea>
                                         </div>
@@ -158,7 +160,7 @@ export const ContactPage: React.FC = () => {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            className={`w-full py-3 rounded-lg bg-coral text-white font-semibold text-sm hover:bg-charcoal transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                            className={`w-full py-3 rounded bg-coral text-white font-semibold text-sm hover:bg-charcoal transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                                         >
                                             {isSubmitting ? 'Sending...' : 'Send Message'}
                                         </button>

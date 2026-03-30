@@ -34,7 +34,7 @@ export const Pillars: React.FC = () => {
     ];
 
     return (
-        <section className="relative py-20 md:py-28 overflow-hidden bg-white" data-navbar-theme="light">
+        <section className="relative py-24 md:py-28 overflow-hidden bg-white" data-navbar-theme="light">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header — no split color */}
                 <div className="text-center mb-14">
@@ -48,9 +48,9 @@ export const Pillars: React.FC = () => {
                     {pillars.map((pillar, index) => (
                         <div
                             key={index}
-                            className="flex flex-col items-start text-left px-7 py-10 bg-gray-50 rounded-2xl border border-gray-100 transition-colors duration-200 hover:border-gray-200"
+                            className="flex flex-col items-start text-left px-7 py-10 bg-gray-50 rounded border border-gray-100 transition-all duration-200 hover:border-gray-200 hover:bg-gray-100/50"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center text-coral mb-6">
+                            <div className="w-12 h-12 rounded bg-coral/10 flex items-center justify-center text-coral mb-6">
                                 {pillar.icon}
                             </div>
                             <h3 className="font-sans font-semibold text-lg text-charcoal mb-3">

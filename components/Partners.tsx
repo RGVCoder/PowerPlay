@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Partners: React.FC = () => {
+export const Partners: React.FC<{ bgClass?: string }> = ({ bgClass = 'bg-white' }) => {
+    const isGray = bgClass.includes('gray') || bgClass.includes('cream');
     const partners = [
         {
             name: 'Courtside Change',
@@ -37,7 +38,7 @@ export const Partners: React.FC = () => {
     const carouselPartners = [...partners, ...partners];
 
     return (
-        <section className="relative bg-white py-20 md:py-28 overflow-hidden" data-navbar-theme="light">
+        <section className={`relative py-20 md:py-28 overflow-hidden ${bgClass}`} data-navbar-theme="light">
             <div className="w-full">
                 {/* Section Header — no split color */}
                 <div className="text-center mb-14 px-4">
@@ -73,8 +74,8 @@ export const Partners: React.FC = () => {
                     </div>
 
                     {/* Gradient Masks for Fade Effect at Edges */}
-                    <div className="absolute top-0 left-0 h-full w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-                    <div className="absolute top-0 right-0 h-full w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+                    <div className={`absolute top-0 left-0 h-full w-12 md:w-32 bg-gradient-to-r ${isGray ? 'from-gray-50' : 'from-white'} to-transparent pointer-events-none z-10`}></div>
+                    <div className={`absolute top-0 right-0 h-full w-12 md:w-32 bg-gradient-to-l ${isGray ? 'from-gray-50' : 'from-white'} to-transparent pointer-events-none z-10`}></div>
                 </div>
 
                 {/* Partnership CTA */}
