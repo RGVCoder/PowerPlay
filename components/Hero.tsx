@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-black" data-navbar-theme="dark">
+    <section id="home" className="relative h-[100vh] min-h-[700px] flex items-center justify-center overflow-hidden bg-black" data-navbar-theme="dark">
       {/* Background Images with Crossfade */}
       {heroImages.map((image, index) => (
         <div
@@ -43,7 +43,10 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black -z-10" />
 
       {/* Dark Gradient Overlay for Readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/90 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 z-10" />
+
+      {/* Bottom fade to white for seamless section transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white z-10" />
 
       {/* Content Container */}
       <div className="relative z-20 w-full max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center pt-24 md:pt-0">
