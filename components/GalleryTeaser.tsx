@@ -4,16 +4,16 @@ import { SectionHeader } from './SectionHeader';
 
 const galleryImages = [
     { src: '/images/wilco-3v3-austin.jpg', caption: 'Wilco 3v3 Charity Tournament — Austin Chapter' },
+    { src: '/images/pickleball-winners.jpg', caption: 'Celebrating our tournament champions' },
+    { src: '/images/hero-bg.jpg', caption: 'Our community, together' },
+    { src: '/images/pickleball-gal-2.jpg', caption: 'Tournament action on court' },
     { src: '/images/giveback2.png', caption: 'Giveback Night at Chicken N Pickle' },
-    { src: '/images/pickleball-winners.jpg', caption: 'Celebrating our tournament winners' },
-    { src: '/images/pickleball-gal-2.jpg', caption: 'Tournament action' },
-    { src: '/images/gallery-pickleball.jpg', caption: 'Intense duplicate action on the court' },
-    { src: '/images/event-cricket.jpg', caption: 'Cricket highlights from our tournament' },
-    { src: '/images/speaker-slider2.jpeg', caption: 'Inspiring words from our guest speakers' },
-    { src: '/images/speaker-slider.jpeg', caption: 'Sharing knowledge and experience' },
-    { src: '/images/Photo Jul 20 2025 from raghavsridhar09.jpg', caption: 'Community coming together' },
-    { src: '/images/gallery-coach.jpeg', caption: 'Mentorship in action' },
+    { src: '/images/event-cricket.jpg', caption: 'Cricket tournament highlights' },
+    { src: '/images/game-on-ibd-live.jpg', caption: 'Game On: IBD & Sports' },
     { src: '/images/mvp.jpg', caption: 'Celebrating our tournament MVP' },
+    { src: '/images/trophy-ceremony.jpg', caption: 'Trophy ceremony' },
+    { src: '/images/speaker-slider2.jpeg', caption: 'Inspiring words from our guest speakers' },
+    { src: '/images/gallery-coach.jpeg', caption: 'Mentorship in action' },
 ];
 
 const GAP = 6;
@@ -82,7 +82,6 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-cour
 
     return (
         <section className={`relative py-20 md:py-28 overflow-hidden ${bgClass}`} data-navbar-theme={isLight ? "light" : "dark"}>
-            {/* Section Header */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-14 relative z-10">
                 <SectionHeader
                     eyebrow="From the field"
@@ -92,7 +91,6 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-cour
                 />
             </div>
 
-            {/* Carousel */}
             <div className="relative">
                 <button onClick={goToPrev} disabled={isAnimating}
                     className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-10 md:h-10 bg-black/50 hover:bg-black/70 flex items-center justify-center text-white transition-colors text-lg md:text-xl rounded-full">
@@ -112,7 +110,7 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-cour
 
                         return (
                             <div
-                                key={i}
+                                key={image.src}
                                 onClick={() => changeSlide(i)}
                                 className="absolute top-0 left-1/2 h-full cursor-pointer transition-all duration-700 cubic-bezier(0.25, 0.8, 0.25, 1)"
                                 style={{
@@ -138,12 +136,11 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-cour
                 </button>
             </div>
 
-            {/* Caption and Thumbnails */}
             <div className="mt-8">
                 <p className={`text-center ${isLight ? 'text-charcoal-light' : 'text-white/60'} text-xs md:text-sm mb-5 px-6`}>{galleryImages[activeIndex].caption}</p>
                 <div className="flex flex-wrap justify-center items-center gap-1.5 md:gap-2 px-4">
                     {galleryImages.map((image, index) => (
-                        <button key={index} onClick={() => changeSlide(index)} disabled={isAnimating}
+                        <button key={image.src} onClick={() => changeSlide(index)} disabled={isAnimating}
                             className={`w-8 h-8 md:w-12 md:h-12 overflow-hidden rounded-lg transition-opacity duration-300 border-2 ${index === activeIndex ? 'border-coral opacity-100' : 'border-transparent opacity-30 hover:opacity-60'}`}>
                             <img src={image.src} alt="" className="w-full h-full object-cover" />
                         </button>
@@ -151,7 +148,6 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-cour
                 </div>
             </div>
 
-            {/* View Gallery Link */}
             <div className="text-center mt-8">
                 <Link to="/gallery" className={`inline-flex items-center gap-1.5 text-coral ${isLight ? 'hover:text-charcoal' : 'hover:text-white'} transition-colors text-sm font-medium group`}>
                     View full gallery

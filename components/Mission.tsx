@@ -46,7 +46,7 @@ export const Mission: React.FC = () => {
                                 Real doctors. Real talks.
                             </h3>
                             <p className="text-gray-300 text-sm leading-relaxed">
-                                At every event, we bring in healthcare professionals to speak about pediatric health, wellness, and what these illnesses actually mean for kids.
+                                At many events, we bring in speakers and mentors who share lessons on wellness, resilience, and what it means to compete with purpose.
                             </p>
                         </div>
 
@@ -56,7 +56,7 @@ export const Mission: React.FC = () => {
                                 No admin fees. Ever.
                             </h3>
                             <p className="text-charcoal-light text-sm leading-relaxed">
-                                We're students. We don't take salaries. Every single dollar raised at our events goes directly to families dealing with childhood cancer and other pediatric conditions.
+                                We're students. We don't take salaries. Every single dollar raised at our events goes directly to underprivileged youth and their families.
                             </p>
                         </div>
                     </div>

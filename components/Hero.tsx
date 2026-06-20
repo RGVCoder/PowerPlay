@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
         </h1>
 
         <p className="text-lg sm:text-xl text-white/75 mb-10 max-w-2xl mx-auto font-normal leading-relaxed">
-          Youth tournaments that raise money for families navigating pediatric illness.{' '}
+          PowerPlay unites young athletes through sports, raising funds for underprivileged youth and their families.{' '}
           <span className="text-white/90 font-medium">Every dollar goes to the community.</span>
         </p>
 

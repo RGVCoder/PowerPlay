@@ -10,7 +10,7 @@ export const EventsPage: React.FC = () => {
                 <PageHero
                     eyebrow="Tournaments"
                     title={<>Play Sports. <span className="text-coral">Save Lives.</span></>}
-                    subtitle="Competitive events that create life-changing opportunities for families navigating pediatric illness."
+                    subtitle="PowerPlay unites young athletes through sports, raising funds for underprivileged youth and their families."
                     image="/images/pickleball-winners.jpg"
                 />
 

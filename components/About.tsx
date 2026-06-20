@@ -20,10 +20,10 @@ export const About: React.FC = () => {
               At PowerPlay, we're a <strong className="text-white font-medium">student-run nonprofit</strong> that believes sports can do more than just win games—they can help save lives. By pairing local tournaments with talks from health experts and mentors, we're building a community that cares.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              <strong className="text-orange-cortex font-medium">Every dollar we raise goes directly</strong> to supporting kids and families as they navigate the complexities of pediatric illness—from childhood cancer to chronic conditions.
+              <strong className="text-orange-cortex font-medium">PowerPlay unites young athletes through sports,</strong> raising funds for underprivileged youth and their families.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
-              When you support PowerPlay, you're not just funding a tournament. You're funding hope, healing, and a future for children who deserve every chance to thrive.
+              When you support PowerPlay, you're not just funding a tournament. You're funding opportunity, community, and a future for young athletes who deserve every chance to thrive.
             </p>
           </div>
 

@@ -12,11 +12,11 @@ export const Donations: React.FC = () => {
                     <div className="lg:sticky lg:top-24">
                         {/* Header — no split color, no uppercase */}
                         <h2 className="font-sans font-bold text-3xl md:text-4xl text-charcoal mb-6 tracking-tight leading-tight">
-                            Help a Child Fight Back
+                            Support Young Athletes
                         </h2>
 
                         <p className="text-charcoal-light text-lg leading-relaxed mb-8">
-                            Every dollar you give goes <strong className="text-charcoal font-medium">directly to families</strong> navigating the complexities of pediatric illness—from treatment costs to daily support.
+                            PowerPlay unites young athletes through sports, raising funds for <strong className="text-charcoal font-medium">underprivileged youth and their families</strong>. Every dollar you give goes directly to those who need it most.
                         </p>
 
                         {/* Trust Badges — simplified, no colored dots */}

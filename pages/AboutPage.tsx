@@ -25,7 +25,7 @@ export const AboutPage: React.FC = () => {
                                     PowerPlay unites young athletes through sports, raising funds for underprivileged youth and their families.
                                 </p>
                                 <p className="text-charcoal-light text-base leading-relaxed">
-                                    No child should have to choose between getting better and getting to play. We started PowerPlay because we saw an opportunity to bring together what we love—sports—with a cause that matters. Every dollar raised goes directly to those who need it most.
+                                    We started PowerPlay because we saw an opportunity to bring together what we love—sports—with a cause that matters. Every dollar raised goes directly to underprivileged youth and their families.
                                 </p>
                             </div>
 

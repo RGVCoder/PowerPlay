@@ -54,7 +54,7 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
 
 export const OurImpact: React.FC<{ bgClass?: string }> = ({ bgClass = 'bg-court' }) => {
     const stats = [
-        { end: 5, prefix: '$', suffix: 'K+', label: 'Raised for pediatric care' },
+        { end: 5, prefix: '$', suffix: 'K+', label: 'Raised for families' },
         { end: 500, suffix: '+', label: 'Athletes united' },
         { end: 100, suffix: '%', label: 'Goes to families' },
     ];

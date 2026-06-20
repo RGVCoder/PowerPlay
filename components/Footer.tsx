@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
               PowerPlay
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
-              Student-run tournaments that raise money for families navigating pediatric illness. No overhead. Just kids helping kids.
+              PowerPlay unites young athletes through sports, raising funds for underprivileged youth and their families. No overhead. Just kids helping kids.
             </p>
           </div>
 
