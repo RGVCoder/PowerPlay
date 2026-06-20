@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { SectionHeader } from './SectionHeader';
 
 const galleryImages = [
+    { src: '/images/wilco-3v3-austin.jpg', caption: 'Wilco 3v3 Charity Tournament — Austin Chapter' },
     { src: '/images/giveback2.png', caption: 'Giveback Night at Chicken N Pickle' },
     { src: '/images/pickleball-winners.jpg', caption: 'Celebrating our tournament winners' },
     { src: '/images/pickleball-gal-2.jpg', caption: 'Tournament action' },
@@ -20,12 +22,12 @@ interface GalleryTeaserProps {
     bgClass?: string;
 }
 
-export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-white' }) => {
+export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-court' }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [widths, setWidths] = useState<Record<number, number>>({});
     const total = galleryImages.length;
-    const isLight = bgClass === 'bg-white' || bgClass === 'bg-cream';
+    const isLight = bgClass === 'bg-court' || bgClass === 'bg-white' || bgClass === 'bg-cream';
 
     const changeSlide = useCallback((newIndex: number) => {
         if (isAnimating) return;
@@ -82,14 +84,12 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-whit
         <section className={`relative py-20 md:py-28 overflow-hidden ${bgClass}`} data-navbar-theme={isLight ? "light" : "dark"}>
             {/* Section Header */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-14 relative z-10">
-                <div className="text-center">
-                    <h2 className={`font-display font-bold text-3xl md:text-4xl tracking-tight ${isLight ? 'text-charcoal' : 'text-white'}`}>
-                        Gallery Highlights
-                    </h2>
-                    <p className={`${isLight ? 'text-charcoal-light' : 'text-white/60'} text-base mt-3 max-w-xl mx-auto`}>
-                        Highlights from our tournaments, events, and community celebrations.
-                    </p>
-                </div>
+                <SectionHeader
+                    eyebrow="From the field"
+                    title="Gallery Highlights"
+                    subtitle="Tournaments, giveback nights, and the community that makes it happen."
+                    isLight={isLight}
+                />
             </div>
 
             {/* Carousel */}
@@ -116,7 +116,7 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-whit
                                 onClick={() => changeSlide(i)}
                                 className="absolute top-0 left-1/2 h-full cursor-pointer transition-all duration-700 cubic-bezier(0.25, 0.8, 0.25, 1)"
                                 style={{
-                                    transform: `translateX(calc(-50% + ${xPos}px)) scale(${isActive ? 1 : 0.9})`,
+                                    transform: `translateX(calc(-50% + ${xPos}px))`,
                                     opacity,
                                     zIndex
                                 }}
@@ -124,7 +124,7 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-whit
                                 <img
                                     src={image.src}
                                     alt={image.caption}
-                                    className={`h-full w-auto object-cover md:object-contain transition-all duration-500 rounded-lg ${isActive ? 'shadow-xl' : 'opacity-70'}`}
+                                    className={`h-full w-auto object-cover md:object-contain transition-opacity duration-500 rounded-lg ${isActive ? 'opacity-100' : 'opacity-70'}`}
                                     onLoad={(e) => handleImageLoad(i, e.currentTarget.offsetWidth)}
                                 />
                             </div>
@@ -144,7 +144,7 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-whit
                 <div className="flex flex-wrap justify-center items-center gap-1.5 md:gap-2 px-4">
                     {galleryImages.map((image, index) => (
                         <button key={index} onClick={() => changeSlide(index)} disabled={isAnimating}
-                            className={`w-8 h-8 md:w-12 md:h-12 overflow-hidden rounded-lg transition-all duration-300 ${index === activeIndex ? 'ring-2 ring-coral ring-offset-1 opacity-100' : 'opacity-30 hover:opacity-60'} ${index === activeIndex ? (isLight ? 'ring-offset-white' : 'ring-offset-black') : ''}`}>
+                            className={`w-8 h-8 md:w-12 md:h-12 overflow-hidden rounded-lg transition-opacity duration-300 border-2 ${index === activeIndex ? 'border-coral opacity-100' : 'border-transparent opacity-30 hover:opacity-60'}`}>
                             <img src={image.src} alt="" className="w-full h-full object-cover" />
                         </button>
                     ))}
@@ -154,7 +154,7 @@ export const GalleryTeaser: React.FC<GalleryTeaserProps> = ({ bgClass = 'bg-whit
             {/* View Gallery Link */}
             <div className="text-center mt-8">
                 <Link to="/gallery" className={`inline-flex items-center gap-1.5 text-coral ${isLight ? 'hover:text-charcoal' : 'hover:text-white'} transition-colors text-sm font-medium group`}>
-                    View Full Gallery
+                    View full gallery
                     <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                 </Link>
             </div>

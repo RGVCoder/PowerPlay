@@ -1,29 +1,19 @@
 import React from 'react';
-import { Navbar } from '../components/Navbar';
 import { Events } from '../components/Events';
-import { Footer } from '../components/Footer';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { PageHero } from '../components/PageHero';
 
 export const EventsPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-white font-sans text-charcoal">
+        <div className="min-h-screen bg-court font-sans text-charcoal">
             <main className="pt-20">
-                {/* Hero Section — clean, no pulsing badge */}
-                <section className="relative py-24 bg-black overflow-hidden" data-navbar-theme="dark">
-                    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                        <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Our Events</p>
-                        <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
-                            Play Sports. <span className="text-orange-cortex">Save Lives.</span>
-                        </h1>
-                        <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-                            Join us in our mission to create life-changing opportunities for underprivileged youth through competitive athletic events.
-                        </p>
-                    </div>
-                </section>
+                <PageHero
+                    eyebrow="Tournaments"
+                    title={<>Play Sports. <span className="text-coral">Save Lives.</span></>}
+                    subtitle="Competitive events that create life-changing opportunities for families navigating pediatric illness."
+                    image="/images/pickleball-winners.jpg"
+                />
 
-                <hr className="border-gray-100/30" />
-
-                {/* Events Component */}
                 <ScrollReveal data-navbar-theme="light">
                     <Events />
                 </ScrollReveal>

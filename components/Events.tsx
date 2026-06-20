@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { ScrollReveal } from './ScrollReveal';
+import { EventBox } from './EventBox';
 
 interface EventData {
   id: string;
@@ -11,21 +12,79 @@ interface EventData {
   image: string;
   video?: string;
   imageFallback: string;
-  badge?: string;
   buttonText: string;
   stats?: { label: string; value: string }[];
 }
 
 const EVENTS: EventData[] = [
   {
+    id: 'wilco-3v3-austin',
+    title: 'Wilco 3v3 Charity Tournament',
+    shortDescription: 'Austin chapter\'s charity basketball tournament — rain came down and everyone still balled out.',
+    fullDescription: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="space-y-6">
+          <p className="text-lg font-light leading-relaxed text-charcoal-light">
+            The <strong>Wilco 3v3 Charity Tournament</strong>, run by our <strong>Austin chapter</strong>, did not disappoint. Rain came down and everyone balled out — great games, great people, and all for a great cause.
+          </p>
+          <div className="bg-cream-dark p-6 border-l-4 border-coral">
+            <h4 className="text-charcoal font-bold text-base mb-2 uppercase tracking-widest">Community</h4>
+            <p className="text-charcoal-light font-light text-sm">
+              Thank you to everyone who came out and supported. Events like this show what happens when young athletes show up for each other — on and off the court.
+            </p>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="bg-cream p-6 border border-charcoal/5 rounded-xl">
+            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Tournament Champions</h4>
+            <div className="space-y-4 font-mono text-sm">
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">🏆</span>
+                  <span className="text-coral font-bold">Champions</span>
+                </div>
+                <span className="text-charcoal text-right font-bold">Hershey, Sahil & Vishruth</span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-cream p-6 border border-charcoal/5 rounded-xl">
+            <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Event Details</h4>
+            <div className="space-y-3 font-mono text-sm">
+              <div className="flex justify-between">
+                <span className="text-charcoal-light">Chapter</span>
+                <span className="font-bold text-charcoal">Austin</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-charcoal-light">Format</span>
+                <span className="font-bold text-charcoal">3v3 Basketball</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-charcoal-light">Location</span>
+                <span className="font-bold text-charcoal text-right">Williamson County, TX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    image: '/images/wilco-3v3-austin.jpg',
+    imageFallback: '/images/wilco-3v3-austin.jpg',
+    buttonText: 'View recap',
+    stats: [
+      { label: 'Chapter', value: 'Austin' },
+      { label: 'Format', value: '3v3' },
+      { label: 'Sport', value: 'Basketball' }
+    ]
+  },
+  {
     id: 'heart-to-heart-pickleball',
-    title: 'PICKLEBALL TOURNAMENT',
+    title: 'Pickleball Tournament',
     shortDescription: 'A highly successful doubles tournament with amazing community turnout.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
           <p className="text-lg font-light leading-relaxed text-charcoal-light">
-            We’re excited to share that the <strong>PowerPlay x Heart to Heart Doubles Pickleball Tournament</strong> was a huge success, filled with great energy, competitive matches, and an amazing community turnout from start to finish.
+            We're excited to share that the <strong>PowerPlay x Heart to Heart Doubles Pickleball Tournament</strong> was a huge success, filled with great energy, competitive matches, and an amazing community turnout from start to finish.
           </p>
           <div className="bg-cream-dark p-6 border-l-4 border-coral">
             <h4 className="text-charcoal font-bold text-base mb-2 uppercase tracking-widest">Special Thanks</h4>
@@ -35,7 +94,7 @@ const EVENTS: EventData[] = [
           </div>
         </div>
         <div className="space-y-6">
-          <div className="bg-cream p-6 border border-charcoal/5 shadow-lg rounded-xl">
+          <div className="bg-cream p-6 border border-charcoal/5 rounded-xl">
             <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Tournament Winners</h4>
             <div className="space-y-4 font-mono text-sm">
               <div className="flex justify-between items-center">
@@ -66,8 +125,7 @@ const EVENTS: EventData[] = [
     ),
     image: '/images/pickleball-winners.jpg',
     imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Pickleball+Winners',
-    buttonText: 'View Recap',
-    badge: 'Tournament',
+    buttonText: 'View recap',
     stats: [
       { label: 'Venue', value: 'Chicken N Pickle' },
       { label: 'Sponsor', value: 'Credit Union TX' },
@@ -76,7 +134,7 @@ const EVENTS: EventData[] = [
   },
   {
     id: 'giveback-night',
-    title: 'GIVEBACK NIGHT',
+    title: 'Giveback Night',
     shortDescription: 'Community night at Chicken N Pickle helping the Crohn\'s & Colitis Foundation.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -93,7 +151,7 @@ const EVENTS: EventData[] = [
           </div>
         </div>
         <div className="space-y-6">
-          <div className="bg-cream p-6 border border-charcoal/5 shadow-lg rounded-xl">
+          <div className="bg-cream p-6 border border-charcoal/5 rounded-xl">
             <h4 className="text-charcoal font-bold text-base mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">Event Details</h4>
             <div className="space-y-3 font-mono text-sm">
               <div className="flex justify-between">
@@ -115,8 +173,7 @@ const EVENTS: EventData[] = [
     ),
     image: '/images/giveback2.png',
     imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Giveback+Night',
-    buttonText: 'View Recap',
-    badge: 'Fundraiser',
+    buttonText: 'View recap',
     stats: [
       { label: 'Partner', value: 'Chicken N\' Pickle' },
       { label: 'Activity', value: 'Dining & Play' },
@@ -125,7 +182,7 @@ const EVENTS: EventData[] = [
   },
   {
     id: 'guest-speaker-2026',
-    title: 'DOCTOR GUEST SPEAKER',
+    title: 'Doctor Guest Speaker',
     shortDescription: 'Dr. Bhaskar Gurram shares insights on helping athletes with pediatric illnesses.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -180,8 +237,7 @@ const EVENTS: EventData[] = [
     ),
     image: '/images/game-on-ibd-live.jpg',
     imageFallback: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop',
-    buttonText: 'View Recap',
-    badge: 'Education',
+    buttonText: 'View recap',
     stats: [
       { label: 'Speaker', value: 'Dr. Gurram' },
       { label: 'Focus', value: 'Education' },
@@ -190,7 +246,7 @@ const EVENTS: EventData[] = [
   },
   {
     id: 'cricket',
-    title: 'CRICKET TOURNAMENT',
+    title: 'Cricket Tournament',
     shortDescription: 'Competitive league play that spotlights rising cricket talent in the community.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -281,7 +337,7 @@ const EVENTS: EventData[] = [
     ),
     image: '/images/gallery-batting.jpg',
     imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Cricket+Event',
-    buttonText: 'View Recap',
+    buttonText: 'View recap',
     stats: [
       { label: 'Teams', value: '8' },
       { label: 'Raised', value: '$500+' },
@@ -290,7 +346,7 @@ const EVENTS: EventData[] = [
   },
   {
     id: 'pickleball',
-    title: 'PICKLEBALL OPEN',
+    title: 'Pickleball Open',
     shortDescription: 'Fast-paced brackets designed for all skill levels. Fun, fast, and competitive.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -325,9 +381,7 @@ const EVENTS: EventData[] = [
           <div className="bg-cream-dark p-6 border-l-4 border-coral overflow-x-auto">
             <h4 className="text-charcoal font-bold text-sm mb-6 uppercase tracking-widest border-b border-charcoal/10 pb-2">Bracket Highlights</h4>
 
-            {/* Custom Bracket Visualization - Compact & Fluid */}
             <div className="w-full flex justify-between text-[10px] font-mono relative select-none">
-              {/* Round 1 */}
               <div className="flex flex-col justify-around flex-1 gap-6 pr-1">
                 <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
                   <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">9 Shauryan</span>
@@ -340,7 +394,7 @@ const EVENTS: EventData[] = [
                   <div className="absolute -right-2 top-0 h-[1px] w-1 bg-charcoal/20"></div>
                 </div>
 
-                <div className="h-8"></div> {/* Spacer */}
+                <div className="h-8"></div>
 
                 <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between whitespace-nowrap">
                   <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">7 Shreyas</span>
@@ -354,7 +408,6 @@ const EVENTS: EventData[] = [
                 </div>
               </div>
 
-              {/* Round 2 (QF) */}
               <div className="flex flex-col justify-between flex-1 py-2 pr-1">
                 <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
                   <span className="text-charcoal truncate max-w-[40px] sm:max-w-[60px]">1 Rohit</span>
@@ -391,7 +444,6 @@ const EVENTS: EventData[] = [
                 </div>
               </div>
 
-              {/* Round 3 (SF) */}
               <div className="flex flex-col justify-around flex-1 py-8 pr-1">
                 <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
                   <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">1 Rohit</span>
@@ -416,7 +468,6 @@ const EVENTS: EventData[] = [
                 </div>
               </div>
 
-              {/* Final */}
               <div className="flex flex-col justify-center flex-1">
                 <div className="border-b border-charcoal/20 pb-1 mb-1 flex justify-between relative whitespace-nowrap">
                   <span className="text-charcoal-light truncate max-w-[40px] sm:max-w-[60px]">5 Biswajit</span>
@@ -439,7 +490,7 @@ const EVENTS: EventData[] = [
     ),
     image: '/images/event-pickleball.jpg',
     imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Pickleball+Action',
-    buttonText: 'View Recap',
+    buttonText: 'View recap',
     stats: [
       { label: 'Players', value: '40+' },
       { label: 'Matches', value: '36' },
@@ -448,7 +499,7 @@ const EVENTS: EventData[] = [
   },
   {
     id: 'guest',
-    title: 'SPECIAL GUEST',
+    title: 'Special Guest',
     shortDescription: 'Former Pakistan international Asif Mujtaba joined us to mentor young athletes.',
     fullDescription: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -460,7 +511,7 @@ const EVENTS: EventData[] = [
             His journey from local clubs to the international stage served as a powerful motivation for everyone present. Watch the exclusive interview below to hear his thoughts on the future of youth cricket.
           </p>
         </div>
-        <div className="bg-cream-dark p-2 border-l-4 border-coral shadow-xl">
+        <div className="bg-cream-dark p-2 border-l-4 border-coral">
           <div className="aspect-w-16 aspect-h-9 w-full bg-charcoal overflow-hidden">
             <video
               src="/images/final_asif_interview.mp4"
@@ -475,8 +526,7 @@ const EVENTS: EventData[] = [
     image: '/images/event-guest.jpg',
     video: '/images/final_asif_interview.mp4',
     imageFallback: 'https://placehold.co/600x400/101010/D4AF37?text=Special+Guest',
-    badge: 'Guest Star',
-    buttonText: 'View Recap',
+    buttonText: 'View recap',
     stats: [
       { label: 'Attendees', value: '100+' },
       { label: 'Duration', value: '2 Hours' },
@@ -485,251 +535,110 @@ const EVENTS: EventData[] = [
   }
 ];
 
+const UPCOMING_EVENT = {
+  title: 'More events coming soon',
+  dateDisplay: 'TBD',
+  description: 'We are planning our next tournaments. Check back for dates, or reach out if you want to volunteer at the next one.',
+  image: '/images/event-pickleball.jpg',
+  imageFallback: '/images/gallery-pickleball.jpg',
+};
+
 export const Events: React.FC = () => {
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
-  const [contentEvent, setContentEvent] = useState<EventData | null>(null);
-  const [isContentVisible, setIsContentVisible] = useState(false);
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | 'center'>('center');
-
-  React.useEffect(() => {
-    if (expandedEvent) {
-      const target = EVENTS.find(e => e.id === expandedEvent);
-
-      // If there is content already showing (Switching events)
-      if (contentEvent && contentEvent.id !== expandedEvent) {
-        setSlideDirection('left');
-        setIsContentVisible(false);
-        // The actual content swap happens in onTransitionEnd or after timeout
-        // Using timeout for simplicity and reliability over CSS events in this context
-        const timer = setTimeout(() => {
-          setContentEvent(target || null);
-          setSlideDirection('right');
-          // Small delay to allow DOM to update with 'right' position before sliding in
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              setSlideDirection('center');
-              setIsContentVisible(true);
-            });
-          });
-        }, 200);
-        return () => clearTimeout(timer);
-      }
-      // If opening from closed state
-      else if (!contentEvent) {
-        setContentEvent(target || null);
-        setSlideDirection('right');
-        // Immediate next frame slide in
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setSlideDirection('center');
-            setIsContentVisible(true);
-          });
-        });
-      }
-    } else {
-      // Closing
-      if (contentEvent) {
-        setSlideDirection('left');
-        setIsContentVisible(false);
-        const timer = setTimeout(() => {
-          setContentEvent(null);
-          setSlideDirection('center');
-        }, 200);
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [expandedEvent]);
 
   const toggleEvent = (id: string) => {
     setExpandedEvent(expandedEvent === id ? null : id);
   };
 
-  const displayEventData = contentEvent;
-
-  // Calculate transform based on direction
-  const getTransformClass = () => {
-    switch (slideDirection) {
-      case 'left': return '-translate-x-8';
-      case 'right': return 'translate-x-8';
-      default: return 'translate-x-0';
-    }
-  };
-
-  const topEvents = EVENTS.slice(0, 3);
-  const bottomEvents = EVENTS.slice(3);
-
-  // Determine where to show the expanded content
-  const isTopExpanded = expandedEvent && topEvents.some(e => e.id === expandedEvent);
-  const isBottomExpanded = expandedEvent && bottomEvents.some(e => e.id === expandedEvent);
-
-  const renderExpandedContent = (isVisible: boolean) => (
-    <div className={`hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${isVisible ? 'max-h-[1200px] opacity-100 mt-8 mb-8' : 'max-h-0 opacity-0'}`}>
-      {displayEventData && (
-        <div
-          className={`bg-white border-l-4 border-coral p-10 relative overflow-hidden shadow-xl transition-all duration-200 ease-out transform ${isContentVisible ? 'opacity-100' : 'opacity-0'} ${getTransformClass()} border border-black/5`}
-        >
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-coral via-coral/50 to-transparent"></div>
-
-          {/* Header Row: Title + Stats */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
-            <div>
-              <h3 className="font-display font-bold text-2xl md:text-3xl text-charcoal mb-2 tracking-tight whitespace-nowrap">{displayEventData.title}</h3>
-              <div className="h-1 w-20 bg-coral"></div>
+  const renderExpandedPanel = (event: EventData) => (
+    <div className="bg-white border border-stone-150 border-t-0 rounded-b-lg px-6 md:px-8 pb-8 pt-2 -mt-2">
+      {event.stats && (
+        <div className="flex flex-wrap gap-3 mb-6">
+          {event.stats.map((stat) => (
+            <div key={stat.label} className="bg-sideline px-4 py-2 rounded-lg text-center min-w-[90px]">
+              <div className="text-coral font-display font-semibold text-lg">{stat.value}</div>
+              <div className="text-charcoal-light text-xs mt-0.5">{stat.label}</div>
             </div>
-
-            {displayEventData.stats && (
-              <div className="flex gap-4">
-                {displayEventData.stats.map((stat, idx) => (
-                  <div key={idx} className="bg-black/5 px-4 py-2 text-center border-l-2 border-coral backdrop-blur-sm min-w-[100px]">
-                    <div className="text-coral font-bold text-xl font-display">{stat.value}</div>
-                    <div className="text-charcoal/40 text-[10px] uppercase tracking-widest font-medium mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Content Row */}
-          <div className="text-charcoal/70 text-base leading-relaxed font-light">
-            {displayEventData.fullDescription}
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-black/10 flex justify-end">
-            <Button
-              variant="secondary"
-              onClick={() => setExpandedEvent(null)}
-              className="!py-2 !px-6 text-sm"
-            >
-              Close Details
-            </Button>
-          </div>
+          ))}
         </div>
       )}
+      <div className="text-charcoal-light text-base leading-relaxed">
+        {event.fullDescription}
+      </div>
+      <div className="mt-6 pt-4 border-t border-stone-150 flex justify-end">
+        <Button variant="secondary" onClick={() => setExpandedEvent(null)} className="!py-2 !px-6 text-sm">
+          Close recap
+        </Button>
+      </div>
     </div>
   );
 
-  const renderEventCard = (event: EventData) => (
-    <div
-      key={event.id}
-      className={`bg-white rounded border border-black/5 overflow-hidden hover:border-gray-200 transition-all duration-300 group shadow-sm hover:shadow-md flex flex-col items-center text-center p-8 ${expandedEvent === event.id ? 'ring-1 ring-gray-100 border-gray-200 shadow-md' : ''}`}
-    >
-      <div className="w-full aspect-video rounded overflow-hidden shadow-inner bg-black/5 mb-6 relative">
-        {event.badge && (
-          <div className="absolute top-3 right-3 z-20 bg-coral text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest rounded-md shadow-lg">{event.badge}</div>
-        )}
-        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10"></div>
-        <img
-          src={event.image}
-          alt={event.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          onError={(e) => {
-            e.currentTarget.src = event.imageFallback;
-            e.currentTarget.onerror = null;
-          }}
+  const renderPastEvent = (event: EventData) => {
+    const isExpanded = expandedEvent === event.id;
+
+    return (
+      <div key={event.id}>
+        <EventBox
+          title={event.title}
+          description={event.shortDescription}
+          image={event.image}
+          imageFallback={event.imageFallback}
+          className={isExpanded ? 'rounded-b-none border-b-0' : ''}
+          footer={
+            <button
+              onClick={() => toggleEvent(event.id)}
+              className="text-coral text-sm font-semibold hover:text-charcoal transition-colors inline-flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-coral rounded"
+            >
+              {isExpanded ? 'Close recap' : event.buttonText}
+              <span className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                {isExpanded ? '−' : '→'}
+              </span>
+            </button>
+          }
         />
-      </div>
-
-      <h4 className="font-display font-bold text-lg md:text-xl text-charcoal mb-3 uppercase tracking-wider">{event.title}</h4>
-      <p className="text-charcoal/60 text-sm mb-6 font-light leading-relaxed flex-grow">
-        {event.shortDescription}
-      </p>
-
-      {/* Expanded Content - Mobile Only */}
-      <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${expandedEvent === event.id ? 'max-h-[2000px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-        <div className="pt-4 border-t border-black/10 text-left">
-          <div className="text-charcoal/60 text-sm leading-relaxed mb-6">
-            {event.fullDescription}
-          </div>
-          {event.stats && (
-            <div className="grid grid-cols-3 gap-2 mb-2">
-              {event.stats.map((stat, idx) => (
-                <div key={idx} className="text-center bg-black/5 p-2 rounded-lg">
-                  <div className="text-coral font-bold text-sm">{stat.value}</div>
-                  <div className="text-[10px] text-charcoal/40 uppercase tracking-wider">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          )}
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${
+            isExpanded ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          {isExpanded && renderExpandedPanel(event)}
         </div>
       </div>
-
-      <button
-        onClick={() => toggleEvent(event.id)}
-        className="text-coral text-xs font-bold uppercase tracking-[0.2em] hover:text-charcoal transition-colors flex items-center justify-center gap-2 outline-none focus:outline-none"
-      >
-        {expandedEvent === event.id ? 'Close Recap' : event.buttonText}
-        <span className={`transition-transform duration-300 ${expandedEvent === event.id ? 'rotate-180' : ''}`}>
-          {expandedEvent === event.id ? '−' : '→'}
-        </span>
-      </button>
-    </div>
-  );
+    );
+  };
 
   return (
     <section id="events" className="py-0">
-      {/* Upcoming Events Section - White Background */}
-      <div className="bg-white py-24 md:py-28" data-navbar-theme="light">
+      <div className="bg-court py-24 md:py-28" data-navbar-theme="light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Upcoming Events Section */}
-          <div className="mb-12 md:mb-16">
-            <div className="text-center mb-10 md:mb-12">
-              <h3 className="font-sans font-bold text-2xl md:text-3xl text-charcoal tracking-tight">Upcoming Events</h3>
-            </div>
-
-            <div className="space-y-8">
-              <ScrollReveal width="100%" delay={0.1}>
-                <div className="bg-white rounded border-2 border-black/5 p-6 md:p-10 flex flex-col items-center text-center transition-all duration-300 hover:border-gray-200 group shadow-sm hover:shadow-md">
-                  <div className="w-16 h-16 bg-coral/10 text-coral rounded-full flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-sans font-bold text-2xl md:text-3xl text-charcoal mb-4">More Events Coming Soon</h4>
-                  <p className="text-charcoal/70 text-base md:text-lg leading-relaxed font-light max-w-2xl mx-auto">
-                    We are currently planning our next opportunities to bring athletes together for a cause. Check back soon for updates!
-                  </p>
-                </div>
-              </ScrollReveal>
-            </div>
+          <div className="text-center mb-10 md:mb-12">
+            <h3 className="font-display font-semibold text-2xl md:text-3xl text-charcoal tracking-tight">Upcoming Events</h3>
           </div>
+
+          <ScrollReveal width="100%" delay={0.1}>
+            <EventBox
+              title={UPCOMING_EVENT.title}
+              description={UPCOMING_EVENT.description}
+              image={UPCOMING_EVENT.image}
+              imageFallback={UPCOMING_EVENT.imageFallback}
+              dateLabel={UPCOMING_EVENT.dateDisplay}
+            />
+          </ScrollReveal>
         </div>
       </div>
 
-      {/* Past Events Section - Standard Gray Background */}
-      <div className="bg-gray-50 py-24 md:py-28 border-t border-black/5" data-navbar-theme="light">
+      <div className="bg-sideline py-24 md:py-28 border-t border-stone-150" data-navbar-theme="light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Past Events Header */}
-          <div className="text-center mb-12 md:mb-16 mt-4">
-            <h3 className="font-sans font-bold text-2xl md:text-3xl text-charcoal tracking-tight">Past Events</h3>
+          <div className="text-center mb-10 md:mb-12">
+            <h3 className="font-display font-semibold text-2xl md:text-3xl text-charcoal tracking-tight">Past Events</h3>
           </div>
 
-          {/* Past/Highlight Grid - Top 3 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative">
-            {topEvents.map((event, index) => (
-              <ScrollReveal key={event.id} width="100%" delay={index * 0.2}>
-                {renderEventCard(event)}
+          <div className="space-y-5">
+            {EVENTS.map((event, index) => (
+              <ScrollReveal key={event.id} width="100%" delay={index * 0.05}>
+                {renderPastEvent(event)}
               </ScrollReveal>
             ))}
-          </div>
-
-          {/* Expanded Content for Top Events */}
-          {renderExpandedContent(!!isTopExpanded)}
-
-          {/* Remaining Events Grid (Special Guest) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start relative mt-8">
-            {bottomEvents.map((event, index) => (
-              <ScrollReveal key={event.id} width="100%" delay={index * 0.2}>
-                {renderEventCard(event)}
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* Expanded Content for Bottom Events */}
-          {renderExpandedContent(!!isBottomExpanded)}
-
-          <div className="mt-12 text-center md:hidden">
-            <a href="#" className="text-coral hover:text-white transition-colors font-medium uppercase text-sm tracking-widest">View All Calendar →</a>
           </div>
         </div>
       </div>

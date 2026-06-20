@@ -46,7 +46,7 @@ export const TeamMembers: React.FC = () => {
 
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <h2 className="font-sans font-bold text-3xl md:text-5xl text-charcoal tracking-tight mb-4">
+                    <h2 className="font-display font-semibold text-3xl md:text-5xl text-charcoal tracking-tight mb-4">
                         Meet Our Team
                     </h2>
                     <p className="text-charcoal-light text-lg max-w-2xl mx-auto">
@@ -58,8 +58,8 @@ export const TeamMembers: React.FC = () => {
                 <ScrollReveal>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {TEAM_MEMBERS.map((member) => (
-                            <div key={member.id} className="group bg-white rounded p-8 text-center border border-gray-100 transition-all duration-200 hover:border-gray-200 hover:shadow-md">
-                                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-white shadow-sm transition-transform duration-200 group-hover:scale-105">
+                            <div key={member.id} className="group bg-white rounded p-8 text-center border border-gray-100 transition-colors duration-200 hover:border-gray-200">
+                                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-stone-150">
                                     <img
                                         src={member.image}
                                         alt={member.name}
@@ -70,7 +70,7 @@ export const TeamMembers: React.FC = () => {
                                         }}
                                     />
                                 </div>
-                                <h3 className="font-sans font-semibold text-lg text-charcoal mb-1">{member.name}</h3>
+                                <h3 className="font-display font-semibold text-lg text-charcoal mb-1">{member.name}</h3>
                                 <p className="text-charcoal-light text-sm font-medium">{member.role}</p>
                             </div>
                         ))}

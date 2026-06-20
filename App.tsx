@@ -19,54 +19,40 @@ import { ContactPage } from './pages/ContactPage';
 
 import { ScrollReveal } from './components/ScrollReveal';
 
-// Home page component - Streamlined for visual impact
 const HomePage: React.FC = () => (
-  <div className="min-h-screen font-sans">
+  <div className="min-h-screen font-sans bg-court">
     <main>
-      {/* 1. Hero: Hook with rotating images + donation form */}
       <ScrollReveal data-navbar-theme="dark">
         <Hero />
       </ScrollReveal>
 
-      {/* 2. Pillars: Why PowerPlay? */}
       <ScrollReveal delay={0.2} data-navbar-theme="light">
         <Pillars />
       </ScrollReveal>
 
-      {/* 3. Our Impact: Stats section */}
-      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <OurImpact bgClass="bg-gray-50" />
+        <OurImpact bgClass="bg-sideline" />
       </ScrollReveal>
 
-      {/* 4. Upcoming Events: Tournament schedule */}
-      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <UpcomingEvents bgClass="bg-white" />
+        <UpcomingEvents bgClass="bg-court" />
       </ScrollReveal>
 
-      {/* 5. Partners: Sponsors */}
-      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <Partners bgClass="bg-gray-50" />
+        <Partners bgClass="bg-sideline" />
       </ScrollReveal>
 
-      {/* 8. Gallery: High-impact visuals */}
-      <hr className="border-gray-100/30" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <GalleryTeaser bgClass="bg-white" />
+        <GalleryTeaser bgClass="bg-court" />
       </ScrollReveal>
 
-      {/* 9. Testimonials: What People Say */}
-      <hr className="border-gray-100" />
       <ScrollReveal delay={0.1} data-navbar-theme="light">
-        <Testimonials bgClass="bg-gray-50" />
+        <Testimonials bgClass="bg-sideline" />
       </ScrollReveal>
     </main>
   </div>
 );
 
-// AppContent component to use hooks inside Router context
 const AppContent: React.FC = () => {
   const location = useLocation();
 

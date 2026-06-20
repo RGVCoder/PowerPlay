@@ -27,11 +27,13 @@
       theme: {
         extend: {
           colors: {
+            court: '#FAFAF8',
+            sideline: '#F3F1EC',
             'coral-cortex': '#FF7F50',
-            'orange-cortex': '#FF7F50', // Using Coral for better pop on both B&W
-            'black-cortex': '#000000',
+            'orange-cortex': '#FF7F50',
+            'black-cortex': '#0C0A09',
             'white-cortex': '#ffffff',
-            'dark-grey': '#1a1a1a', // Keep existing dark-grey
+            'dark-grey': '#1C1917',
             orange: {
               cortex: '#FF7F50',
             },
@@ -45,9 +47,12 @@
               dark: '#e5e1d3',
             },
             charcoal: {
-              DEFAULT: '#111827',
-              light: '#4b5563',
-              muted: '#9ca3af',
+              DEFAULT: '#1C1917',
+              light: '#57534E',
+              muted: '#A8A29E',
+            },
+            stone: {
+              150: '#ECEAE4',
             },
             // UTR Inspired Colors
             'utr-black': '#000000',
@@ -127,9 +132,31 @@
   </script>
   <style>
     body {
-      background-color: #ffffff;
-      color: #111827;
+      background-color: #FAFAF8;
+      color: #1C1917;
       position: relative;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #FF7F50;
+    }
+
+    .court-line {
+      width: 3rem;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #FF7F50 40%, #FF7F50 60%, transparent);
+      border-radius: 1px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-fade-in-up {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
 
     section {
@@ -195,7 +222,7 @@
 </script>
 </head>
 
-<body class="bg-white text-charcoal antialiased selection:bg-coral selection:text-white">
+<body class="bg-court text-charcoal antialiased selection:bg-coral selection:text-white">
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

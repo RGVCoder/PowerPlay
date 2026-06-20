@@ -56,9 +56,9 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
                 width,
                 transitionDelay: `${delay}s`,
             }}
-            className={`transition-all duration-600 ease-out transform ${isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-6'
+            className={`transition-opacity duration-600 ease-out ${isVisible
+                ? 'opacity-100'
+                : 'opacity-0'
                 } ${className}`}
             {...props}
         >

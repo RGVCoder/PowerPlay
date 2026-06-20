@@ -1,7 +1,6 @@
 import React from 'react';
-import { Navbar } from '../components/Navbar';
-import { Footer } from '../components/Footer';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { PageHero } from '../components/PageHero';
 
 // Gallery image component for consistent styling
 // Gallery image component for consistent styling
@@ -11,7 +10,7 @@ const GalleryImage: React.FC<{ src: string; alt: string; className?: string; del
             <img
                 src={src}
                 alt={alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
                 style={{ objectPosition }}
                 onError={(e) => {
                     e.currentTarget.src = "https://placehold.co/400x400/f3f4f6/111827?text=Photo";
@@ -24,23 +23,14 @@ const GalleryImage: React.FC<{ src: string; alt: string; className?: string; del
 
 export const GalleryPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-white font-sans text-charcoal">
+        <div className="min-h-screen bg-court font-sans text-charcoal">
             <main className="pt-20">
-                {/* Hero Section — clean, no pulsing badge */}
-                <section className="relative py-24 bg-black overflow-hidden" data-navbar-theme="dark">
-                    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                        <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Photo Gallery</p>
-                        <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
-                            Game Day <span className="text-orange-cortex">Memories</span>
-                        </h1>
-                        <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-                            Relive the highlights from our tournaments, chapter events, and community gatherings.
-                        </p>
-                    </div>
-                </section>
-
-
-                <hr className="border-gray-100/30" />
+                <PageHero
+                    eyebrow="Photo gallery"
+                    title={<>Game Day <span className="text-coral">Memories</span></>}
+                    subtitle="Highlights from tournaments, chapter events, and community gatherings."
+                    image="/images/event-pickleball.jpg"
+                />
 
                 <section className="py-24 bg-white relative" data-navbar-theme="light">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +38,13 @@ export const GalleryPage: React.FC = () => {
                         {/* Grid Layout - Optimized for Mobile Editorial and Desktop Bento Restoration */}
                         <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
 
-                            {/* Row 1: Desktop [sq][sq][wide][sq][sq] */}
+                            {/* Row 1: Austin chapter spotlight + desktop grid */}
+                            <GalleryImage
+                                src="/images/wilco-3v3-austin.jpg"
+                                alt="Wilco 3v3 Charity Tournament — Austin Chapter"
+                                className="col-span-2 aspect-[16/9] md:aspect-[2/1] md:col-span-2 md:row-span-1"
+                                delay={0.05}
+                            />
                             <GalleryImage
                                 src="/images/Photo Jun 23 2025 (1).jpg"
                                 alt="PowerPlay Event"
@@ -99,12 +95,12 @@ export const GalleryPage: React.FC = () => {
 
                             {/* HERO CENTERPIECE - 4x2 on Desktop. 4:2 = 2:1 aspect ratio. */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:row-span-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden rounded shadow-lg w-full h-full">
+                                <div className="relative group overflow-hidden rounded w-full h-full">
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
                                     <img
                                         src="/images/hero-bg.jpg"
                                         alt="PowerPlay Sports - Our Community"
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                                        className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
                                         onError={(e) => {
                                             e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/FFA100?text=PowerPlay";
                                             e.currentTarget.onerror = null;
@@ -246,12 +242,12 @@ export const GalleryPage: React.FC = () => {
 
                             {/* Center Huge Image */}
                             <ScrollReveal className="col-span-2 md:col-span-4 md:col-start-2 md:aspect-[2/1]" width="100%" delay={0.5}>
-                                <div className="relative group overflow-hidden rounded shadow-lg w-full h-full">
+                                <div className="relative group overflow-hidden rounded w-full h-full">
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
                                     <img
                                         src="/images/game-on-ibd-live.jpg"
                                         alt="Game On: IBD & Sports"
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                                        className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
                                         onError={(e) => {
                                             e.currentTarget.src = "https://placehold.co/1200x800/FFF3E6/FFA100?text=PowerPlay";
                                             e.currentTarget.onerror = null;

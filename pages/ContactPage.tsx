@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { PageHero } from '../components/PageHero';
 
 export const ContactPage: React.FC = () => {
     const form = React.useRef<HTMLFormElement>(null);
@@ -48,28 +49,19 @@ export const ContactPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white font-sans text-charcoal">
+        <div className="min-h-screen bg-court font-sans text-charcoal">
             <main className="pt-20">
-                {/* Hero Section — clean, no pulsing badge */}
-                <section className="relative py-24 bg-black overflow-hidden" data-navbar-theme="dark">
-                    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                        <p className="text-sm text-white/50 tracking-wide mb-6 font-medium">Get In Touch</p>
-                        <h1 className="font-sans font-bold text-4xl md:text-6xl text-white mb-6 tracking-tight">
-                            Contact <span className="text-orange-cortex">Us</span>
-                        </h1>
-                        <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-                            Have questions? Want to start a chapter? We'd love to hear from you.
-                        </p>
-                    </div>
-                </section>
+                <PageHero
+                    eyebrow="Get in touch"
+                    title={<>Contact <span className="text-coral">Us</span></>}
+                    subtitle="Questions about events, chapters, or partnerships? We'd like to hear from you."
+                    image="/images/speaker-hero.jpeg"
+                />
 
-                <hr className="border-gray-100/30" />
-
-                {/* Contact Form Section */}
                 <ScrollReveal data-navbar-theme="light">
-                    <section className="py-24 md:py-28 relative bg-gray-50" data-navbar-theme="light">
+                    <section className="py-24 md:py-28 relative bg-sideline" data-navbar-theme="light">
                         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="bg-white rounded shadow-sm p-8 md:p-10 border border-gray-100">
+                            <div className="bg-white rounded-lg p-8 md:p-10 border border-stone-150">
                                 {status === 'success' ? (
                                     <div className="text-center py-10">
                                         <div className="w-14 h-14 bg-green-50 text-green-500 rounded flex items-center justify-center mx-auto mb-5">
@@ -104,7 +96,7 @@ export const ContactPage: React.FC = () => {
                                                     name="user_name"
                                                     id="user_name"
                                                     required
-                                                    className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
+                                                    className="w-full px-4 py-2.5 rounded-lg bg-court border border-stone-150 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
                                                     placeholder="Your Name"
                                                 />
                                             </div>
@@ -115,7 +107,7 @@ export const ContactPage: React.FC = () => {
                                                     name="user_email"
                                                     id="user_email"
                                                     required
-                                                    className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
+                                                    className="w-full px-4 py-2.5 rounded-lg bg-court border border-stone-150 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all text-charcoal placeholder-charcoal/30 text-sm"
                                                     placeholder="your@email.com"
                                                 />
                                             </div>
@@ -129,7 +121,7 @@ export const ContactPage: React.FC = () => {
                                                     id="topic"
                                                     value={topic}
                                                     onChange={(e) => setTopic(e.target.value)}
-                                                    className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all appearance-none cursor-pointer text-charcoal text-sm"
+                                                    className="w-full px-4 py-2.5 rounded-lg bg-court border border-stone-150 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all appearance-none cursor-pointer text-charcoal text-sm"
                                                 >
                                                     <option value="General Inquiry">General Inquiries</option>
                                                     <option value="Starting a Chapter">Starting a Chapter</option>
@@ -152,7 +144,7 @@ export const ContactPage: React.FC = () => {
                                                 id="message"
                                                 required
                                                 rows={5}
-                                                className="w-full px-4 py-2.5 rounded bg-gray-50 border border-gray-200 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all resize-none text-charcoal placeholder-charcoal/30 text-sm"
+                                                className="w-full px-4 py-2.5 rounded-lg bg-court border border-stone-150 focus:border-coral focus:ring-1 focus:ring-coral outline-none transition-all resize-none text-charcoal placeholder-charcoal/30 text-sm"
                                                 placeholder="How can we help?"
                                             ></textarea>
                                         </div>

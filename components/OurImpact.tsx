@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { SectionHeader } from './SectionHeader';
 
 const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: string; prefix?: string }> = ({ end, duration = 2000, suffix = '', prefix = '' }) => {
     const [count, setCount] = useState(0);
@@ -32,8 +33,6 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
         const step = (timestamp: number) => {
             if (!startTime) startTime = timestamp;
             const progress = Math.min((timestamp - startTime) / duration, 1);
-
-            // Ease out quart
             const easeOut = 1 - Math.pow(1 - progress, 4);
 
             setCount(Math.floor(startValue + (end - startValue) * easeOut));
@@ -53,31 +52,26 @@ const AnimatedCounter: React.FC<{ end: number; duration?: number; suffix?: strin
     );
 };
 
-export const OurImpact: React.FC<{ bgClass?: string }> = ({ bgClass = 'bg-white' }) => {
+export const OurImpact: React.FC<{ bgClass?: string }> = ({ bgClass = 'bg-court' }) => {
     const stats = [
-        { end: 5, prefix: '$', suffix: 'K+', label: 'Raised for Pediatric Care' },
-        { end: 500, suffix: '+', label: 'Athletes United' },
-        { end: 100, suffix: '%', label: 'Goes to Families' },
+        { end: 5, prefix: '$', suffix: 'K+', label: 'Raised for pediatric care' },
+        { end: 500, suffix: '+', label: 'Athletes united' },
+        { end: 100, suffix: '%', label: 'Goes to families' },
     ];
 
     return (
         <section className={`relative py-24 md:py-28 overflow-hidden ${bgClass}`} data-navbar-theme="light">
             <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
-                {/* Section Header — no split color */}
-                <div className="text-center mb-14">
-                    <h2 className="font-sans font-bold text-3xl md:text-4xl text-charcoal tracking-tight">
-                        Our Impact
-                    </h2>
-                    <p className="text-charcoal-light text-base mt-3 max-w-xl mx-auto">
-                        Real numbers. Real change. See the difference we're making together.
-                    </p>
-                </div>
+                <SectionHeader
+                    eyebrow="By the numbers"
+                    title="Our Impact"
+                    subtitle="Real numbers from real tournaments. Every event adds up."
+                />
 
-                {/* Stats — simpler, no pill cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     {stats.map((stat, i) => (
-                        <div key={i} className="text-center px-6 py-10 bg-gray-50 rounded border border-gray-100 transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:bg-white hover:border-gray-200">
-                            <div className="font-sans font-bold text-5xl md:text-6xl text-orange-cortex mb-3 leading-none">
+                        <div key={i} className="text-center px-6 py-10 bg-white rounded-lg border border-stone-150 transition-colors duration-200 hover:border-coral/30">
+                            <div className="font-display font-semibold text-5xl md:text-6xl text-coral mb-3 leading-none tracking-tight">
                                 <AnimatedCounter end={stat.end} prefix={stat.prefix} suffix={stat.suffix} />
                             </div>
                             <div className="text-charcoal-light text-sm font-medium">
