@@ -536,11 +536,18 @@ const EVENTS: EventData[] = [
 ];
 
 const UPCOMING_EVENT = {
-  title: 'More events coming soon',
-  dateDisplay: 'TBD',
-  description: 'We are planning our next tournaments. Check back for dates, or reach out if you want to volunteer at the next one.',
-  image: '/images/event-pickleball.jpg',
+  title: 'PowerPlay x Heart to Heart Pickleball Tournament',
+  dateDisplay: 'August 9, 2026 · 5:00–8:00 PM',
+  description: (
+    <>
+      Men&apos;s, women&apos;s, and mixed doubles at <strong>Pickleball Kingdom Plano</strong>,
+      1301 Custer Rd, Suite 200. Registration is $20 per team, with $100 for first place
+      and $50 for second place.
+    </>
+  ),
+  image: '/images/pickleball-kingdom-plano.png',
   imageFallback: '/images/gallery-pickleball.jpg',
+  registrationUrl: 'https://bit.ly/powerplaypickleball',
 };
 
 export const Events: React.FC = () => {
@@ -622,6 +629,17 @@ export const Events: React.FC = () => {
               image={UPCOMING_EVENT.image}
               imageFallback={UPCOMING_EVENT.imageFallback}
               dateLabel={UPCOMING_EVENT.dateDisplay}
+              footer={
+                <a
+                  href={UPCOMING_EVENT.registrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-2.5 rounded-lg text-sm hover:bg-charcoal transition-colors"
+                >
+                  Register now
+                  <span>↗</span>
+                </a>
+              }
             />
           </ScrollReveal>
         </div>

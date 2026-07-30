@@ -7,20 +7,27 @@ interface UpcomingEvent {
     id: string;
     title: string;
     dateDisplay: string;
-    description: string;
+    description: React.ReactNode;
     image: string;
     imageFallback: string;
-    volunteerFormUrl?: string;
+    registrationUrl?: string;
 }
 
 const UPCOMING_EVENTS: UpcomingEvent[] = [
     {
-        id: 'coming-soon',
-        title: 'More events coming soon',
-        dateDisplay: 'TBD',
-        description: 'We are planning our next tournaments. Check back for dates, or reach out if you want to volunteer at the next one.',
-        image: '/images/event-pickleball.jpg',
+        id: 'pickleball-tournament-august-2026',
+        title: 'PowerPlay x Heart to Heart Pickleball Tournament',
+        dateDisplay: 'August 9, 2026 · 5:00–8:00 PM',
+        description: (
+            <>
+                Men&apos;s, women&apos;s, and mixed doubles at <strong>Pickleball Kingdom Plano</strong>,
+                1301 Custer Rd, Suite 200. Registration is $20 per team, with $100 for first place
+                and $50 for second place.
+            </>
+        ),
+        image: '/images/pickleball-kingdom-plano.png',
         imageFallback: '/images/gallery-pickleball.jpg',
+        registrationUrl: 'https://bit.ly/powerplaypickleball',
     }
 ];
 
@@ -51,14 +58,14 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ bgClass = 'bg-co
                             imageFallback={event.imageFallback}
                             dateLabel={event.dateDisplay}
                             footer={
-                                event.volunteerFormUrl ? (
+                                event.registrationUrl ? (
                                     <a
-                                        href={event.volunteerFormUrl}
+                                        href={event.registrationUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-2.5 rounded-lg text-sm hover:bg-charcoal transition-colors"
                                     >
-                                        Volunteer now
+                                        Register now
                                         <span>↗</span>
                                     </a>
                                 ) : undefined
