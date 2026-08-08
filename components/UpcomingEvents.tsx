@@ -17,7 +17,7 @@ const UPCOMING_EVENTS: UpcomingEvent[] = [
     {
         id: 'pickleball-tournament-august-2026',
         title: 'PowerPlay x Heart to Heart Pickleball Tournament',
-        dateDisplay: 'August 9, 2026 · 5:00–8:00 PM',
+        dateDisplay: 'Postponed',
         description: (
             <>
                 Men&apos;s, women&apos;s, and mixed doubles at <strong>Pickleball Kingdom Plano</strong>,

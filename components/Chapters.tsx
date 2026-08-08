@@ -17,7 +17,7 @@ export const Chapters: React.FC = () => {
                 <ScrollReveal>
                     <div>
                         <div className="text-center mb-12">
-                            <h2 className="font-display font-semibold text-3xl md:text-5xl text-charcoal mb-4">Our Chapters</h2>
+                            <h2 className="font-display font-semibold text-3xl md:text-4xl text-charcoal mb-4">Our Chapters</h2>
                             <p className="text-charcoal-light text-lg max-w-2xl mx-auto">Expanding our impact across the nation.</p>
                         </div>
                         

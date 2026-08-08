@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const heroImages = [
-  '/images/pickleball-winners.jpg',
   '/images/gallery-giveback-1.jpg',
   '/images/event-pickleball.jpg',
   '/images/event-guest.jpg',
